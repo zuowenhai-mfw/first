@@ -1,0 +1,134 @@
+<div class="modal-header">
+    <button type='button' class='close' data-ng-click="cancel();"><i class="fa fa-close"></i></button>
+    <h4 class="modal-title">软件发布信息</h4>
+</div>
+<div class="modal-body">
+    <form action="" class="form-horizontal">
+        <!--基本信息-->
+        <fieldset>
+            <legend>
+                <h4>基本信息</h4>
+            </legend>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">成品编码：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static">{{finishedProductPublish.productCode}}</p>
+                </div>
+                <label class="col-sm-2 control-label">产品名称：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static">{{finishedProductPublish.productName}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">软件版本：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static">{{finishedProductPublish.softwareVersion}}</p>
+                </div>
+                <label class="col-sm-2 control-label">产品类型：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static">{{finishedProductPublish.productType}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">发布人：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static">{{finishedProductPublish.publishPerson}}</p>
+                </div>
+                <label class="col-sm-2 control-label">发布日期：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static">{{finishedProductPublish.publishDate}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">建档日期：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static">{{finishedProductPublish.putOnRecordDate}}</p>
+                </div>
+                <label class="col-sm-2 control-label">预期用途：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static">{{finishedProductPublish.expectPurpose}}</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-2 text-center">
+                    <label class="checkbox-inline">
+                        <input type="radio" name="isHardware" data-ng-model="finishedProductPublish.isHardware" data-ng-checked="yesHardwareSign" value="1">&nbsp;是
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="radio" name="isHardware" data-ng-model="finishedProductPublish.isHardware" data-ng-checked="noHardwareSign" value="2" >&nbsp;否
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">硬件编码：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static">{{finishedProductPublish.hardwareCode}}</p>
+                </div>
+            </div>
+        </fieldset>
+        <!--备注信息-->
+        <fieldset>
+            <legend>
+                <h4>备注信息</h4>
+            </legend>
+            <div class="form-group">
+                <textarea class="form-control" rows="4" disabled>{{finishedProductPublish.remarks}}</textarea>
+            </div>
+
+        </fieldset>
+        <!--修改记录-->
+        <fieldset>
+            <legend>
+                <h4>修改记录</h4>
+            </legend>
+            <table id="softwareEditRecordList" data-mobile-responsive="true"></table>
+        </fieldset>
+
+        <fieldset>
+            <!--文件列表-->
+            <div class="form-group data_list">
+                <table class="table table-striped table-condensed table-hover table-bordered">
+                    <thead>
+                    <tr>
+                        <th width="10%">序号</th>
+                        <th width="40%">文件名</th>
+                        <th width="40%">时间</th>
+                        <th width="10%" style="display: none">文件路径</th>
+                        <th width="10%">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr data-ng-repeat="softwareFile in softwareFileList">
+                        <td width="10%" data-ng-if="softwareFile.fileName!=''">
+                            {{$index+1}}
+                        </td>
+                        <td width="40%" ng-bind="softwareFile.fileName" data-ng-if="softwareFile.fileName!=''"></td>
+                        <td width="40%" ng-bind="softwareFile.createTime" data-ng-if="softwareFile.fileName!=''"></td>
+                        <td width="40%" ng-bind="softwareFile.filePath" style="display: none" data-ng-if="softwareFile.fileName!=''"></td>
+                        <td width="10%" data-ng-if="softwareFile.fileName!=''">
+                            <a class="fa fa-download" data-ng-click="downloadFile(softwareFile.filePath,softwareFile.createTime)"></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-sm btn-white" data-ng-click="cancel()"><i class="fa fa-close"></i>&nbsp;关闭</button>
+</div>

@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5bd68066-1a62-42e9-b363-9bde7f3a2d08" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/baseInform/softwareList/softwareReleaseAddOrEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/baseInform/softwareList/softwareReleaseAddOrEdit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baseInform/softwareList/softwareReleaseDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/baseInform/softwareList/softwareReleaseDetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataQuery/dataQueryList.html" beforeDir="false" afterPath="$PROJECT_DIR$/dataQuery/dataQueryList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/baseInform/softwareplatform.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/baseInform/softwareplatform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/common/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/common/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/dataQuery/dataQueryList.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/dataQuery/dataQueryList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/lifeCycleManagement/contractOrder.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/lifeCycleManagement/contractOrder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/lifeCycleManagement/hardwareProchase.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/lifeCycleManagement/hardwareProchase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lifeCycleManagement/contractOrder/contractOrderAddOrEdit.html" beforeDir="false" afterPath="$PROJECT_DIR$/lifeCycleManagement/contractOrder/contractOrderAddOrEdit.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1kDS2QcVNwTXMETQwsTR87sArt0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../soc" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\workspace\demo\systemMessage" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\workspace\demo\lifeCycleManagement\hardwareProchase" />
+      <recent name="F:\workspace\demo\lifeCycleManagement\license\licenseMake" />
+      <recent name="F:\workspace\demo\baseInform\hardwareList" />
+      <recent name="F:\workspace\demo\systemManage\businessUserManage" />
+      <recent name="F:\workspace\demo\js\systemManage\businessUserManage" />
+    </key>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\wenha\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\ws\demo" />
+          <option name="myCopyRoot" value="D:\ws\demo" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="D:\ws\demo" />
+          <option name="myCopyRoot" value="D:\ws\demo" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5bd68066-1a62-42e9-b363-9bde7f3a2d08" name="Default Changelist" comment="" />
+      <created>1605233461946</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605233461946</updated>
+      <workItem from="1605233463267" duration="2061000" />
+      <workItem from="1605673795326" duration="553000" />
+      <workItem from="1605677990573" duration="12168000" />
+      <workItem from="1605749455575" duration="10669000" />
+      <workItem from="1605841349794" duration="12915000" />
+      <workItem from="1606094342773" duration="4071000" />
+      <workItem from="1606110018507" duration="6524000" />
+      <workItem from="1606182268677" duration="48000" />
+      <workItem from="1606272872240" duration="8087000" />
+      <workItem from="1606369074076" duration="14175000" />
+      <workItem from="1606440212641" duration="3881000" />
+      <workItem from="1606455343541" duration="582000" />
+      <workItem from="1606460288650" duration="4673000" />
+      <workItem from="1606698319464" duration="1266000" />
+      <workItem from="1606714486335" duration="16721000" />
+      <workItem from="1606786575553" duration="5183000" />
+      <workItem from="1606801029170" duration="640000" />
+      <workItem from="1606801793595" duration="16563000" />
+      <workItem from="1606871233275" duration="9034000" />
+      <workItem from="1606887375271" duration="9797000" />
+      <workItem from="1606974223422" duration="14455000" />
+      <workItem from="1607044607897" duration="607000" />
+      <workItem from="1607059888703" duration="4120000" />
+      <workItem from="1607304120468" duration="2220000" />
+      <workItem from="1607319502701" duration="12864000" />
+      <workItem from="1607391277748" duration="2087000" />
+      <workItem from="1607405925193" duration="779000" />
+      <workItem from="1607588715024" duration="5073000" />
+      <workItem from="1607650075807" duration="1001000" />
+      <workItem from="1607907609121" duration="595000" />
+      <workItem from="1609240468500" duration="550000" />
+      <workItem from="1609761559485" duration="696000" />
+      <workItem from="1609810326875" duration="14869000" />
+      <workItem from="1609895876734" duration="2544000" />
+      <workItem from="1609983263995" duration="1549000" />
+      <workItem from="1610070107607" duration="598000" />
+      <workItem from="1610266608201" duration="12042000" />
+      <workItem from="1610364371858" duration="3061000" />
+      <workItem from="1610416068436" duration="20945000" />
+      <workItem from="1610525871980" duration="7319000" />
+      <workItem from="1610584385738" duration="1302000" />
+      <workItem from="1610672564503" duration="11038000" />
+      <workItem from="1610759320576" duration="15628000" />
+      <workItem from="1610846683931" duration="5886000" />
+      <workItem from="1610929780950" duration="20880000" />
+      <workItem from="1611020249172" duration="12018000" />
+      <workItem from="1611105369348" duration="6304000" />
+      <workItem from="1611192789247" duration="10989000" />
+      <workItem from="1611279404922" duration="11467000" />
+      <workItem from="1611364337716" duration="6820000" />
+      <workItem from="1611465183618" duration="12470000" />
+      <workItem from="1611537499579" duration="15522000" />
+      <workItem from="1611623243442" duration="18804000" />
+      <workItem from="1611709903885" duration="15148000" />
+      <workItem from="1611795685541" duration="13244000" />
+      <workItem from="1611823751790" duration="1361000" />
+      <workItem from="1611827936135" duration="4595000" />
+      <workItem from="1611881526122" duration="21964000" />
+      <workItem from="1612142778203" duration="13664000" />
+      <workItem from="1612229356642" duration="13106000" />
+      <workItem from="1612315432430" duration="8626000" />
+      <workItem from="1612402258278" duration="9236000" />
+      <workItem from="1612843162131" duration="765000" />
+      <workItem from="1615015234007" duration="598000" />
+      <workItem from="1615087464905" duration="620000" />
+    </task>
+    <task id="LOCAL-00001" summary="修改说明：修改前端html页面，修改新增硬件信息和新增成品信息页面。&#10;影响范围：PLM系统。">
+      <created>1605679274827</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605679274827</updated>
+    </task>
+    <task id="LOCAL-00002" summary="修改说明：修改前端html页面和js。&#10;影响范围：PLM系统。">
+      <created>1605683462142</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1605683462142</updated>
+    </task>
+    <task id="LOCAL-00003" summary="修改说明：修改前端js。&#10;影响范围：PLM系统。">
+      <created>1605698515340</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605698515340</updated>
+    </task>
+    <task id="LOCAL-00004" summary="修改说明：修改前端HTML页面和js。&#10;影响范围：PLM系统。">
+      <created>1605754746895</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605754746895</updated>
+    </task>
+    <task id="LOCAL-00005" summary="修改说明：修改前端HTML页面和js,售后服务点击详细页面增加下载功能。&#10;影响范围：PLM系统。">
+      <created>1605782976629</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1605782976629</updated>
+    </task>
+    <task id="LOCAL-00006" summary="修改说明：修改前端HTML页面,将新增成品页面中的硬件序列号下拉框改为必选。&#10;影响范围：PLM系统。">
+      <created>1605842822594</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1605842822594</updated>
+    </task>
+    <task id="LOCAL-00007" summary="修改说明：修改前端HTML页面和js，修改系统中新增表单的建档日期为当前日期和对对页面的表单元素加了必填属性等。&#10;影响范围：PLM系统。">
+      <created>1605866322221</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1605866322221</updated>
+    </task>
+    <task id="LOCAL-00008" summary="修改说明：修改前端新增授权码js方法。&#10;影响范围：PLM系统。">
+      <created>1606111108713</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1606111108713</updated>
+    </task>
+    <task id="LOCAL-00009" summary="修改说明：修改前端客户信息维护模块的html和js方法。&#10;影响范围：PLM系统。">
+      <created>1606115801791</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1606115801791</updated>
+    </task>
+    <task id="LOCAL-00010" summary="修改说明：修改html和js方法。&#10;影响范围：PLM系统。">
+      <created>1606379418106</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1606379418106</updated>
+    </task>
+    <task id="LOCAL-00011" summary="修改说明：修改html和js方法。&#10;影响范围：PLM系统。">
+      <created>1606471387350</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1606471387350</updated>
+    </task>
+    <task id="LOCAL-00012" summary="修改说明：修改测试提交的bug，修改的html和js方法。&#10;影响范围：PLM系统。">
+      <created>1606910249964</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1606910249964</updated>
+    </task>
+    <task id="LOCAL-00013" summary="修改说明：修改测试提交的bug，修改的html和js方法和前端加入系统消息模块。&#10;影响范围：PLM系统。">
+      <created>1607305074961</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1607305074961</updated>
+    </task>
+    <task id="LOCAL-00014" summary="修改说明：修改测试提交的bug，修改的html和js方法和前端加入系统消息模块。&#10;影响范围：PLM系统。">
+      <created>1609810434610</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1609810434610</updated>
+    </task>
+    <task id="LOCAL-00015" summary="修改说明：开发和修改html和js方法和前端加入系统消息模块。&#10;影响范围：PLM系统影响范围如下：&#10; 一、发布人、销售人员、下单人员、发货人员、需求人员、实施人 ,用一张表来存放，而且系统中有一&#10;&#9;个模块可以创建新增这些人，之前是打包时初始化进去的。需要再开发一个业务用户的模块。&#10;&#9;二、硬件平台发布模块&#10;&#9;1、加一个文件导入、导出的功能；    &#10;&#9;2、导入的文件有历史列表： 有序号、时间、文件名称、导出按钮等&#10;&#9;三、成品发布模块&#10;&#9;1、加一个文件导入、导出功能；    &#10;&#9;2、导入的文件有历史列表： 有序号、时间、文件名称、导出按钮等&#10;&#9;四、硬件平台采购模块&#10;&#9;1、新增硬件采购单时，硬件序列号可以先不生成，然后等到货了再补充(修改更新)进去。&#10;&#9;五、license制作&#10;&#9;1、需求发生变更，一个硬件序列号可以被授权多次，但是这个硬件序列号对应的授权历史版本要能查看的到。&#10;&#9;六、UTM制作登记模块&#10;&#9;1、允许一个硬件序列号被使用多次，但是这个应该序列号的历史使用记录要有地方可以查询。&#10;&#9;七、用户管理&#10;&#9;1、目前用户管理没有部门这个概念，现在加入部门功能，也就是说模块中能够创建部门，有部门管理模块。">
+      <created>1611027010304</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1611027010304</updated>
+    </task>
+    <task id="LOCAL-00016" summary="修改说明：修改前端html和js方法。&#10;影响范围：产品生命周期管理系统,修改license制作、数据查询、产品交付发货模块。">
+      <created>1611538324299</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1611538324299</updated>
+    </task>
+    <task id="LOCAL-00017" summary="修改说明：修改硬件采购模块，在新增硬件采购单是不允许提交系统中已存在的原始序列号和我司序列号，并且提示展示到前端。新增产品交付发货时，如果提交的记录中存在重复的硬件序列号(但一体化设备除外，这种情况允许提交两个记录中有一样的硬件序列号)，后台给出提示信息展示到前端。&#10;影响范围：产品生命周期管理系统,硬件采购模块、产品交付发货模块。">
+      <created>1611645696198</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1611645696198</updated>
+    </task>
+    <task id="LOCAL-00018" summary="修改说明：编辑页面时不允许修改硬件序列号和合同号。&#10;影响范围：产品生命周期管理系统,产品安装售后服务。">
+      <created>1611713972849</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1611713972849</updated>
+    </task>
+    <task id="LOCAL-00019" summary="修改说明：注释js中所有的console.log。&#10;影响范围：产品生命周期管理系统。">
+      <created>1611732387733</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1611732387733</updated>
+    </task>
+    <task id="LOCAL-00020" summary="修改说明：对硬件采购页面中的原始序列号和我司序列号范围做判断处理，原始序列号和我司序列号范围必须都为数字且长度必须一致。&#10;影响范围：产品生命周期管理系统。">
+      <created>1611816779582</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1611816779582</updated>
+    </task>
+    <task id="LOCAL-00021" summary="修改说明：修改查看硬件平台发布和软件成品中文件列表中的记录可以下载，license制作时根据制作的id个数延迟加载。&#10;影响范围：产品生命周期管理系统。">
+      <created>1611886236516</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1611886236516</updated>
+    </task>
+    <task id="LOCAL-00022" summary="修改说明：注释业务用户列表的删除按钮。&#10;影响范围：产品生命周期管理系统。">
+      <created>1611888160755</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1611888160755</updated>
+    </task>
+    <task id="LOCAL-00023" summary="修改说明：前端捕获网络异常并进行提示。&#10;影响范围：产品生命周期管理系统，对前端调用后台接口出现的网络异常进行优化处理。">
+      <created>1611909087411</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1611909087411</updated>
+    </task>
+    <task id="LOCAL-00024" summary="修改说明：前端捕获网络异常并进行提示。&#10;影响范围：产品生命周期管理系统，对前端调用后台接口出现的网络异常进行优化处理。">
+      <created>1611912800067</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1611912800067</updated>
+    </task>
+    <task id="LOCAL-00025" summary="修改说明：修改前端代码，业务用户模块中新增用户时下拉框的用户类型改为多选框，UTM登录新增防护板授权码时根据授权类型来是否显示刮刮卡编号和授权码，和硬件发布平台新增时去掉双板中第二个电源输入框。&#10;影响范围：产品生命周期管理系统，业务用户模块中新增用户时下拉框的用户类型改为多选框，UTM登录新增和修改防护板授权码，硬件发布平台新增和修改页面">
+      <created>1612235972120</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1612235972120</updated>
+    </task>
+    <task id="LOCAL-00026" summary="修改说明：修改前端代码，不同角色登录新增时只能新增对应类型的用户。&#10;影响范围：产品生命周期管理系统，客户关系维护模块。">
+      <created>1612246699492</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1612246699492</updated>
+    </task>
+    <task id="LOCAL-00027" summary="修改说明：修改前端js,新增硬件序列号规则。&#10;影响范围：产品生命周期管理系统，硬件采购模块。">
+      <created>1612338044059</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1612338044059</updated>
+    </task>
+    <task id="LOCAL-00028" summary="修改说明：修改前端js中字符串转int的问题,新增硬件序列号规则。&#10;影响范围：产品生命周期管理系统，硬件采购模块。">
+      <created>1612339752302</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1612339752302</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修改说明：修改前端html页面，修改新增硬件信息和新增成品信息页面。&#10;影响范围：PLM系统。" />
+    <MESSAGE value="修改说明：修改前端html页面和js。&#10;影响范围：PLM系统。" />
+    <MESSAGE value="修改说明：修改前端js。&#10;影响范围：PLM系统。" />
+    <MESSAGE value="修改说明：修改前端HTML页面和js。&#10;影响范围：PLM系统。" />
+    <MESSAGE value="修改说明：修改前端HTML页面和js,售后服务点击详细页面增加下载功能。&#10;影响范围：PLM系统。" />
+    <MESSAGE value="修改说明：修改前端HTML页面,将新增成品页面中的硬件序列号下拉框改为必选。&#10;影响范围：PLM系统。" />
+    <MESSAGE value="修改说明：修改前端HTML页面和js，修改系统中新增表单的建档日期为当前日期和对对页面的表单元素加了必填属性等。&#10;影响范围：PLM系统。" />
+    <MESSAGE value="修改说明：修改前端新增授权码js方法。&#10;影响范围：PLM系统。" />
+    <MESSAGE value="修改说明：修改前端客户信息维护模块的html和js方法。&#10;影响范围：PLM系统。" />
+    <MESSAGE value="修改说明：修改html和js方法。&#10;影响范围：PLM系统。" />
+    <MESSAGE value="修改说明：修改测试提交的bug，修改的html和js方法。&#10;影响范围：PLM系统。" />
+    <MESSAGE value="修改说明：修改测试提交的bug，修改的html和js方法和前端加入系统消息模块。&#10;影响范围：PLM系统。" />
+    <MESSAGE value="修改说明：开发和修改html和js方法和前端加入系统消息模块。&#10;影响范围：PLM系统影响范围如下：&#10; 一、发布人、销售人员、下单人员、发货人员、需求人员、实施人 ,用一张表来存放，而且系统中有一&#10;&#9;个模块可以创建新增这些人，之前是打包时初始化进去的。需要再开发一个业务用户的模块。&#10;&#9;二、硬件平台发布模块&#10;&#9;1、加一个文件导入、导出的功能；    &#10;&#9;2、导入的文件有历史列表： 有序号、时间、文件名称、导出按钮等&#10;&#9;三、成品发布模块&#10;&#9;1、加一个文件导入、导出功能；    &#10;&#9;2、导入的文件有历史列表： 有序号、时间、文件名称、导出按钮等&#10;&#9;四、硬件平台采购模块&#10;&#9;1、新增硬件采购单时，硬件序列号可以先不生成，然后等到货了再补充(修改更新)进去。&#10;&#9;五、license制作&#10;&#9;1、需求发生变更，一个硬件序列号可以被授权多次，但是这个硬件序列号对应的授权历史版本要能查看的到。&#10;&#9;六、UTM制作登记模块&#10;&#9;1、允许一个硬件序列号被使用多次，但是这个应该序列号的历史使用记录要有地方可以查询。&#10;&#9;七、用户管理&#10;&#9;1、目前用户管理没有部门这个概念，现在加入部门功能，也就是说模块中能够创建部门，有部门管理模块。" />
+    <MESSAGE value="修改说明：修改前端html和js方法。&#10;影响范围：产品生命周期管理系统,修改license制作、数据查询、产品交付发货模块。" />
+    <MESSAGE value="修改说明：修改硬件采购模块，在新增硬件采购单是不允许提交系统中已存在的原始序列号和我司序列号，并且提示展示到前端。新增产品交付发货时，如果提交的记录中存在重复的硬件序列号(但一体化设备除外，这种情况允许提交两个记录中有一样的硬件序列号)，后台给出提示信息展示到前端。&#10;影响范围：产品生命周期管理系统,硬件采购模块、产品交付发货模块。" />
+    <MESSAGE value="修改说明：编辑页面时不允许修改硬件序列号和合同号。&#10;影响范围：产品生命周期管理系统,产品安装售后服务。" />
+    <MESSAGE value="修改说明：注释js中所有的console.log。&#10;影响范围：产品生命周期管理系统。" />
+    <MESSAGE value="修改说明：对硬件采购页面中的原始序列号和我司序列号范围做判断处理，原始序列号和我司序列号范围必须都为数字且长度必须一致。&#10;影响范围：产品生命周期管理系统。" />
+    <MESSAGE value="修改说明：修改查看硬件平台发布和软件成品中文件列表中的记录可以下载，license制作时根据制作的id个数延迟加载。&#10;影响范围：产品生命周期管理系统。" />
+    <MESSAGE value="修改说明：注释业务用户列表的删除按钮。&#10;影响范围：产品生命周期管理系统。" />
+    <MESSAGE value="修改说明：前端捕获网络异常并进行提示。&#10;影响范围：产品生命周期管理系统，对前端调用后台接口出现的网络异常进行优化处理。" />
+    <MESSAGE value="修改说明：修改前端代码，业务用户模块中新增用户时下拉框的用户类型改为多选框，UTM登录新增防护板授权码时根据授权类型来是否显示刮刮卡编号和授权码，和硬件发布平台新增时去掉双板中第二个电源输入框。&#10;影响范围：产品生命周期管理系统，业务用户模块中新增用户时下拉框的用户类型改为多选框，UTM登录新增和修改防护板授权码，硬件发布平台新增和修改页面" />
+    <MESSAGE value="修改说明：修改前端代码，不同角色登录新增时只能新增对应类型的用户。&#10;影响范围：产品生命周期管理系统，客户关系维护模块。" />
+    <MESSAGE value="修改说明：修改前端js,新增硬件序列号规则。&#10;影响范围：产品生命周期管理系统，硬件采购模块。" />
+    <MESSAGE value="修改说明：修改前端js中字符串转int的问题,新增硬件序列号规则。&#10;影响范围：产品生命周期管理系统，硬件采购模块。" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改说明：修改前端js中字符串转int的问题,新增硬件序列号规则。&#10;影响范围：产品生命周期管理系统，硬件采购模块。" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="588" y="69" key="CommitChangelistDialog2" timestamp="1612339735778">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="588" y="69" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1612339735778" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1612335593023">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1612335593023" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1615087486225">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615087486225" />
+    <state x="757" y="220" key="RollbackChangesDialog" timestamp="1612335365440">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="757" y="220" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1612335365440" />
+    <state x="1048" y="129" width="656" height="606" key="find.popup" timestamp="1612405705766">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1048" y="129" width="656" height="606" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612405705766" />
+    <state x="616" y="235" key="run.anything.popup" timestamp="1611904263821">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="235" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1611904263821" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1611829597589">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1611829597589" />
+  </component>
+</project>

@@ -1,0 +1,76 @@
+<script>
+    $(function() {
+        $(".myTab a").click(function(e){
+            e.preventDefault();
+            $(this).tab('show');
+        })
+    })
+</script>
+<div class="wrapper wrapper-content" data-ng-controller="customersInformListCtrl">
+    <div class="btn-group float-e-margins" id="customersInformListToolbar" role="group">
+        <button type="button" class="btn btn-sm btn-success" data-ng-click="addOrEditcustomersInform()">
+            <i class="fa fa-plus"></i>&nbsp;新增
+        </button>
+        <!--<button type="button" class="btn btn-sm btn-white" data-ng-click="delCustomersInfoList()">
+            <i class="fa fa-trash"></i>&nbsp;删除
+        </button>-->
+
+    </div>
+    <!--<ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" >订单用户</a>
+        </li>
+        <li class=""><a data-toggle="tab" >收货用户</a>
+        </li>
+        <li class=""><a data-toggle="tab" >售后用户</a>
+        </li>
+        <li class=""><a data-toggle="tab" >厂商用户</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="tab-4" class="tab-pane active">
+            &lt;!&ndash;客户信息列表&ndash;&gt;
+            <table id="customersInformList"  data-mobile-responsive="true"></table>
+        </div>
+
+        <div id="tab-5" class="tab-pane">
+
+        </div>
+        <div id="tab-6" class="tab-pane">
+
+        </div>
+
+    </div>-->
+
+    <ul class="nav nav-tabs myTab" > <!--class="active"-->
+        <li data-ng-show="customerOrder" data-ng-class="{true:'active',false:'inactive'}[orderActive]"><a href="#customersInformOrder" data-toggle="tab" data-ng-click="customersInformOrder()">订单用户</a></li>
+        <li data-ng-show="customerReceive" data-ng-class="{true:'active',false:'inactive'}[receiveActive]"><a href="#customersInformReceive" data-toggle="tab" data-ng-click="customersInformReceive()">收货用户</a></li>
+        <li data-ng-show="customerAfterSale" data-ng-class="{true:'active',false:'inactive'}[afterSaleActive]"><a href="#customersInformAfterSale" data-toggle="tab" data-ng-click="customersInformAfterSale()">售后用户</a></li>
+        <li data-ng-show="customerFactory" data-ng-class="{true:'active',false:'inactive'}[factoryActive]"><a href="#customersInformFactory" data-toggle="tab" data-ng-click="customersInformFactory()">厂商用户</a></li>
+    </ul>
+    <div class="tab-content data_list">
+        <!--订单用户-->
+        <div class="tab-pane active" id="customersInformOrder" data-ng-class="{true:'active',false:'inactive'}[orderActive]">
+            <div id="orderId" class="tab-pane active">
+                <table id="customersInformOrderList"  data-mobile-responsive="true"></table>
+            </div>
+        </div>
+        <!--收货用户-->
+        <div class="tab-pane" id="customersInformReceive" data-ng-class="{true:'active',false:'inactive'}[receiveActive]">
+            <div id="receiveId" class="tab-pane active">
+                <table id="customersInformReceiveList"  data-mobile-responsive="true"></table>
+            </div>
+        </div>
+        <!--售后用户-->
+        <div class="tab-pane " id="customersInformAfterSale" data-ng-class="{true:'active',false:'inactive'}[afterSaleActive]">
+            <div id="afterSaleId" class="tab-pane active">
+                <table id="customersInformAfterSaleList"  data-mobile-responsive="true"></table>
+            </div>
+        </div>
+        <!--厂商用户-->
+        <div class="tab-pane " id="customersInformFactory" data-ng-class="{true:'active',false:'inactive'}[factoryActive]">
+            <div id="factoryId" class="tab-pane active">
+                <table id="customersInformFactoryList"  data-mobile-responsive="true"></table>
+            </div>
+        </div>
+    </div>
+</div>

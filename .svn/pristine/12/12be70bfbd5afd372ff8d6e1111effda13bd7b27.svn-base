@@ -1,0 +1,268 @@
+<div class="modal-header">
+    <button type='button' class='close' data-ng-click="cancel();"><i class="fa fa-close"></i></button>
+    <h4 class="modal-title">{{title}}硬件平台采购信息</h4>
+</div>
+<div class="modal-body">
+    <form action="" name="hardwarePurchaseForm" class="form-horizontal">
+        <div class="form-group">
+            <div data-ng-class="{'has-error':hardwarePurchaseForm.addPurchaseNo.$dirty && hardwarePurchaseForm.addPurchaseNo.$invalid}">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>请购单号：</label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control" autofocus="autofocus" autocomplete="off"
+                       data-ng-model="hardwarePlatformPurchase.purchaseNo" purchaseno-ensure-unique
+                       name="addPurchaseNo" data-ng-required="true"
+                       data-ng-minlength="5" data-ng-maxlength="20"
+                       ng-readonly="purchaseNoSign"
+                       data-ng-pattern="/^[a-zA-Z0-9]*$/" />
+                <span class="help-block m-b-none"
+                      data-ng-if="hardwarePurchaseForm.addPurchaseNo.$error.purchaseNoUnique && hardwarePurchaseForm.addPurchaseNo.$dirty && hardwarePurchaseForm.addPurchaseNo.$invalid">
+                              <i class="fa fa-times-circle"></i> 请购单号已经存在</span>
+                <span class="help-block m-b-none" data-ng-if="hardwarePurchaseForm.addPurchaseNo.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;请购单号只能输入字母、数字
+                    </span><span class="help-block m-b-none"
+                                 data-ng-if="hardwarePurchaseForm.addPurchaseNo.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 请购单号不能少于5位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="hardwarePurchaseForm.addPurchaseNo.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 请购单号不能大于20位
+                                </span>
+            </div>
+            </div>
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>下单人员：</label>
+
+            <div class="col-sm-4">
+                <div class="col-sm-3">
+                    <select class="form-control" name="orderUser"
+                            data-ng-model="hardwarePlatformPurchase.orderUserId"
+                            data-ng-options="orderUser.value as orderUser.text for orderUser in order"
+                            data-ng-required="true">
+                        <option value="">---请选择---</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>硬件编码：</label>
+            <div class="col-sm-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="hardware" name="hardwareNo" data-ng-model="hardwarePlatformPurchase.hardwareNo">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                        </ul>
+                    </div>
+                    <!-- /btn-group -->
+                </div>
+            </div>
+
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>硬件平台：</label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control" name="hardwarePlatform" disabled
+                       data-ng-model="hardwarePlatformPurchase.hardwarePlatform" data-ng-required="true" autocomplete="off"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>维保起始时间：</label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="maintenanceStartTime" name="maintenanceStartTime" def-laydate datetype='date' readonly
+                       data-ng-required="true" data-ng-model="hardwarePlatformPurchase.maintenanceStartTime" name="maintenanceStartTime">
+            </div>
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>合同号：</label>
+
+            <div class="col-sm-4">
+                <!--<input type="text" class="form-control" name="contractNumber" ng-model="addOrEditHardwareProchaseForm.contractNumber" required autocomplete="off"/>-->
+
+                    <div class="col-sm-3">
+                        <select class="form-control" name="contractoo"
+                                data-ng-model="hardwarePlatformPurchase.contractNo"
+                                data-ng-options="contractoo.value as contractoo.text for contractoo in contract"
+                                data-ng-required="true">
+                            <option value="">---请选择---</option>
+                        </select>
+                    </div>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>维保期限：</label>
+
+            <div class="col-sm-4" >
+                <select class="form-control" name="maintenancePeriod" data-ng-required="true" data-ng-model="hardwarePlatformPurchase.maintenancePeriod">
+                    <option value="">--请选择--</option>
+                    <option value="1">1年</option>
+                    <option value="3">3年</option>
+                    <option value="5">5年</option>
+                    <option value="10">10年</option>
+                </select>
+
+            </div>
+        </div>
+       <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>下单日期：</label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control" def-laydate datetype='date' name="orderDate" id="orderDate"
+                       data-ng-required="true" data-ng-model="hardwarePlatformPurchase.orderDate" readonly/>
+            </div>
+            <label class="col-sm-2 control-label">到货日期：</label>
+
+            <div class="col-sm-4">
+                <input id="arrivalDate" def-laydate datetype='date' readonly name="arrivalDate"
+                        data-ng-model="hardwarePlatformPurchase.arrivalDate" class="form-control">
+
+            </div>
+        </div>
+       <div class="form-group">
+            <label class="col-sm-2 control-label">备注：</label>
+
+            <div class="col-sm-10">
+                <div class="col-sm-5" data-ng-class="{'has-error':hardwarePurchaseForm.remark.$dirty && hardwarePurchaseForm.remark.$invalid}">
+                <textarea class="form-control" rows="4" name="remark" ng-model="hardwarePlatformPurchase.remarks" data-ng-maxlength="100"></textarea>
+                    <span class="help-block m-b-none" data-ng-show="hardwarePurchaseForm.remark.$error.maxlength">
+                            	<i class="fa fa-times-circle"></i> 备注不能大于100位字符
+                            </span>
+            </div>
+        </div>
+        </div>
+        <fieldset>
+            <legend class="m-b-xs">
+                <h4>配置硬件序列号</h4>
+            </legend>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"></label>
+                <div class="col-sm-10 ">
+                    <label class="checkbox-inline" style="padding-left: 0px">
+                        <input type="radio" name="serialNumberType" data-ng-model="serialNumberType" data-ng-change="changetype(serialNumberType)" value="single">&nbsp;单个序列号
+                    </label>
+                    <label class="checkbox-inline" style="padding-left: 0px">
+                        <input type="radio" name="serialNumberType" data-ng-model="serialNumberType" data-ng-change="changetype(serialNumberType)" value="multiple">&nbsp;多个序列号
+                    </label>
+                </div>
+            </div>
+            <div class="form-group" data-ng-if="singleSerialNumberType">
+                <label class="col-sm-2 control-label">原始序列号：</label>
+                <div class="col-sm-3 ">
+                    <input type="text" class="form-control" data-ng-model="addHardwareSerialNumber.singleSerialNumber">
+                </div>
+                <label class="col-sm-2 control-label">我司序列号：</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" data-ng-model="addHardwareSerialNumber.mysingleSerialNumber">
+                </div>
+            </div>
+
+            <div class="form-group" data-ng-if="multipleSerialNumberType">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">原始固定值：</label>
+                        <div class="col-sm-9 ">
+                            <input type="text" class="form-control" name="originalFixed" data-ng-model="addHardwareSerialNumber.originalFixed">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">原始序列号范围：</label>
+                        <div class="col-sm-9 form-inline">
+                            <input type="text" class="form-control" name="beginOriginalSerial" data-ng-model="addHardwareSerialNumber.beginOriginalSerial"> - <input type="text" class="form-control" name="endOriginalSerial" data-ng-model="addHardwareSerialNumber.endOriginalSerial">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">我司固定值：</label>
+                        <div class="col-sm-9 ">
+                            <input type="text" class="form-control" name="myCompanyFixed" data-ng-model="addHardwareSerialNumber.myCompanyFixed">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">我司序列号范围：</label>
+                        <div class="col-sm-9 form-inline">
+                            <input type="text" class="form-control" name="beginMyCompanySerial" data-ng-model="addHardwareSerialNumber.beginMyCompanySerial"> - <input type="text" class="form-control" name="endMyCompanySerial" data-ng-model="addHardwareSerialNumber.endMyCompanySerial">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">&nbsp;</label>
+                <div class="col-sm-10">
+                    <!--<button type="button" class="btn btn-sm btn-white"
+                            data-ng-disabled="addHardwareSerialNumber.singleSerialNumber.length == 0 || addHardwareSerialNumber.singleSerialNumber == null"
+                            data-ng-click="addserialNumber()"><i class="fa fa-plus"></i>&nbsp;添加</button>-->
+                    <button type="button" class="btn btn-sm btn-white"
+                            data-ng-click="addserialNumber()"><i class="fa fa-plus"></i>&nbsp;添加</button>
+                </div>
+            </div>
+
+            <div class="form-group color_5" ng-show="multipleSerialNumberType">
+                <div class="col-sm-4">
+                <p>说明，比如原始序列号为：</p>
+                <p>
+                    a1b3c4d0001
+                </p>
+                <p>
+                    a1b3c4d0002
+                </p>
+                <p>
+                    a1b3c4d0003
+                </p>
+                <p>
+                    a1b3c4d0004
+                </p>
+                <p>
+                    原始固定值：a1b3c4d
+                </p>
+                <p>
+                    原始序列号范围：0001-0004
+                </p>
+                </div>
+                <div class="col-sm-4">
+                <p>
+
+                </p>
+                <p>
+                    对应的我司序列号为：
+                </p>
+                <p>
+                    xxxxxxx0005
+                </p>
+                <p>
+                    xxxxxxx0006
+                </p>
+                <p>
+                    xxxxxxx0007
+                </p>
+                <p>
+                    xxxxxxx0008
+                </p>
+                <p>
+                    原始固定值：xxxxxxx
+                </p>
+                <p>
+                    原始序列号范围：0005-0008
+                </p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <table id="serialNumberList" data-height="299" data-mobile-responsive="true">
+
+                </table>
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-success" data-ng-disabled="hardwarePurchaseForm.$invalid || existSign" data-ng-click="save()">保存</button>
+    <button class="btn btn-sm btn-white" data-ng-click="cancel()"><i class="fa fa-close"></i>&nbsp;关闭</button>
+</div>

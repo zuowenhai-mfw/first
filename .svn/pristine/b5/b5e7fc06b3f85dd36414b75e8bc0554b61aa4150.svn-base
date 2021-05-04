@@ -1,0 +1,23 @@
+[
+  {
+    "Id": "1",
+    "operator": "张立科",
+    "operatype": "添加",
+    "operatime": "2019-05-02 ",
+    "detailed": "添加了硬件发布信息"
+  },
+  {
+    "Id": "2",
+    "operator": "张立科",
+    "operatype": "修改",
+    "operatime": "2019-05-03 ",
+    "detailed": "修改了硬件发布信息"
+  },
+  {
+    "Id": "3",
+    "operator": "张立科",
+    "operatype": "添加",
+    "operatime": "2019-05-03 ",
+    "detailed": "添加了硬件发布信息"
+  }
+]

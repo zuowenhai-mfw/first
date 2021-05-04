@@ -1,0 +1,351 @@
+<div class="modal-header">
+    <button type='button' class='close' data-ng-click="cancel();"><i class="fa fa-close"></i></button>
+    <h4 class="modal-title">{{title}}硬件发布信息</h4>
+</div>
+<div class="modal-body">
+    <form action="" name="addOrEditHardwareForm" class="form-horizontal">
+        <!--基本信息-->
+        <fieldset>
+            <legend>
+                <h4>基本信息</h4>
+            </legend>
+            <div class="form-group">
+                <div data-ng-class="{'has-error':addOrEditHardwareForm.addHardwareCode.$dirty && addOrEditHardwareForm.addHardwareCode.$invalid}">
+                <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>硬件编码：</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" autofocus="autofocus" autocomplete="off"
+                           data-ng-model="hardwarePlatformPublish.hardwareCode" hardwarecode-ensure-unique
+                           name="addHardwareCode" data-ng-required="true"
+                           ng-readonly="hardwarePlatformCodeSign"
+                           data-ng-minlength="2" data-ng-maxlength="20"
+                           data-ng-pattern="/^[a-zA-Z0-9\_]*$/" />
+                    <span class="help-block m-b-none"
+                            data-ng-if="addOrEditHardwareForm.addHardwareCode.$error.hardwareCodeUnique && addOrEditHardwareForm.addHardwareCode.$dirty && addOrEditHardwareForm.addHardwareCode.$invalid">
+                              <i class="fa fa-times-circle"></i> 硬件编码已经存在</span>
+                    <span class="help-block m-b-none" data-ng-if="addOrEditHardwareForm.addHardwareCode.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;硬件编码只能输入字母、数字下划线
+                    </span><span class="help-block m-b-none"
+                          data-ng-if="addOrEditHardwareForm.addHardwareCode.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 硬件编码不能少于2位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="addOrEditHardwareForm.addHardwareCode.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 硬件编码不能大于20位
+                                </span>
+                </div>
+                </div>
+
+                <div data-ng-class="{'has-error':addOrEditHardwareForm.addHardwarePlatform.$dirty && addOrEditHardwareForm.addHardwarePlatform.$invalid}">
+                <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>硬件平台：</label>
+
+                <div class="col-sm-4">
+                    <!--<input type="text" class="form-control" name="hardwarePlatform" data-ng-model="hardwarePlatformPublish.hardwarePlatform" required autocomplete="off"/>-->
+
+                    <input type="text" class="form-control" autofocus="autofocus" autocomplete="off"
+                           data-ng-model="hardwarePlatformPublish.hardwarePlatform" hardwareplatform-ensure-unique
+                           name="addHardwarePlatform" data-ng-required="true"
+                           data-ng-minlength="2" data-ng-maxlength="20"
+                           data-ng-pattern="/^[a-zA-Z0-9\u4e00-\u9fa5\_]*$/" />
+                    <span class="help-block m-b-none"
+                          data-ng-if="addOrEditHardwareForm.addHardwarePlatform.$error.hardwarePlatformUnique && addOrEditHardwareForm.addHardwarePlatform.$dirty && addOrEditHardwareForm.addHardwarePlatform.$invalid">
+                              <i class="fa fa-times-circle"></i> 硬件平台已经存在</span>
+                    <span class="help-block m-b-none" data-ng-if="addOrEditHardwareForm.addHardwareCode.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;硬件平台只能输入字母、汉字、数字下划线
+                    </span><span class="help-block m-b-none"
+                                 data-ng-if="addOrEditHardwareForm.addHardwareCode.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 硬件平台不能少于2位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="addOrEditHardwareForm.addHardwareCode.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 硬件平台不能大于20位
+                                </span>
+                </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div data-ng-class="{'has-error':addOrEditHardwareForm.addFactoryCode.$dirty && addOrEditHardwareForm.addFactoryCode.$invalid}">
+                <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>厂商编码：</label>
+
+                <div class="col-sm-4">
+                    <!--<input type="text" class="form-control" name="factoryCode" required data-ng-model="hardwarePlatformPublish.factoryCode" autocomplete="off"/>-->
+
+                    <input type="text" class="form-control" autofocus="autofocus" autocomplete="off"
+                           data-ng-model="hardwarePlatformPublish.factoryCode"
+                           name="addFactoryCode" data-ng-required="true"
+                           data-ng-minlength="2" data-ng-maxlength="20"
+                           data-ng-pattern="/^[a-zA-Z0-9\_]*$/" />
+                    <span class="help-block m-b-none" data-ng-if="addOrEditHardwareForm.addFactoryCode.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;厂商编码只能输入字母、数字下划线
+                    </span><span class="help-block m-b-none"
+                                 data-ng-if="addOrEditHardwareForm.addFactoryCode.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 厂商编码不能少于2位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="addOrEditHardwareForm.addFactoryCode.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 厂商编码不能大于20位
+                                </span>
+                </div>
+                </div>
+
+                <div data-ng-class="{'has-error':addOrEditHardwareForm.addFactoryInfo.$dirty && addOrEditHardwareForm.addFactoryInfo.$invalid}">
+                <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>厂商信息：</label>
+
+                <div class="col-sm-4">
+                    <!--<input type="text" class="form-control" name="factoryInfo" data-ng-model="hardwarePlatformPublish.factoryInfo" required autocomplete="off"/>-->
+
+                    <input type="text" class="form-control" autocomplete="off"
+                           data-ng-model="hardwarePlatformPublish.factoryInfo"
+                           name="addFactoryInfo" data-ng-required="true"
+                           data-ng-minlength="2" data-ng-maxlength="30"
+                           data-ng-pattern="/^[a-zA-Z0-9\u4e00-\u9fa5\_]*$/" />
+                    <span class="help-block m-b-none" data-ng-if="addOrEditHardwareForm.addFactoryInfo.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;厂商信息只能输入字母、汉字、数字下划线
+                    </span><span class="help-block m-b-none"
+                                 data-ng-if="addOrEditHardwareForm.addFactoryInfo.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 厂商信息不能少于2位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="addOrEditHardwareForm.addFactoryInfo.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 厂商信息不能大于30位
+                                </span>
+                </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">发布人：</label>
+
+                <div class="col-sm-4">
+                    <!--<input type="text" class="form-control" name="issuer" ng-model="hardwareForm.issuer" required autocomplete="off"/>-->
+                    <div class="col-sm-3">
+                        <select class="form-control" name="publishUser"
+                                data-ng-model="publishUserId"
+                                data-ng-options="publishUser.value as publishUser.text for publishUser in publish"
+                                data-ng-required="true">
+                            <option value="">---请选择---</option>
+                        </select>
+                    </div>
+                </div>
+                <label class="col-sm-2 control-label">发布日期：</label>
+
+                <div class="col-sm-4">
+                    <input id="getPublishDate" name="publishDate" readonly data-ng-model="hardwarePlatformPublish.publishDate"
+                           def-laydate dateType="date" data-ng-required="true" autocomplete="off" class="form-control layer-date" mindate="-0">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">建档日期：</label>
+
+                <div class="col-sm-4">
+                    <input id="getPutOnRecordDate" name="putOnRecordDate"  readonly data-ng-model="hardwarePlatformPublish.putOnRecordDate"
+                           def-laydate dateType="date" data-ng-required="true" autocomplete="off" class="form-control layer-date" mindate="-0">
+                </div>
+
+                <div data-ng-class="{'has-error':addOrEditHardwareForm.addExpectPurpose.$dirty && addOrEditHardwareForm.addExpectPurpose.$invalid}">
+                <label class="col-sm-2 control-label">预期用途：</label>
+
+                <div class="col-sm-4">
+                    <!--<input type="text" class="form-control" name="expectPurpose" ng-model="hardwarePlatformPublish.expectPurpose" required autocomplete="off"/>-->
+
+                    <input type="text" class="form-control" autocomplete="off"
+                           data-ng-model="hardwarePlatformPublish.expectPurpose"
+                           name="addExpectPurpose" data-ng-required="true"
+                           data-ng-minlength="2" data-ng-maxlength="30"
+                           data-ng-pattern="/^[a-zA-Z0-9\u4e00-\u9fa5\_]*$/" />
+                    <span class="help-block m-b-none" data-ng-if="addOrEditHardwareForm.addExpectPurpose.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;预期用途只能输入字母、汉子、数字下划线
+                    </span><span class="help-block m-b-none"
+                                 data-ng-if="addOrEditHardwareForm.addExpectPurpose.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 预期用途不能少于2位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="addOrEditHardwareForm.addExpectPurpose.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 预期用途不能大于30位
+                                </span>
+                </div>
+            </div>
+            </div>
+
+        </fieldset>
+        <!--详细信息-->
+        <fieldset>
+            <legend>
+                <h4>详细信息</h4>
+            </legend>
+            <div class="form-group">
+                <div class="col-sm-12 text-center">
+                    <label class="checkbox-inline">
+                        <input type="radio" name="Vtype" data-ng-model="Vtype" data-ng-change="changeVtype(Vtype)" value="oneV">&nbsp;单版
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="radio" name="Vtype" data-ng-model="Vtype" data-ng-change="changeVtype(Vtype)" value="twoV">&nbsp;双版
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div data-ng-class="{'has-error':addOrEditHardwareForm.addFirstChipset.$dirty && addOrEditHardwareForm.addFirstChipset.$invalid}">
+                <label class="col-sm-2 control-label">芯片组：</label>
+
+                <div class="col-sm-4">
+                    <!--<input type="text" class="form-control" name="firstChipset" data-ng-model="hardwarePlatformPublish.firstChipset" required autocomplete="off"/>-->
+                    <input type="text" class="form-control" autocomplete="off"
+                           data-ng-model="hardwarePlatformPublish.firstChipset"
+                           name="addFirstChipset" data-ng-required="true"
+                           data-ng-minlength="2" data-ng-maxlength="20"
+                           data-ng-pattern="/^[a-zA-Z0-9\u4e00-\u9fa5\_]*$/" />
+                    <span class="help-block m-b-none" data-ng-if="addOrEditHardwareForm.addFirstChipset.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;预期用途只能输入字母、汉字、数字下划线
+                    </span><span class="help-block m-b-none"
+                                 data-ng-if="addOrEditHardwareForm.addFirstChipset.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 预期用途不能少于2位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="addOrEditHardwareForm.addFirstChipset.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 预期用途不能大于20位
+                                </span>
+                </div>
+                </div>
+
+                <div data-ng-class="{'has-error':addOrEditHardwareForm.addFirstChipset.$dirty && addOrEditHardwareForm.addFirstChipset.$invalid}">
+                <label class="col-sm-2 control-label" data-ng-if="twoVconfig">芯片组：</label>
+
+                <div class="col-sm-4" data-ng-if="twoVconfig">
+                    <!--<input type="text" class="form-control" name="secondChipset" data-ng-model="hardwarePlatformPublish.secondChipset" required autocomplete="off"/>-->
+
+                    <input type="text" class="form-control" autocomplete="off"
+                           data-ng-model="hardwarePlatformPublish.secondChipset"
+                           name="addSecondChipset" data-ng-required="true"
+                           data-ng-minlength="2" data-ng-maxlength="20"
+                           data-ng-pattern="/^[a-zA-Z0-9\u4e00-\u9fa5\_]*$/" />
+                    <span class="help-block m-b-none" data-ng-if="addOrEditHardwareForm.addSecondChipset.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;预期用途只能输入字母、汉子、数字下划线
+                    </span><span class="help-block m-b-none"
+                                 data-ng-if="addOrEditHardwareForm.addSecondChipset.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 预期用途不能少于2位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="addOrEditHardwareForm.addSecondChipset.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 预期用途不能大于20位
+                                </span>
+                </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">CPU：</label>
+
+                <div class="col-sm-4">
+                    <select class="form-control" name="firstCpu"
+                            data-ng-model="hardwarePlatformPublish.firstCpu">
+                        <option value="">--请选择--</option>
+                        <option value="i3">i3</option>
+                        <option value="i5">i5</option>
+                        <option value="i7">i7</option>
+                    </select>
+                </div>
+                <label class="col-sm-2 control-label" data-ng-if="twoVconfig">CPU：</label>
+
+                <div class="col-sm-4" data-ng-if="twoVconfig">
+                    <select class="form-control" name="secondCpu"
+                            data-ng-model="hardwarePlatformPublish.secondCpu">
+                        <option value="">--请选择--</option>
+                        <option value="i3">i3</option>
+                        <option value="i5">i5</option>
+                        <option value="i7">i7</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">内存：</label>
+
+                <div class="col-sm-4">
+                    <select class="form-control" name="firstMemory"
+                            data-ng-model="hardwarePlatformPublish.firstMemory">
+                        <option value="">--请选择--</option>
+                        <option value="2G">2G</option>
+                        <option value="4G">4G</option>
+                        <option value="8G">8G</option>
+                        <option value="16G">16G</option>
+                        <option value="32G">32G</option>
+                        <option value="64G">64G</option>
+                    </select>
+                </div>
+                <label class="col-sm-2 control-label " data-ng-if="twoVconfig">内存：</label>
+
+                <div class="col-sm-4" data-ng-if="twoVconfig">
+                    <select class="form-control" name="secondMemory"
+                            data-ng-model="hardwarePlatformPublish.secondMemory">
+                        <option value="">--请选择--</option>
+                        <option value="2G">2G</option>
+                        <option value="4G">4G</option>
+                        <option value="8G">8G</option>
+                        <option value="16G">16G</option>
+                        <option value="32G">32G</option>
+                        <option value="64G">64G</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div data-ng-class="{'has-error':addOrEditHardwareForm.addFirstPowerSupply.$dirty && addOrEditHardwareForm.addFirstPowerSupply.$invalid}">
+                <label class="col-sm-2 control-label">电源：</label>
+
+                <div class="col-sm-4">
+                    <!--<input type="text" class="form-control" name="firstPowerSupply" data-ng-model="hardwarePlatformPublish.firstPowerSupply" required autocomplete="off"/>-->
+
+                    <input type="text" class="form-control" autocomplete="off"
+                           data-ng-model="hardwarePlatformPublish.firstPowerSupply"
+                           name="addFirstPowerSupply" data-ng-required="true"
+                           data-ng-minlength="2" data-ng-maxlength="20"
+                           data-ng-pattern="/^[a-zA-Z0-9\u4e00-\u9fa5\_]*$/" />
+                    <span class="help-block m-b-none" data-ng-if="addOrEditHardwareForm.addFirstPowerSupply.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;电源只能输入字母、汉子、数字下划线
+                    </span><span class="help-block m-b-none"
+                                 data-ng-if="addOrEditHardwareForm.addFirstPowerSupply.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 电源不能少于2位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="addOrEditHardwareForm.addFirstPowerSupply.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 电源不能大于20位
+                                </span>
+                </div>
+                </div>
+                <div data-ng-class="{'has-error':addOrEditHardwareForm.addSecondPowerSupply.$dirty && addOrEditHardwareForm.addSecondPowerSupply.$invalid}">
+                <label class="col-sm-2 control-label" data-ng-if="twoVconfig">电源：</label>
+
+                <div class="col-sm-4" data-ng-if="twoVconfig">
+                    <!--<input type="text" class="form-control" name="secondPowerSupply" data-ng-model="hardwarePlatformPublish.secondPowerSupply" required autocomplete="off"/>-->
+
+                    <input type="text" class="form-control" autocomplete="off"
+                           data-ng-model="hardwarePlatformPublish.secondPowerSupply"
+                           name="addSecondPowerSupply" data-ng-required="true"
+                           data-ng-minlength="2" data-ng-maxlength="20"
+                           data-ng-pattern="/^[a-zA-Z0-9\u4e00-\u9fa5\_]*$/" />
+                    <span class="help-block m-b-none" data-ng-if="addOrEditHardwareForm.addSecondPowerSupply.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;电源只能输入字母、汉子、数字下划线
+                    </span><span class="help-block m-b-none"
+                                 data-ng-if="addOrEditHardwareForm.addSecondPowerSupply.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 电源不能少于2位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="addOrEditHardwareForm.addSecondPowerSupply.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 电源不能大于20位
+                                </span>
+                </div>
+                </div>
+            </div>
+        </fieldset>
+        <!--备注-->
+        <fieldset>
+            <legend>
+                <h4>备注信息</h4>
+            </legend>
+            <div class="form-group">
+                <div class="col-sm-12 text-center">
+                    <div class="col-sm-5" data-ng-class="{'has-error':addOrEditHardwareForm.remark.$dirty && addOrEditHardwareForm.remark.$invalid}">
+                    <!--<textarea class="form-control" rows="4" data-ng-model="hardwarePlatformPublish.remarks"></textarea>-->
+                        <textarea class="form-control" rows="4" data-ng-model="hardwarePlatformPublish.remarks"
+                                  name="remark" data-ng-init="hardwarePlatformPublish.remarks=''"
+                                  data-ng-maxlength="100"></textarea>
+                        <span class="help-block m-b-none" data-ng-show="addOrEditHardwareForm.remark.$error.maxlength">
+                            	<i class="fa fa-times-circle"></i> 描述信息不能大于100位字符
+                            </span>
+                </div>
+            </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-success" data-ng-disabled="addOrEditHardwareForm.$invalid" data-ng-click="save()">保存</button>
+    <button class="btn btn-sm btn-white" data-ng-click="cancel()"><i class="fa fa-close"></i>&nbsp;关闭</button>
+</div>

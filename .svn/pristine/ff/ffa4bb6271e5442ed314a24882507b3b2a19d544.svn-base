@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html  data-ng-app="plmLogin" data-ng-controller="loginCtrl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品生命周期系统</title>
+
+    <!--[if lt IE 9]>
+    <meta http-equiv="refresh" content="0;ie.html" />
+    <script src="comp/crossbrowserjs/excanvas.min.js"></script>
+    <script src="comp/crossbrowserjs/html5shiv.js"></script>
+    <script src="comp/crossbrowserjs/respond.min.js"></script>
+    <![endif]-->
+
+
+
+    <link rel="stylesheet" href="comp/bootstrap/bootstrap.min.css" />
+
+
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="stylesheet" href="css/common.css" />
+
+    <!--<link href="css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">-->
+
+
+    <script src="js/common/jquery-1.11.3.min.js"></script>
+    <script src="comp/bootstrap/bootstrap.min.js"></script>
+
+    <script src="comp/angularjs/angular.js"></script>
+    <script src="comp/angularjs/angular-route.min.js"></script>
+    <script src="comp/angularjs/ui-bootstrap-tpls-0.14.3.min.js"></script>
+    <script type="text/javascript" src="js/common/crypto.js"></script>
+    <script src="js/login.js"></script>
+
+    <style>
+
+        body{
+            background: none repeat scroll 0% 0% #D9E0E7;
+        }
+
+       .input-lg {
+           height: 46px;
+           padding: 10px 16px;
+           font-size: 18px;
+           line-height: 1.33333;
+           border-radius: 6px !important;
+       }
+        .form-control {
+            border: 1px solid #CCD0D4;
+            box-shadow: none;
+            font-size: 13px;
+            color: #555;
+            border-radius: 3px !important;
+        }
+        .login .login-content {
+            padding: 30px 40px;
+            color: #999;
+            width: 450px;
+            margin: 0px auto;
+        }
+        .login .login-header {
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            right: 0px;
+            width: 450px;
+            padding: 0px 40px;
+            margin-left: -225px;
+            font-weight: 900;
+        }
+        .btn{
+            border-radius: 3px !important;
+        }
+        .login .login-header .icon {
+            position: absolute;
+            right: 40px;
+            top: -2px;
+            opacity: 0.15;
+        }
+        .login .login-header .icon i {
+            font-size: 70px;
+        }
+        .login .login-header .brand {
+            padding: 0px;
+            font-size: 28px;
+        }
+        /*.login .login-header .brand .logo {
+            border-width: 14px;
+            border-style: solid;
+            -moz-border-top-colors: none;
+            -moz-border-right-colors: none;
+            -moz-border-bottom-colors: none;
+            -moz-border-left-colors: none;
+            border-image: none;
+            border-color: #4DCACA #31A3A3 #1D8888;
+            width: 28px;
+            height: 28px;
+            position: relative;
+            font-size: 0px;
+            margin-right: 10px;
+            top: -9px;
+        }*/
+        /*.login .login-header .brand small {
+            font-size: 14px;
+            display: block;
+        }*/
+        .checkbox label, .radio label {
+            font-weight: 900;
+        }
+        .checkbox input[type=radio] {
+            margin: 4px 0 0;
+            margin-left: -20px
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div style='width:100%;display: table;background: none repeat scroll 0% 0% #2D353C !important;position: absolute;top: 20%;'>
+    <div class="login bg-black animated fadeInDown">
+        <!-- begin brand -->
+        <div class="login-header">
+            <div class="brand">
+               产品生命周期管理系统<br/>PLM
+            </div>
+            <div class="icon">
+                <i class="fa fa-sign-in"></i>
+            </div>
+        </div>
+        <!-- end brand -->
+        <div class="login-content">
+            <form  class="margin-bottom-0" novalidate>
+                <div class="form-group m-b-md">
+                    <input type="text" class="form-control input-lg" data-ng-model="user.username" placeholder="用户名" />
+                </div>
+                <div class="form-group m-b-md">
+                    <input type="password" class="form-control input-lg" data-ng-model="user.password" placeholder="密码" />
+                </div>
+                <!--<div class="checkbox m-b-md">
+                    <label>
+                        <input type="radio" name="type" value="1" data-ng-model="user.rolename"/> 产品
+                    </label>&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" name="type" value="2" data-ng-model="user.rolename"/> 销售
+                    </label>&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" name="type" value="3" data-ng-model="user.rolename"/> 库房
+                    </label>&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" name="type" value="4" data-ng-model="user.rolename"/> 生产
+                    </label>&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" name="type" value="5" data-ng-model="user.rolename"/> 技术
+                    </label>&nbsp;&nbsp;
+                    <label>
+                        <input type="radio" name="type" value="6" data-ng-model="user.rolename"/> 超级管理员
+                    </label>
+                </div>-->
+                <div class="login-buttons">
+                    <button type="submit" data-ng-click="login()"  class="btn btn-success btn-block btn-lg">登&nbsp;录</button>
+                </div>
+                <div>
+                    <h4 class="text-center color_5">
+                       {{msg}}
+                    </h4>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+
+</html>

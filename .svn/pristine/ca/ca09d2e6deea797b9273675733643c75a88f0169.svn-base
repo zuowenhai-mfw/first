@@ -1,0 +1,3 @@
+<div class="wrapper wrapper-content" ng-controller="productServiceListCtrl">
+    <div ng-include="productServiceUrl"></div>
+</div>

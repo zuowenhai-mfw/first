@@ -1,0 +1,123 @@
+<script>
+    $(function() {
+        $(".myTab a").click(function(e){
+            e.preventDefault();
+            $(this).tab('show');
+        })
+    })
+</script>
+<h3 class="m-t-none"><a class="fa fa-chevron-left" ng-click="back()">&nbsp;&nbsp;返回</a> <i class="vertical"></i>
+    <span><b>详细信息</b></span></h3>
+<div class="tabs-container" data-ng-controller="dataQueryDetails">
+    <ul class="nav nav-tabs myTab" >
+        <li class="active"><a href="#hardwarePlatform" data-toggle="tab">硬件平台信息</a></li>
+        <li><a href="#contractInfor" data-toggle="tab" data-ng-click="contractDetails()">合同信息</a></li>
+        <li><a href="#purchaseInfo" data-toggle="tab" data-ng-click="purchaseDetails()">采购信息</a></li>
+        <li><a href="#productLicense" data-toggle="tab" data-ng-click="authDetails()">产品授权信息</a></li>
+        <li><a href="#deliverGoods" data-toggle="tab" data-ng-click="sendDetails()">发货信息</a></li>
+        <li><a href="#afterInstall" data-toggle="tab" data-ng-click="afterService()">安装售后信息</a></li>
+        <li><a href="#maintenance" data-toggle="tab" data-ng-click="maintenanceDetails()">维保信息</a></li>
+    </ul>
+    <div class="tab-content data_list">
+        <!--硬件平台信息-->
+        <div class="tab-pane active" id="hardwarePlatform" >
+            <!--<div class="panel-body" ng-include="'baseInform/hardwareList/hardwareReleaseDetailContent.html'"></div>-->
+            <div class="panel-body" ng-include="'baseInform/hardwareList/hardwareReleaseDetail.html'"></div>
+        </div>
+        <!--产品授权信息-->
+        <div class="tab-pane" id="productLicense" >
+            <div class="panel-body" ng-include="'lifeCycleManagement/license/license_log/license_log.html'"></div>
+        </div>
+        <!--采购信息-->
+        <div class="tab-pane " id="purchaseInfo" >
+            <div class="panel-body" ng-include="'lifeCycleManagement/hardwareProchase/hardwareProchaseDetailContentForDataQuery.html'"></div>
+        </div>
+        <!--合同信息-->
+        <div class="tab-pane " id="contractInfor" >
+            <div class="panel-body" ng-include="'lifeCycleManagement/contractOrder/contractOrderDetailContent.html'"></div>
+        </div>
+        <!--发货信息-->
+        <div class="tab-pane " id="deliverGoods" >
+            <div class="panel-body" ng-include="'lifeCycleManagement/productDelivery/productDeliveryDetailContentDataQuery.html'"></div>
+        </div>
+        <!--安装售后信息-->
+        <div class="tab-pane " id="afterInstall" >
+            <!--<div class="panel-body" ng-include="'lifeCycleManagement/productService/productServiceDetailContent.html'"></div>-->
+            <div class="panel-body" ng-include="'lifeCycleManagement/productService/dataQueryProductServiceList.html'"></div>
+        </div>
+        <!--维保信息-->
+        <div class="tab-pane " id="maintenance" >
+            <div class="panel-body form-horizontal">
+                <fieldset>
+                    <legend>
+                        <h4>硬件状态</h4>
+                    </legend>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">硬件状态：</label>
+
+                        <div class="col-sm-10">
+                            <p class="form-control-static color_1">{{hardwareDisplay}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">处理方式：</label>
+                        <div class="col-sm-10">
+                            <label class="checkbox-inline" style="padding-left: 0px">
+                                <input type="radio" name="hardwareDealMode" data-ng-model="maintenanceInfo.hardwareDealMode" value="1" data-ng-disabled="invalidHardware">&nbsp;暂缓
+                            </label>
+                            <label class="checkbox-inline" style="padding-left: 0px">
+                                <input type="radio" name="hardwareDealMode" data-ng-model="maintenanceInfo.hardwareDealMode" value="2" data-ng-disabled="invalidHardware">&nbsp;忽略
+                            </label>
+                            <label class="checkbox-inline" style="padding-left: 0px">
+                                <input type="radio" name="hardwareDealMode" data-ng-model="maintenanceInfo.hardwareDealMode" value="3" data-ng-disabled="invalidHardware">&nbsp;已续
+                            </label>
+                        </div>
+                        <!--<input type="hidden" name="id" data-ng-model="maintenanceInfo.id">-->
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-12 text-center">
+                            <button type="button" class="btn btn-success" data-ng-disabled="invalidHardware || buttonHardware" data-ng-click="expirationDeal('1')">处理</button>
+                        </div>
+
+                    </div>
+
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        <h4>软件状态</h4>
+                    </legend>
+                    <div class="form-group">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">产品状态：</label>
+
+                            <div class="col-sm-10">
+                                <p class="form-control-static color_5">{{productDisplay}}</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">处理方式：</label>
+                            <div class="col-sm-10 ">
+                                <label class="checkbox-inline" style="padding-left: 0px">
+                                    <input type="radio" name="productDealMode" data-ng-model="maintenanceInfo.productDealMode"  value="1" data-ng-disabled="invalidProduct">&nbsp;暂缓
+                                </label>
+                                <label class="checkbox-inline" style="padding-left: 0px">
+                                    <input type="radio" name="productDealMode" data-ng-model="maintenanceInfo.productDealMode"  value="2" data-ng-disabled="invalidProduct">&nbsp;忽略
+                                </label>
+                                <label class="checkbox-inline" style="padding-left: 0px">
+                                    <input type="radio" name="productDealMode" data-ng-model="maintenanceInfo.productDealMode"  value="3" data-ng-disabled="invalidProduct">&nbsp;已续
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12 text-center">
+                                <button type="button" class="btn btn-success" data-ng-disabled="invalidProduct || buttonProduct" data-ng-click="expirationDeal('2')">处理</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</div>

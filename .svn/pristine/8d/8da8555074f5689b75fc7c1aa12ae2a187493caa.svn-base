@@ -1,0 +1,13 @@
+<div class="wrapper wrapper-content" ng-controller="productDeliveryListCtrl">
+    <div class="btn-group hidden-xs" id="hardwareProchaseToolbar" role="group">
+        <button type="button" class="btn btn-sm btn-success" ng-click="addOreEditProductDelivery()">
+            <i class="fa fa-plus"></i>&nbsp;新增
+        </button>
+        <!--<button type="button" class="btn btn-sm btn-white" ng-click="deleteProductDelivery()">
+            <i class="fa fa-trash"></i>&nbsp;删除
+        </button>-->
+
+    </div>
+    <!--合同订单签订列表-->
+    <table id="productDeliveryList"  data-mobile-responsive="true"></table>
+</div>

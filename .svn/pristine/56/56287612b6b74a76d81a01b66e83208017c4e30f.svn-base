@@ -1,0 +1,284 @@
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<div class="modal-header">
+    <button type='button' class='close' data-ng-click="cancel();"><i class="fa fa-close"></i></button>
+    <h4 class="modal-title">license配置</h4>
+</div>
+<div class="modal-body">
+    <form action="" class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><span class="asterisk_red">*</span>产品类型：</label>
+
+            <div class="col-sm-9">
+
+                <div class="input-group">
+                    <!--<input type="text" class="form-control" id="productCode" name="productCode" data-ng-model="authorizationConfig.productCode">-->
+                    <input type="text" class="form-control" id="productCode" name="productCode" data-ng-model="authorizationConfig.productCode">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                        </ul>
+                    </div>
+                    <!-- /btn-group -->
+                </div>
+
+                <!--<select class="form-control" name="productCode" data-ng-model="licenseMakeform.productCode" data-ng-change="changetype(licenseMakeform.productCode)">
+                    <option value="">&#45;&#45; 请选择 &#45;&#45;</option>
+                    <option value="NSM" ng-selected="true">网络安全防护管控软件</option>
+                    <option value="TNSM">网络安全管理与监察系统</option>
+                    <option value="UPM1000">I型一体化安全防护设备</option>
+                    <option value="UPM1000E">II型一体化安全防护设备</option>
+                    <option value="UPM1000E-B">统一防护与安全防护系统</option>
+                    <option value="UAP">UAP认证授权设备</option>
+                    <option value="other">其它</option>
+
+                </select>-->
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><span class="asterisk_red">*</span>授权时效：</label>
+
+            <div class="col-sm-9">
+                <select class="form-control" id="authAging" name="authAging" data-ng-model="authorizationConfig.authAging">
+                    <option value="">-- 请选择 --</option>
+
+                    <!--产品类型为 网络安全防护管控软件-->
+                    <option data-ng-if="anguanSign" value="90天">90天</option>
+                    <option data-ng-if="anguanSign" value="180天">180天</option>
+                    <option data-ng-if="anguanSign" value="1年">1年</option>
+                    <option data-ng-if="anguanSign" value="2年">2年</option>
+                    <option data-ng-if="anguanSign" value="3年">3年</option>
+                    <option data-ng-if="anguanSign" value="永久" ng-selected="true">永久</option>
+
+                    <!--产品类型为 网络安全管理与监察系统-->
+                    <option data-ng-if="jianchaSign" value="90天">90天</option>
+                    <option data-ng-if="jianchaSign" value="180天">180天</option>
+                    <option data-ng-if="jianchaSign" value="1年">1年</option>
+                    <option data-ng-if="jianchaSign" value="2年">2年</option>
+                    <option data-ng-if="jianchaSign" value="3年">3年</option>
+                    <option data-ng-if="jianchaSign" value="永久" ng-selected="true">永久</option>
+
+                    <!--产品类型为 I型一体化安全防护设备-->
+                    <option data-ng-if="yitihuaOneSign" value="90天">90天</option>
+                    <option data-ng-if="yitihuaOneSign" value="180天">180天</option>
+                    <option data-ng-if="yitihuaOneSign" value="1年">1年</option>
+                    <option data-ng-if="yitihuaOneSign" value="2年">2年</option>
+                    <option data-ng-if="yitihuaOneSign" value="3年">3年</option>
+                    <option data-ng-if="yitihuaOneSign" value="永久" ng-selected="true">永久</option>
+
+                    <!--产品类型为 II型一体化安全防护设备-->
+                    <option data-ng-if="yitihuaTwoSign" value="90天">90天</option>
+                    <option data-ng-if="yitihuaTwoSign" value="180天">180天</option>
+                    <option data-ng-if="yitihuaTwoSign" value="1年">1年</option>
+                    <option data-ng-if="yitihuaTwoSign" value="2年">2年</option>
+                    <option data-ng-if="yitihuaTwoSign" value="3年">3年</option>
+                    <option data-ng-if="yitihuaTwoSign" value="永久" ng-selected="true">永久</option>
+
+                    <!--产品类型为 统一防护与安全防护系统-->
+                    <option data-ng-if="fangHuAnQuanSign" value="90天">90天</option>
+                    <option data-ng-if="fangHuAnQuanSign" value="180天">180天</option>
+                    <option data-ng-if="fangHuAnQuanSign" value="1年">1年</option>
+                    <option data-ng-if="fangHuAnQuanSign" value="2年">2年</option>
+                    <option data-ng-if="fangHuAnQuanSign" value="3年">3年</option>
+                    <option data-ng-if="fangHuAnQuanSign" value="永久" ng-selected="true">永久</option>
+
+                    <!--产品类型为 UAP认证授权设备-->
+                    <option data-ng-if="uapSign" value="90天">90天</option>
+                    <option data-ng-if="uapSign" value="180天">180天</option>
+                    <option data-ng-if="uapSign" value="1年">1年</option>
+                    <option data-ng-if="uapSign" value="2年">2年</option>
+                    <option data-ng-if="uapSign" value="3年">3年</option>
+                    <option data-ng-if="uapSign" value="永久" ng-selected="true">永久</option>
+
+                    <!--产品类型为 其它-->
+                    <option data-ng-if="otherSign" value="90天">90天</option>
+                    <option data-ng-if="otherSign" value="180天">180天</option>
+                    <option data-ng-if="otherSign" value="1年">1年</option>
+                    <option data-ng-if="otherSign" value="2年">2年</option>
+                    <option data-ng-if="otherSign" value="3年">3年</option>
+                    <option data-ng-if="otherSign" value="永久" ng-selected="true">永久</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><span class="asterisk_red">*</span>软件版本：</label>
+
+            <div class="col-sm-9">
+                <select class="form-control" id="softwareVersion" name="softwareVersion" data-ng-model="authorizationConfig.softwareVersion">
+                    <option value="">-- 请选择 --</option>
+                    <option data-ng-if="anguanSign" value="V2.0.0.0">V2.0.0.0</option>
+                    <option data-ng-if="anguanSign" value="V3.0.0.0" ng-selected="true">V3.0.0.0</option>
+
+                    <option data-ng-if="jianchaSign" value="V2.0.0.0">V2.0.0.0</option>
+                    <option data-ng-if="jianchaSign" value="V3.0.0.0" ng-selected="true">V3.0.0.0</option>
+
+                    <option data-ng-if="yitihuaOneSign" value="V2.0.0.0">V2.0.0.0</option>
+                    <option data-ng-if="yitihuaOneSign" value="V3.0.0.0" ng-selected="true">V3.0.0.0</option>
+
+                    <option data-ng-if="yitihuaTwoSign" value="V2.0.0.0">V2.0.0.0</option>
+                    <option data-ng-if="yitihuaTwoSign" value="V3.0.0.0" ng-selected="true">V3.0.0.0</option>
+
+                    <option data-ng-if="fangHuAnQuanSign" value="V2.0.0.0">V2.0.0.0</option>
+                    <option data-ng-if="fangHuAnQuanSign" value="V3.0.0.0" ng-selected="true">V3.0.0.0</option>
+
+                    <option data-ng-if="uapSign" value="V2.0.0.0" ng-selected="true">V2.0.0.0</option>
+                    <option data-ng-if="uapSign" value="V3.0.0.0">V3.0.0.0</option>
+
+                    <option data-ng-if="otherSign" value="V2.0.0.0" ng-selected="true">V2.0.0.0</option>
+                    <option data-ng-if="otherSign" value="V3.0.0.0">V3.0.0.0</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label"><span class="asterisk_red">*</span>硬件平台：</label>
+
+            <div class="col-sm-9">
+                <select class="form-control" id="hardwarePlatform" name="hardwarePlatform" data-ng-model="authorizationConfig.hardwarePlatform">
+                    <option value="">-- 请选择 --</option>
+                    <option data-ng-if="anguanSign" value="a100" ng-selected="true">网络安全管理系统(纯软)</option>
+
+                    <option data-ng-if="jianchaSign" value="a100" ng-selected="true">网络安全管理系统(纯软)</option>
+
+
+                    <!--产品类型为 I型一体化安全防护设备-->
+                    <option data-ng-if="yitihuaOneSign" value="a105">I型一体化(G41)TS500</option>
+                    <option data-ng-if="yitihuaOneSign" value="a106">I型一体化(B75)TS500</option>
+                    <option data-ng-if="yitihuaOneSign" value="a108">I型一体化(B75)VN500</option>
+                    <option data-ng-if="yitihuaOneSign" value="a110" ng-selected="true">I型一体化(HM65)VN500</option>
+                    <option data-ng-if="yitihuaOneSign" value="a111">I型一体化(HM65)TS500</option>
+                    <option data-ng-if="yitihuaOneSign" value="a113">I型一体化(FT1500A)TS500</option>
+
+                    <!--产品类型为 II型一体化安全防护设备-->
+                    <option data-ng-if="yitihuaTwoSign" value="a107">II型一体化(HM65)TS500</option>
+                    <option data-ng-if="yitihuaTwoSign" value="a112" ng-selected="true">II型一体化(018B)VN500</option>
+
+                    <!--产品类型为 统一防护与安全防护系统-->
+                    <option data-ng-if="fangHuAnQuanSign" value="a104" ng-selected="true">统一防护(3392)TS300</option>
+                    <option data-ng-if="fangHuAnQuanSign" value="a205">统一防护(3395)TS300</option>
+                    <option data-ng-if="fangHuAnQuanSign" value="a206">统一防护(HY)TS300</option>
+
+                    <!--产品类型为 UAP认证授权设备-->
+                    <option data-ng-if="uapSign" value="a100" ng-selected="true">认证授权设备(通用平台)</option>
+
+                    <option data-ng-if="otherSign" value="a100" ng-selected="true">认证授权设备(通用平台)</option>
+
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">授权点数：</label>
+
+            <div class="col-sm-9">
+                <select class="form-control" id="authPoints" name="authPoints" data-ng-model="authorizationConfig.authPoints">
+                    <option value="">-- 请选择 --</option>
+                    <option data-ng-if="anguanSign" value="100" ng-selected="true">100点</option>
+                    <option data-ng-if="anguanSign" value="150">150点</option>
+                    <option data-ng-if="anguanSign" value="200">200点</option>
+
+                    <option data-ng-if="jianchaSign" value="100" ng-selected="true">100点</option>
+                    <option data-ng-if="jianchaSign" value="150">150点</option>
+                    <option data-ng-if="jianchaSign" value="200">200点</option>
+
+
+                    <option data-ng-if="yitihuaOneSign" value="100" ng-selected="true">100点</option>
+                    <option data-ng-if="yitihuaOneSign" value="150">150点</option>
+                    <option data-ng-if="yitihuaOneSign" value="200">200点</option>
+
+                    <option data-ng-if="yitihuaTwoSign" value="100" ng-selected="true">100点</option>
+                    <option data-ng-if="yitihuaTwoSign" value="150">150点</option>
+                    <option data-ng-if="yitihuaTwoSign" value="200">200点</option>
+
+                    <option data-ng-if="fangHuAnQuanSign" value="100" ng-selected="true">100点</option>
+                    <option data-ng-if="fangHuAnQuanSign" value="150">150点</option>
+                    <option data-ng-if="fangHuAnQuanSign" value="200">200点</option>
+
+                    <option data-ng-if="uapSign" value="100" ng-selected="true">100点</option>
+
+                    <option data-ng-if="otherSign" value="100" ng-selected="true">100点</option>
+                    <option data-ng-if="otherSign" value="150">150点</option>
+                    <option data-ng-if="otherSign" value="200">200点</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">区域类型：</label>
+
+            <div class="col-sm-9">
+                <select class="form-control" id="areaType" name="areaType" data-ng-model="authorizationConfig.areaType">
+                    <option value="">-- 请选择 --</option>
+                    <option data-ng-if="anguanSign" value="kjzhw" ng-selected="true">指挥网</option>
+
+                    <option data-ng-if="jianchaSign" value="kjyww" ng-selected="true">业务网</option>
+
+                    <option data-ng-if="yitihuaOneSign" value="kjyww">业务网</option>
+                    <option data-ng-if="yitihuaOneSign" value="kjzhw" ng-selected="true">指挥网</option>
+                    <option data-ng-if="yitihuaOneSign" value="error">不涉及</option>
+
+                    <option data-ng-if="yitihuaTwoSign" value="kjyww">业务网</option>
+                    <option data-ng-if="yitihuaTwoSign" value="kjzhw" ng-selected="true">指挥网</option>
+                    <option data-ng-if="yitihuaTwoSign" value="error">不涉及</option>
+
+                    <!--产品类型为 统一防护与安全防护系统-->
+                    <option data-ng-if="fangHuAnQuanSign" value="kjyww">业务网</option>
+                    <option data-ng-if="fangHuAnQuanSign" value="kjzhw" ng-selected="true">指挥网</option>
+                    <option data-ng-if="fangHuAnQuanSign" value="error">不涉及</option>
+
+                    <option data-ng-if="uapSign" value="error" ng-selected="true">不涉及</option>
+
+                    <option data-ng-if="otherSign" value="kjyww">业务网</option>
+                    <option data-ng-if="otherSign" value="kjzhw">指挥网</option>
+                    <option data-ng-if="otherSign" value="error" ng-selected="true">不涉及</option>
+
+
+                </select>
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">态势模块：</label>
+
+            <div class="col-sm-9">
+                <select class="form-control" id="situaTemplate" name="situaTemplate" data-ng-model="authorizationConfig.situaTemplate">
+                    <option value="">-- 请选择 --</option>
+                    <option data-ng-if="anguanSign" value="no">不包含</option>
+                    <option data-ng-if="anguanSign" value="yes" ng-selected="true">包含</option>
+                    <option data-ng-if="anguanSign" value="error">不涉及</option>
+
+                    <option data-ng-if="jianchaSign" value="no">不包含</option>
+                    <option data-ng-if="jianchaSign" value="yes" ng-selected="true">包含</option>
+                    <option data-ng-if="jianchaSign" value="error">不涉及</option>
+
+                    <option data-ng-if="yitihuaOneSign" value="no" ng-selected="true">不包含</option>
+                    <option data-ng-if="yitihuaOneSign" value="yes">包含</option>
+                    <option data-ng-if="yitihuaOneSign" value="error">不涉及</option>
+
+                    <option data-ng-if="yitihuaTwoSign" value="no" ng-selected="true">不包含</option>
+                    <option data-ng-if="yitihuaTwoSign" value="yes">包含</option>
+                    <option data-ng-if="yitihuaTwoSign" value="error">不涉及</option>
+
+                    <option data-ng-if="fangHuAnQuanSign" value="no" ng-selected="true">不包含</option>
+                    <option data-ng-if="fangHuAnQuanSign" value="yes">包含</option>
+                    <option data-ng-if="fangHuAnQuanSign" value="error">不涉及</option>
+
+                    <option data-ng-if="uapSign" value="error" ng-selected="true">不涉及</option>
+
+                    <option data-ng-if="otherSign" value="error" ng-selected="true">不涉及</option>
+                </select>
+                <!--<input type="text" ng-model="addOrEditProductDeliveryForm.receivePersonnel" name="receivePersonnel" class="form-control">-->
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">描述：</label>
+
+            <div class="col-sm-9">
+                <textarea class="form-control" rows="4" id="descirbe" name="descirbe" data-ng-model="authorizationConfig.descirbe"></textarea>
+            </div>
+        </div>
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-success" data-ng-disabled="makeSign" data-ng-click="beginMake()">开始制作</button>
+    <button class="btn btn-sm btn-white" data-ng-click="cancel()"><i class="fa fa-close"></i>&nbsp;关闭</button>
+</div>

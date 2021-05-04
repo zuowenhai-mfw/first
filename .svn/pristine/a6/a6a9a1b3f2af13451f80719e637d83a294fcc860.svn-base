@@ -1,0 +1,187 @@
+<div class="modal-header">
+    <button type='button' class='close' data-ng-click="cancel();"><i class="fa fa-close"></i></button>
+    <h4 class="modal-title">{{title}}合同订单签订信息</h4>
+</div>
+<div class="modal-body">
+    <form action="" class="form-horizontal" name="contractOrderForm">
+        <div class="form-group">
+            <div data-ng-class="{'has-error':contractOrderForm.addContractNo.$dirty && contractOrderForm.addContractNo.$invalid}">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>合同号：</label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control" autofocus="autofocus" autocomplete="off"
+                       data-ng-model="contractOrder.contractNo" contractno-ensure-unique
+                       name="addContractNo" data-ng-required="true"
+                       data-ng-minlength="2" data-ng-maxlength="20"
+                       ng-readonly="contractNoSign"
+                       data-ng-pattern="/^[a-zA-Z0-9]*$/" />
+                <span class="help-block m-b-none"
+                      data-ng-if="contractOrderForm.addContractNo.$error.contractNoUnique && contractOrderForm.addContractNo.$dirty && contractOrderForm.addContractNo.$invalid">
+                              <i class="fa fa-times-circle"></i> 合同号已经存在</span>
+                <span class="help-block m-b-none" data-ng-if="contractOrderForm.addContractNo.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;合同号只能输入字母、数字
+                    </span><span class="help-block m-b-none"
+                                 data-ng-if="contractOrderForm.addContractNo.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 合同号不能少于2位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="contractOrderForm.addContractNo.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 合同号不能大于20位
+                                </span>
+            </div>
+            </div>
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>销售人员：</label>
+
+            <div class="col-sm-3">
+                <select class="form-control" name="saleUser"
+                        data-ng-model="saleUserId"
+                        data-ng-options="saleUser.value as saleUser.text for saleUser in sale"
+                        data-ng-required="true">
+                    <option value="">---请选择---</option>
+                </select>
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">签订日期：</label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control" data-ng-model="contractOrder.signDate" readonly data-ng-required="true"
+                       def-laydate datetype='date' name="signDate" required id="date" autocomplete="off"/>
+            </div>
+            <label class="col-sm-2 control-label">建档日期：</label>
+
+            <div class="col-sm-4">
+                <input id="createDate" readonly class="form-control" def-laydate datetype='date'
+                       data-ng-required="true" data-ng-model="contractOrder.putOnRecordDate" name="putOnRecordDate">
+            </div>
+
+        </div>
+        <div class="form-group">
+
+            <label class="col-sm-2 control-label">合同详情：</label>
+
+            <div class="col-sm-4">
+                <div class="col-sm-5" data-ng-class="{'has-error':contractOrderForm.addContractDetails.$dirty && contractOrderForm.addContractDetails.$invalid}">
+                <textarea class="form-control" rows="4" data-ng-model="contractOrder.contractDetails" name="addContractDetails"
+                          data-ng-maxlength="100"></textarea>
+                    <span class="help-block m-b-none" data-ng-show="contractOrderForm.addContractDetails.$error.maxlength">
+                            	<i class="fa fa-times-circle"></i> 合同详情不能大于100位字符
+                            </span>
+                </div>
+            </div>
+            <label class="col-sm-2 control-label">备注：</label>
+
+            <div class="col-sm-4">
+                <div class="col-sm-5" data-ng-class="{'has-error':contractOrderForm.remark.$dirty && contractOrderForm.remark.$invalid}">
+                <textarea class="form-control" rows="4" data-ng-model="contractOrder.remarks" name="remark"
+                          data-ng-maxlength="100"></textarea>
+                <span class="help-block m-b-none" data-ng-show="contractOrderForm.remark.$error.maxlength">
+                            	<i class="fa fa-times-circle"></i> 备注不能大于100位字符
+                            </span>
+            </div>
+            </div>
+        </div>
+        <fieldset>
+            <legend>
+                <h4>成品列表</h4>
+            </legend>
+
+            <div class="form-group">
+
+                <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>成品编码：</label>
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="product" name="productCode" data-ng-model="productCode">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            </ul>
+                        </div>
+                        <!-- /btn-group -->
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+
+                <label class="col-sm-2 control-label">产品名称：</label>
+
+                <div class="col-sm-2">
+                    <input type="text" disabled class="form-control" data-ng-model="productName" name="productName" autocomplete="off"/>
+                </div>
+                <div data-ng-class="{'has-error':contractOrderForm.addSum.$dirty && contractOrderForm.addSum.$invalid}">
+                <label class="col-sm-2 control-label">数量：</label>
+
+                <div class="col-sm-2">
+                    <!--<input class="form-control" type="text" data-ng-model="sum" name="sum">-->
+                    <input type="text" class="form-control" autocomplete="off"
+                           data-ng-model="sum"
+                           name="addSum" data-ng-required="true"
+                           data-ng-minlength="1" data-ng-maxlength="6"
+                           data-ng-pattern="/^[0-9]*$/" />
+                    <span class="help-block m-b-none" data-ng-if="contractOrderForm.addSum.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;数量只能输入数字
+                    </span><span class="help-block m-b-none"
+                                 data-ng-if="contractOrderForm.addSum.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 数量不能少于1位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="contractOrderForm.addSum.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 数量不能大于6位
+                                </span>
+                </div>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">&nbsp;</label>
+                <div class="col-sm-10">
+                    <button type="button" class="btn btn-sm btn-white"
+                            data-ng-click="addproductList()"><i class="fa fa-plus"></i>&nbsp;添加</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="data_list">
+                    <table class="table table-striped table-condensed table-hover table-bordered">
+                        <thead>
+                        <tr>
+                            <th width="40%">成品编码</th>
+                            <th width="40%">产品名称</th>
+                            <th width="10%">数量</th>
+                            <th width="10%">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr data-ng-repeat="product in productList">
+                            <td width="40%"><input class="form-control" type="text" data-ng-model="product.finishedProductNo" name="finishedProductNo" readonly></td>
+                            <td width="40%"><input class="form-control" type="text" data-ng-model="product.productName" name="productName" readonly></td>
+                            <td width="10%"><input class="form-control" type="text" data-ng-model="product.sum" name="sum" readonly></td>
+                            <td width="10%">
+                                <a data-ng-click="delProductList($index)" class="fa fa-trash"></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--<table id="productList" data-mobile-responsive="true">
+
+                </table>-->
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-success" data-ng-disabled="contractOrderForm.$invalid" data-ng-click="save()">保存</button>
+    <button class="btn btn-sm btn-white" data-ng-click="cancel()"><i class="fa fa-close"></i>&nbsp;关闭</button>
+</div>

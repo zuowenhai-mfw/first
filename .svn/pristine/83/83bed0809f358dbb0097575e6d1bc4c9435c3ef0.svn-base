@@ -1,0 +1,199 @@
+<div ng-controller="addOrEditproductServiceCtrl">
+    <h3 class="m-t-none"><a class="fa fa-chevron-left" ng-click="back()">&nbsp;&nbsp;返回</a> <i class="vertical"></i>
+        <span><b>{{title}}产品安装售后信息</b></span></h3>
+    <form action="" name="addService" class="form-horizontal">
+        <!--基本信息-->
+        <fieldset>
+            <legend>
+                <h4>基本信息</h4>
+            </legend>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>硬件序列号：</label>
+
+                <div class="col-sm-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control" data-ng-required="true" id="hardwareSerialNumber" name="hardwareSerialNumber" data-ng-model="addOrEditproductServiceFormFor.hardwareSerialNumber">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                            </ul>
+                        </div>
+                        <!-- /btn-group -->
+                    </div>
+                </div>
+
+
+                <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>用户单位：</label>
+
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" data-ng-required="true" data-ng-model="addOrEditproductServiceFormFor.company" name="company" required autocomplete="off"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>联系人：</label>
+                <div class="col-sm-4">
+                    <div class="col-sm-3">
+                        <select class="form-control" name="receiveUser" data-ng-change="changetype(addOrEditproductServiceFormFor.customerId)"
+                                data-ng-model="addOrEditproductServiceFormFor.customerId"
+                                data-ng-options="receiveUser.value as receiveUser.text for receiveUser in receiveData"
+                                data-ng-required="true">
+                            <option value="">---请选择---</option>
+                        </select>
+                    </div>
+                </div>
+                <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>联系方式：</label>
+
+                <div class="col-sm-4">
+                    <input class="form-control" data-ng-required="true" ng-model="addOrEditproductServiceFormFor.contactInfo" name="contactInfo">
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>合同号：</label>
+
+                <div class="col-sm-4">
+                    <input data-ng-required="true" ng-model="addOrEditproductServiceFormFor.contractNo" name="contractNo" class="form-control">
+                </div>
+            </div>
+        </fieldset>
+        <!--详细信息-->
+        <fieldset>
+            <legend>
+                <h4>详细信息</h4>
+            </legend>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>战区：</label>
+
+                <div class="col-sm-4">
+                    <!--<input type="text" class="form-control" name="ruleName" required autocomplete="off"/>-->
+                    <select data-ng-required="true"  class="form-control" name="warZone" data-ng-model="addOrEditproductServiceFormFor.warZone">
+                        <option value="中部战区">中部战区</option>
+                        <option value="北部战区">北部战区</option>
+                        <option value="南北战区">南部战区</option>
+                        <option value="西部战区">西部战区</option>
+                        <option value="东部战区">东部战区</option>
+                    </select>
+                </div>
+                <label class="col-sm-2 control-label twoVconfig"><span class="asterisk_red">*</span>业务系统：</label>
+
+                <div class="col-sm-4 twoVconfig">
+                    <!--<input type="text" class="form-control" name="ruleName" required autocomplete="off"/>-->
+                    <select data-ng-required="true"  class="form-control" name="businessSystem" data-ng-model="addOrEditproductServiceFormFor.businessSystem">
+                        <option value="安管">安管</option>
+                        <option value="一体化">一体化</option>
+                        <option value="末端">末端</option>
+                        <option value="UAP">UAP</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>上下级关系：</label>
+
+                <div class="col-sm-4">
+                    <input type="text" data-ng-required="true" class="form-control" name="upperLowerGuanxi" data-ng-model="addOrEditproductServiceFormFor.upperLowerGuanxi" required autocomplete="off"/>
+                </div>
+            </div>
+
+
+        </fieldset>
+        <!--备注信息-->
+        <fieldset>
+            <legend>
+                <h4>备注信息</h4>
+            </legend>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">备注：</label>
+
+                <div class="col-sm-10">
+                    <div class="col-sm-5" data-ng-class="{'has-error':addMessage.problemDescribe.$dirty && addMessage.problemDescribe.$invalid}">
+                    <textarea class="form-control" name="remarks" data-ng-model="addOrEditproductServiceFormFor.remarks" rows="4"
+                              data-ng-maxlength="300"></textarea>
+                        <span class="help-block m-b-none" data-ng-show="addMessage.problemDescribe.$error.maxlength">
+                            	<i class="fa fa-times-circle"></i> 备注长度不能超过300个字符
+                            </span>
+                    </div>
+                </div>
+            </div>
+
+        </fieldset>
+        <!-- 售后记录-->
+        <fieldset>
+            <legend>
+                <h4>售后记录</h4>
+            </legend>
+            <div class="data_list">
+                <table class="table table-striped table-condensed table-hover table-bordered">
+                    <thead>
+                    <tr>
+                        <th width="10%">序号</th>
+                        <th width="20%" style="display: none">id</th>
+                        <th width="20%">时间</th>
+                        <th width="15%">实施人</th>
+                        <th width="15%">售后类型</th>
+                        <th width="30%">问题概述</th>
+                        <th width="10%">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr data-ng-repeat="log in addOrEditproductServiceForm.effective">
+                        <td width="10%">
+                            {{$index+1}}
+                        </td>
+                        <td width="10%" style="display: none">
+                            {{addOrEditproductServiceForm.effective[$index].id}}
+                        </td>
+                        <td width="20%">
+                            <input type="text" data-ng-required="true" class="form-control" readonly def-laydate datetype='datetime' id="createTime{{$index}}"
+                                   ng-model="addOrEditproductServiceForm.effective[$index].createTime" name="createTime"  />
+                        </td>
+                        <td width="15%">
+                            <!--<input type="text"  class="form-control" data-ng-model="addOrEditproductServiceForm.effective[$index].implementer"/>-->
+                            <select class="form-control" name="impleUser"
+                                    data-ng-model="addOrEditproductServiceForm.effective[$index].impleUserId"
+                                    data-ng-options="impleUser.value as impleUser.text for impleUser in impleData"
+                                    data-ng-required="true">
+                                <option value="">---请选择---</option>
+                            </select>
+                        </td>
+                        <td width="15%">
+                            <select data-ng-required="true" class="form-control" data-ng-model="addOrEditproductServiceForm.effective[$index].afterSaleType">
+                                <option value="安装">安装</option>
+                                <option value="售后">售后</option>
+                                <option value="培训">培训</option>
+                                <option value="换型">换型</option>
+                                <option value="保障">保障</option>
+                            </select>
+                        </td>
+                        <td width="30%">
+                            <input type="text"  class="form-control" data-ng-model="addOrEditproductServiceForm.effective[$index].problemDescribe"/>
+                        </td>
+                        <td width="10%">
+                            <a data-ng-click="openDescribe($index,addOrEditproductServiceForm.effective[$index].detailedDescribeList)">详细描述</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="6">
+                            <a data-ng-click="addlog($index)">
+                                <i class="fa fa-plus"></i>&nbsp;新增问题记录
+                            </a>
+                        </th>
+                    </tr>
+                    <!--<tr>
+                        <th colspan="6">
+                            &lt;!&ndash;<a data-ng-disabled="addService.$invalid" data-ng-click="addSave()">
+                            <i class="fa fa-plus"></i>&nbsp;保存</a>&ndash;&gt;
+                            <button type="button" class="btn btn-success" data-ng-disabled="addService.$invalid && submitSign" data-ng-click="addSave()">保存</button>
+                        </th>
+                    </tr>-->
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+    </form>
+    <div align="center">
+        <button type="button" class="btn btn-success" data-ng-disabled="addService.$invalid" data-ng-click="addSave()">保存</button>
+    </div>
+</div>

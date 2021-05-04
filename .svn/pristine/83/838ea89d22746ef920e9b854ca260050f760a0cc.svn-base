@@ -1,0 +1,216 @@
+<div class="modal-header">
+    <button type='button' class='close' data-ng-click="cancel();"><i class="fa fa-close"></i></button>
+    <h4 class="modal-title">{{title}}成品发布信息</h4>
+</div>
+<div class="modal-body">
+    <form action="" class="form-horizontal" name="softwareForm" novalidate>
+        <div class="form-group">
+            <div data-ng-class="{'has-error':softwareForm.addProductCode.$dirty && softwareForm.addProductCode.$invalid}">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>成品编码：</label>
+
+            <div class="col-sm-4">
+                <!--<input type="text" class="form-control" data-ng-model="finishedProductPublish.productCode" name="productCode" required autocomplete="off"/>-->
+                <input type="text" class="form-control" autofocus="autofocus" autocomplete="off"
+                       data-ng-model="finishedProductPublish.productCode" productcode-ensure-unique
+                       name="addProductCode" data-ng-required="true" ng-readonly="productCodeSign"
+                       data-ng-minlength="2" data-ng-maxlength="20"
+                       data-ng-pattern="/^[a-zA-Z0-9\_]*$/" />
+                <span class="help-block m-b-none"
+                      data-ng-if="softwareForm.addProductCode.$error.productCodeUnique && softwareForm.addProductCode.$dirty && softwareForm.addProductCode.$invalid">
+                              <i class="fa fa-times-circle"></i> 成品编码已经存在</span>
+                <span class="help-block m-b-none" data-ng-if="softwareForm.addProductCode.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;成品编码只能输入字母、数字下划线
+                    </span><span class="help-block m-b-none"
+                                 data-ng-if="softwareForm.addProductCode.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 成品编码不能少于2位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="softwareForm.addProductCode.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 成品编码不能大于20位
+                                </span>
+            </div>
+            </div>
+
+            <div data-ng-class="{'has-error':softwareForm.productName.$dirty && softwareForm.productName.$invalid}">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>产品名称：</label>
+
+            <div class="col-sm-4">
+                <!--<input type="text" class="form-control" data-ng-model="finishedProductPublish.productName" name="productName" required autocomplete="off"/>-->
+                <input type="text" class="form-control" autofocus="autofocus" autocomplete="off"
+                       data-ng-model="finishedProductPublish.productName" productname-ensure-unique
+                       name="productName" data-ng-required="true"
+                       data-ng-minlength="2" data-ng-maxlength="20"
+                       data-ng-pattern="/^[a-zA-Z0-9\u4e00-\u9fa5]*$/" />
+                <span class="help-block m-b-none"
+                      data-ng-if="softwareForm.productName.$error.productNameUnique && softwareForm.productName.$dirty && softwareForm.productName.$invalid">
+                              <i class="fa fa-times-circle"></i> 产品名称已经存在</span>
+                <span class="help-block m-b-none" data-ng-if="softwareForm.productName.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;产品名称只能输入字母、数字下划线
+                    </span><span class="help-block m-b-none"
+                                 data-ng-if="softwareForm.productName.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 产品名称不能少于2位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="softwareForm.productName.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 产品名称不能大于20位
+                                </span>
+            </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div data-ng-class="{'has-error':softwareForm.addSoftwareVersion.$dirty && softwareForm.addSoftwareVersion.$invalid}">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>软件版本：</label>
+
+            <div class="col-sm-4">
+                <!--<input type="text" class="form-control" data-ng-model="finishedProductPublish.softwareVersion" name="softwareVersion" required autocomplete="off"/>-->
+                <input type="text" class="form-control" autocomplete="off"
+                       data-ng-model="finishedProductPublish.softwareVersion"
+                       name="addSoftwareVersion" data-ng-required="true"
+                       data-ng-minlength="2" data-ng-maxlength="20"
+                       data-ng-pattern="/^[0-9\.]*$/" />
+                <span class="help-block m-b-none" data-ng-if="softwareForm.addSoftwareVersion.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;软件版本只能输入数字、.
+                    </span><span class="help-block m-b-none"
+                                 data-ng-if="softwareForm.addSoftwareVersion.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 软件版本不能少于2位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="softwareForm.addSoftwareVersion.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 软件版本不能大于20位
+                                </span>
+            </div>
+            </div>
+            <label class="col-sm-2 control-label">产品类型：</label>
+
+            <div class="col-sm-4">
+                <select class="form-control" name="productType"
+                        data-ng-model="finishedProductPublish.productType">
+                    <option value="自研产品">自研产品</option>
+                    <option value="OEM产品">OEM产品</option>
+                    <option value="代销产品">代销产品</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>发布人：</label>
+
+            <div class="col-sm-4">
+                <div class="col-sm-3">
+                    <select class="form-control" name="publishUser" style="width:120px"
+                            data-ng-model="publishUserId"
+                            data-ng-options="publishUser.value as publishUser.text for publishUser in publish"
+                            data-ng-required="true">
+                        <option value="">---请选择---</option>
+                    </select>
+                </div>
+            </div>
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>发布日期：</label>
+
+            <div class="col-sm-4">
+                <input id="publishDate" name="publishDate" readonly data-ng-model="finishedProductPublish.publishDate"
+                       def-laydate dateType="date" data-ng-required="true" autocomplete="off" class="form-control layer-date" mindate="-0">
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>建档日期：</label>
+
+            <div class="col-sm-4">
+                <input id="putOnRecordDate" name="putOnRecordDate"  readonly data-ng-model="finishedProductPublish.putOnRecordDate"
+                       def-laydate dateType="date" data-ng-required="true" autocomplete="off" class="form-control layer-date" mindate="-0">
+            </div>
+            <div data-ng-class="{'has-error':softwareForm.addExpectPurpose.$dirty && softwareForm.addExpectPurpose.$invalid}">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>预期用途：</label>
+
+            <div class="col-sm-4">
+                <!--<input type="text" class="form-control" data-ng-model="finishedProductPublish.expectPurpose" name="expectPurpose" required autocomplete="off"/>-->
+
+                <input type="text" class="form-control" autocomplete="off"
+                       data-ng-model="finishedProductPublish.expectPurpose"
+                       name="addExpectPurpose" data-ng-required="true"
+                       data-ng-minlength="2" data-ng-maxlength="20"
+                       data-ng-pattern="/^[a-zA-Z0-9\u4e00-\u9fa5\_]*$/" />
+                <span class="help-block m-b-none" data-ng-if="softwareForm.addExpectPurpose.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;预期用途只能输入字母、数字、汉字、下划线
+                    </span><span class="help-block m-b-none"
+                                 data-ng-if="softwareForm.addExpectPurpose.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 预期用途不能少于2位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="softwareForm.addExpectPurpose.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 预期用途不能大于20位
+                                </span>
+            </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">产品类型(大类)：</label>
+            <div class="col-sm-4">
+                <div class="col-sm-3">
+                    <select data-ng-required="true" class="form-control" name="type" data-ng-model="finishedProductPublish.type">
+                        <option value="">-- 请选择 --</option>
+                        <option value="NSM">网络安全防护管控软件</option>
+                        <option value="TNSM">网络安全管理与监察系统</option>
+                        <option value="UPM1000">I型一体化安全防护设备</option>
+                        <option value="UPM1000E">II型一体化安全防护设备</option>
+                        <option value="UPM1000E-B">统一防护与安全防护系统</option>
+                        <option value="UAP">UAP认证授权设备</option>
+                        <option value="other">其它</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>是否为硬件：</label>
+
+            <div class="col-sm-4">
+                <label class="checkbox-inline">
+                    <input type="radio" name="isHardware" data-ng-model="finishedProductPublish.isHardware" data-ng-checked="yesHardwareSign" value="1">&nbsp;是
+                </label>
+                <label class="checkbox-inline">
+                    <input type="radio" name="isHardware" data-ng-model="finishedProductPublish.isHardware" data-ng-checked="noHardwareSign" value="2" >&nbsp;否
+                </label>
+            </div>
+
+
+
+            <label class="col-sm-2 control-label" ng-show="finishedProductPublish.isHardware == '1'"><span class="asterisk_red">*</span>硬件编码：</label>
+            <div class="col-sm-4" ng-show="finishedProductPublish.isHardware == '1'">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="hardware" name="hardwareCode" data-ng-model="finishedProductPublish.hardwareCode">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                        </ul>
+                    </div>
+                    <!-- /btn-group -->
+                </div>
+            </div>
+            <!--<div class="col-sm-4" ng-if="softwareAddOrEditForm.isHardwareId == '是'">
+                <select class="form-control" ng-options="txt for txt in hardwareIdList" data-ng-model="softwareAddOrEditForm.hardwareId">
+                    <option value="">&#45;&#45; 请选择 &#45;&#45;</option>
+                </select>
+            </div>-->
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">备注：</label>
+
+            <div class="col-sm-10">
+                <div class="col-sm-5" data-ng-class="{'has-error':softwareForm.remark.$dirty && softwareForm.remark.$invalid}">
+                <textarea class="form-control" data-ng-model="finishedProductPublish.remarks" name="remark" rows="4" data-ng-maxlength="100"></textarea>
+                    <span class="help-block m-b-none" data-ng-show="softwareForm.remark.$error.maxlength">
+                            	<i class="fa fa-times-circle"></i> 描述信息不能大于100位字符
+                            </span>
+            </div>
+        </div>
+        </div>
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-success" data-ng-disabled="softwareForm.$invalid" data-ng-click="save()">保存</button>
+    <button class="btn btn-sm btn-white" data-ng-click="cancel()"><i class="fa fa-close"></i>&nbsp;关闭</button>
+</div>

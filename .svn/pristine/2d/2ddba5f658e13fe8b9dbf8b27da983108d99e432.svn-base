@@ -1,0 +1,61 @@
+<form action="" class="form-horizontal" ng-controller="addOrEditProductDeliveryContentCtrl">
+    <fieldset>
+        <legend>
+            <h4>基本信息</h4>
+        </legend>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">单据号：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{productDeliver.billNo}}</p>
+            </div>
+            <label class="col-sm-2 control-label">合同号：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{productDeliver.contractNo}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">发货人：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{productDeliver.sendUser}}</p>
+            </div>
+            <label class="col-sm-2 control-label">发货日期：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{productDeliver.sendDate}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">需求人：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{productDeliver.demandUser}}</p>
+            </div>
+            <label class="col-sm-2 control-label">接收单位：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{productDeliver.company}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">接收人：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{productDeliver.contactPerson}}</p>
+            </div>
+            <label class="col-sm-2 control-label">联系方式：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{productDeliver.contactInfo}}</p>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>
+            <h4>发货硬件</h4>
+        </legend>
+        <table id="hardwareNumberList" data-mobile-responsive="true"></table>
+    </fieldset>
+</form>

@@ -1,0 +1,187 @@
+<div class="modal-header">
+    <button type='button' class='close' data-ng-click="cancel();"><i class="fa fa-close"></i></button>
+    <h4 class="modal-title">{{title}}客户信息</h4>
+</div>
+<div class="modal-body">
+    <form action="" class="form-horizontal" name="customersInforForm">
+        <div class="form-group">
+            <div data-ng-class="{'has-error':customersInforForm.addCompanyNamet.$dirty && customersInforForm.addCompanyNamet.$invalid}">
+                <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>单位名称：</label>
+
+                <div class="col-sm-4">
+                    <!--<input type="text" class="form-control" data-ng-model="customerInfoMaintain.companyName" name="companyName" required autocomplete="off"/>-->
+                    <input type="text" class="form-control" autocomplete="off"
+                           data-ng-model="customerInfoMaintain.companyName"
+                           name="addCompanyNamet"  readonly/>
+                </div>
+            </div>
+
+            <div data-ng-class="{'has-error':customersInforForm.addContactPerson.$dirty && customersInforForm.addContactPerson.$invalid}">
+                <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>联系人：</label>
+
+                <div class="col-sm-4">
+                    <!--<input type="text" class="form-control" data-ng-model="customerInfoMaintain.contactPerson" name="contactPerson" required autocomplete="off"/>-->
+                    <input type="text" class="form-control" autocomplete="off"
+                           data-ng-model="customerInfoMaintain.contactPerson"
+                           name="addContactPerson" readonly/>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div data-ng-class="{'has-error':customersInforForm.addContactInfo.$dirty && customersInforForm.addContactInfo.$invalid}">
+                <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>联系方式(移动电话)：</label>
+
+                <div class="col-sm-4">
+                    <!--<input type="text" class="form-control" name="contactInfo" data-ng-model="customerInfoMaintain.contactInfo" required autocomplete="off"/>-->
+                    <input type="text" class="form-control" autocomplete="off"
+                           data-ng-model="customerInfoMaintain.contactInfo"
+                           name="addContactInfo" readonly/>
+                </div>
+            </div>
+            <label class="col-sm-2 control-label">部门：</label>
+
+            <div class="col-sm-4">
+                <select class="form-control" name="department" data-ng-required="true" ng-model="customerInfoMaintain.department" readonly>
+                    <option value="">--请选择--</option>
+                    <option value="科技部">科技部</option>
+                    <option value="信息部">信息部</option>
+                    <option value="学习部">销售部</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>职务：</label>
+
+            <div class="col-sm-4">
+                <select class="form-control" name="post" data-ng-required="true" ng-model="customerInfoMaintain.post" readonly>
+                    <option value="">--请选择--</option>
+                    <option value="少尉">少尉</option>
+                    <option value="其他">其他</option>
+                    <option value="少校">少校</option>
+                </select>
+            </div>
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>所属战区：</label>
+
+            <div class="col-sm-4">
+                <select class="form-control" name="warZone" data-ng-required="true" ng-model="customerInfoMaintain.warZone" readonly>
+                    <option value="">--请选择--</option>
+                    <option value="东部">东部</option>
+                    <option value="西部">西部</option>
+                    <option value="南部">南部</option>
+                    <option value="北部">北部</option>
+                    <option value="中部">中部</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>所属系统：</label>
+
+            <div class="col-sm-4">
+                <select class="form-control" name="system" data-ng-required="true" ng-model="customerInfoMaintain.system" readonly>
+                    <option value="">--请选择--</option>
+                    <option value="网络安全管理">网络安全管理</option>
+                </select>
+            </div>
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>建档日期：</label>
+
+            <div class="col-sm-4">
+                <input id="issueDate" readonly class="form-control" data-ng-required="true" name="putOnRecordDate" ng-model="customerInfoMaintain.putOnRecordDate">
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">用户类型：</label>
+
+            <div class="col-sm-4" data-ng-if="getRoleType=='6'">
+                <div class="radio">
+                    <label >
+                        <input name="customerType" data-ng-model="customerType" type="radio" value="1" class="radio">订单用户
+                    </label>&nbsp;&nbsp;
+                    <label >
+                        <input name="customerType" data-ng-model="customerType" type="radio" value="2" class="radio">收货用户
+                    </label>&nbsp;&nbsp;
+                    <label>
+                        <input name="customerType" data-ng-model="customerType" type="radio" value="3" class="radio">售后用户
+                    </label>
+                    <label>
+                        <input name="customerType" data-ng-model="customerType" type="radio" value="4" class="radio">厂商用户
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-sm-4" data-ng-if="getRoleType=='3'">
+                <div class="radio">
+                    <label >
+                        <input name="customerType" data-ng-model="customerType" type="radio" value="1" class="radio">订单用户
+                    </label>&nbsp;&nbsp;
+                    <label >
+                        <input name="customerType" data-ng-model="customerType" type="radio" value="2" class="radio">收货用户
+                    </label>&nbsp;&nbsp;
+                    <label>
+                        <input name="customerType" data-ng-model="customerType" type="radio" value="4" class="radio">厂商用户
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-sm-4" data-ng-if="getRoleType=='7'">
+                <div class="radio">
+                    <label >
+                        <input name="customerType" data-ng-model="customerType" type="radio" value="1" class="radio">订单用户
+                    </label>&nbsp;&nbsp;
+                    <label>
+                        <input name="customerType" data-ng-model="customerType" type="radio" value="4" class="radio">厂商用户
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-sm-4" data-ng-if="getRoleType=='2'">
+                <div class="radio">
+                    <label >
+                        <input name="customerType" data-ng-model="customerType" type="radio" value="2" class="radio">收货用户
+                    </label>&nbsp;&nbsp;
+                    <label>
+                        <input name="customerType" data-ng-model="customerType" type="radio" value="3" class="radio">售后用户
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-sm-4" data-ng-if="getRoleType=='5'">
+                <div class="radio">
+                    <label>
+                        <input name="customerType" data-ng-model="customerType" type="radio" value="3" class="radio">售后用户
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-sm-4" data-ng-if="getRoleType=='1'">
+                <div class="radio">
+                    <label>
+                        <input name="customerType" data-ng-model="customerType" type="radio" value="4" class="radio">厂商用户
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">备注：</label>
+
+            <div class="col-sm-10">
+                <div class="col-sm-5" data-ng-class="{'has-error':customersInforForm.remark.$dirty && customersInforForm.remark.$invalid}">
+                <textarea class="form-control" rows="4"  ng-model="customerInfoMaintain.remarks"
+                          data-ng-maxlength="100" name="remark" readonly></textarea>
+                    <span class="help-block m-b-none" data-ng-show="customersInforForm.remark.$error.maxlength">
+                            	<i class="fa fa-times-circle"></i> 描述信息不能大于100位字符
+                            </span>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-sm btn-white" data-ng-click="cancel()"><i class="fa fa-close"></i>&nbsp;关闭</button>
+</div>

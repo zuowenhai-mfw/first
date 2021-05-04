@@ -1,0 +1,62 @@
+<form action="" class="form-horizontal" ng-controller="hardwareProchaseDetailContentCtrl">
+    <fieldset>
+        <legend>
+            <h4>基本信息</h4>
+        </legend>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">请购单号：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{hardwarePlatformPurchase.purchaseNo}}</p>
+            </div>
+            <label class="col-sm-2 control-label">下单人员：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{hardwarePlatformPurchase.orderUserName}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">硬件编码：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{hardwarePlatformPurchase.hardwareNo}}</p>
+            </div>
+            <label class="col-sm-2 control-label">硬件平台：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{hardwarePlatformPurchase.hardwarePlatform}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">合同号：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{hardwarePlatformPurchase.contractNo}}</p>
+            </div>
+            <label class="col-sm-2 control-label">下单日期：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{hardwarePlatformPurchase.orderDate}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">到货日期：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{hardwarePlatformPurchase.arrivalDate}}</p>
+            </div>
+            <label class="col-sm-2 control-label">备注：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{hardwarePlatformPurchase.remarks}}</p>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>
+            <h4>硬件序列号</h4>
+        </legend>
+        <table id="serialNumberList"  data-mobile-responsive="true"></table>
+        <!--硬件序列号列表 ，状态（有没有被采用）-->
+    </fieldset>
+</form>

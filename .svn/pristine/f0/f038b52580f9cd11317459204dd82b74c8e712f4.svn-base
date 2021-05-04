@@ -1,0 +1,173 @@
+/*.nav-uls {*/
+/*display: none;*/
+/*}*/
+/*.nav-uls {*/
+/*height: auto;*/
+/*}*/
+/*.nav-uls li {*/
+/*height: 25px;*/
+/*line-height: 25px;*/
+/*text-align: center;*/
+/*}*/
+.clearfix:after {
+    content: "";
+    height: 0;
+    line-height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.txt-rht {
+    text-align: right;
+    padding-right: 5px;
+}
+.tab-w {
+    padding: 25px;
+}
+ul {
+    -webkit-padding-start: 0;
+    -moz-padding-start: 0;
+}
+ul,li {
+    list-style: none;
+}
+.table {
+    margin-bottom: 0;
+}
+.panel-body {
+    padding: 0;
+}
+.table th,
+.table td {
+    text-align: center;
+}
+.tab-title {
+    height: auto;
+    margin-bottom: 0;
+}
+.tab-title li {
+    float: left;
+    padding: 5px 2%;
+    text-align: center;
+    cursor: pointer;
+}
+/*.tab-active {*/
+    /*color: #fff;*/
+    /*border: 1px solid #45b9ff;*/
+    /*border-bottom: 0;*/
+    /*/!*background: rgba(5,65,101,.4);*!/*/
+    /*background: #04456c;*/
+/*}*/
+.tab01 .tab-active,
+.tab02 .tab-active {
+    border-bottom: 0;
+    margin-top: -1px;
+}
+.tab-cont li {
+    display: none;
+}
+.tab-cont .shows {
+    display: block;
+}
+.tab-cont .hide {
+    display: none;
+}
+
+
+
+.table-top {
+    padding: 10px 0;
+    background: #f4f4f4;
+}
+.bg-txt {
+    padding: .5% 0 .5% 1.5%;
+    /*border: 1px solid #4affff;*/
+    /*border-top: 0;*/
+    /*border-bottom: 0;*/
+    border-left: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+}
+.top-tit {
+    padding: 0 10px;
+}
+.mjsz {
+    margin-right: 10px;
+}
+.cjlei {
+    padding: 0!important;
+}
+.cjlei div {
+    padding: 5px 0;
+}
+.cjlei .table-bordered>tbody>tr>td,
+.cjlei .table-bordered>tbody>tr>th,
+.cjlei .table-bordered>tfoot>tr>td,
+.cjlei .table-bordered>tfoot>tr>th,
+.cjlei .table-bordered>thead>tr>td,
+.cjlei .table-bordered>thead>tr>th {
+    border-bottom: 0;
+}
+td.cjlei .table-bordered,
+td.cjlei .table-bordered>tbody>tr>td {
+    border-top: 0!important;
+}
+
+
+
+
+
+/**/
+.brs {
+    /*text-align: right;*/
+    border-left: 1px solid #e7e7e7;
+    border-right: 1px solid #e7e7e7;
+    padding: 10px 15px 5px;
+}
+.mjsh li {
+    width: 50%;
+}
+.mjsh li.fl {
+    text-align: right;
+}
+.mjsh li.fr {
+    text-align: left;
+}
+
+
+/*
+ * 计划管理-单独生成
+ */
+.form-group {
+    margin-top: 25px;
+}
+.control-label {
+    text-align: right;
+}
+.form-group .col-sm-4 {
+    height: 32px;
+    line-height: 32px;
+}
+.fir-col {
+    margin-top: 10px;
+}
+/*
+ * 计划管理-通知下级
+ */
+.form-groups {
+    padding-top: 20px;
+    text-align: center;
+}
+/*
+ * ... - 创建模板
+ */
+#checktype_add td{text-align:left !important;}
+.node_indent{ display:block; width:16px; height:16px; float:left; margin-left:3px;}

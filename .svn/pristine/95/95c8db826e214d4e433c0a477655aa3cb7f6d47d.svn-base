@@ -1,0 +1,70 @@
+<style>
+    .modal-content {
+        background-color: rgb(2, 26, 39);
+        color: #fff;
+        border: 1px solid #8cb6ce;
+        box-shadow: 0 0 10px #8cb6ce
+    }
+
+    .modal-backdrop {
+        background-color: rgb(0, 0, 0);
+    }
+
+    .modal-header {
+        background-color: rgb(5, 65, 101);
+        border-bottom: 0px;
+        padding: 8px 15px;
+    }
+
+    .modal-body {
+        background-color: rgb(2, 26, 39);
+
+    }
+
+    /*列表边框的颜色*/
+    .table-bordered > thead > tr > th, .table-bordered > tbody > tr > td {
+        border: 1px solid #185375 !important;
+    }
+
+    /*列表的背景色*/
+    .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+        background-color: #0d3954;
+    }
+
+    .modal-header .close {
+        color: #fff;
+        /*margin-top: 3px;*/
+        opacity: 1;
+    }
+
+    a {
+        cursor: pointer;
+    }
+    /*
+     * 2019-06-17
+     * ldd
+     */
+    .modal-dialog {
+        top: 60px;
+    }
+    .modal-header .close {
+        padding: 0 ;
+        margin: 0;
+    }
+</style>
+
+<div class="modal-header">
+    <h5 class="modal-title">登录确认</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-ng-click="cancel()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="data_list">
+        <div>用户{{param.username}}已在{{param.ip}}登录，继续登录会将其下线，您确定要登录吗？</div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-sm btn-info" data-ng-click="login()"><i class="fa fa-check"></i>&nbsp;确定</button>
+    <button class="btn btn-sm btn-info" data-ng-click="cancel()"><i class="fa fa-close"></i>&nbsp;取消</button>
+</div>

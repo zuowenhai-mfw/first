@@ -1,0 +1,176 @@
+<div class="modal-header">
+    <button type='button' class='close' data-ng-click="cancel();"><i class="fa fa-close"></i></button>
+    <h4 class="modal-title">软件发布信息</h4>
+</div>
+<div class="modal-body">
+    <form action="" class="form-horizontal">
+        <!--基本信息-->
+        <fieldset>
+            <legend>
+                <h4>基本信息</h4>
+            </legend>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">成品编码：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static">{{finishedProductPublish.productCode}}</p>
+                </div>
+                <label class="col-sm-2 control-label">产品名称：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static">{{finishedProductPublish.productName}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">软件版本：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static">{{finishedProductPublish.softwareVersion}}</p>
+                </div>
+                <label class="col-sm-2 control-label">产品类型：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static">{{finishedProductPublish.productType}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">发布人：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static">{{finishedProductPublish.publishPerson}}</p>
+                </div>
+                <label class="col-sm-2 control-label">发布日期：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static">{{finishedProductPublish.publishDate}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">建档日期：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static">{{finishedProductPublish.putOnRecordDate}}</p>
+                </div>
+                <label class="col-sm-2 control-label">预期用途：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static">{{finishedProductPublish.expectPurpose}}</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-2 text-center">
+                    <label class="checkbox-inline">
+                        <input type="radio" name="isHardware" data-ng-model="finishedProductPublish.isHardware" data-ng-checked="yesHardwareSign" value="1">&nbsp;是
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="radio" name="isHardware" data-ng-model="finishedProductPublish.isHardware" data-ng-checked="noHardwareSign" value="2" >&nbsp;否
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">硬件编码：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static">{{finishedProductPublish.hardwareCode}}</p>
+                </div>
+            </div>
+        </fieldset>
+        <!--备注信息-->
+        <fieldset>
+            <legend>
+                <h4>备注信息</h4>
+            </legend>
+            <div class="form-group">
+                <textarea class="form-control" rows="4" disabled>{{finishedProductPublish.remarks}}</textarea>
+            </div>
+
+        </fieldset>
+        <!--修改记录-->
+        <fieldset>
+            <legend>
+                <h4>修改记录</h4>
+            </legend>
+            <table id="softwareEditRecordList" data-mobile-responsive="true"></table>
+        </fieldset>
+        <!--详细信息-->
+        <!--<fieldset>
+            <legend>
+                <h4>详细信息</h4>
+            </legend>
+            <div class="form-group">
+                <div class="col-sm-12 text-center">
+                    <label class="checkbox-inline">
+                        <input type="radio" name="gendar" disabled value="单版">&nbsp;单版
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="radio" name="gendar" disabled checked value="双版">&nbsp;双版
+                </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">芯片组：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static"></p>
+                </div>
+                <label class="col-sm-2 control-label">芯片组：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static"></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">CPU：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static"></p>
+                </div>
+                <label class="col-sm-2 control-label">CPU：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static"></p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">内存：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static"></p>
+                </div>
+                <label class="col-sm-2 control-label">内存：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static"></p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">电源：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static"></p>
+                </div>
+                <label class="col-sm-2 control-label">电源：</label>
+
+                <div class="col-sm-4">
+                    <p class="form-control-static"></p>
+                </div>
+            </div>
+        </fieldset>-->
+        <!--修改记录-->
+        <!-- <fieldset>
+             <legend>
+                 <h4>修改记录</h4>
+             </legend>
+             <table id="editRecordList" data-mobile-responsive="true"></table>
+         </fieldset>-->
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button class="btn btn-sm btn-white" data-ng-click="cancel()"><i class="fa fa-close"></i>&nbsp;关闭</button>
+</div>

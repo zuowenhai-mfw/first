@@ -1,0 +1,120 @@
+<script>
+    $('#file-pretty input[type="file"]').prettyFile()
+</script>
+<div class="modal-header">
+    <button type='button' class='close' data-ng-click="cancel();"><i class="fa fa-close"></i></button>
+    <h4 class="modal-title">{{title}}授权码</h4>
+</div>
+<div class="modal-body">
+    <form action="" class="form-horizontal">
+        <div class="form-group" ng-show="title == '新增'">
+            <label class="col-sm-4 control-label"></label>
+            <div class="col-sm-8 " ng-init="addLicenseType = 'single'">
+                <label class="checkbox-inline" style="padding-left: 0px">
+                    <input type="radio" data-ng-change="changetype('single')" name="single" data-ng-model="addLicenseType"  value="single">&nbsp;单个授权码输入
+                </label>
+                <label class="checkbox-inline" style="padding-left: 0px">
+                    <input type="radio" data-ng-change="changetype('multiple')" name="multiple" data-ng-model="addLicenseType"  value="fileTolead">&nbsp;文件导入授权码
+                </label>
+
+            </div>
+        </div>
+        <div class="form-group" ng-show="addLicenseType == 'single'">
+            <label class="col-sm-4 control-label"><span class="asterisk_red">*</span>管理板序列号：</label>
+
+            <div class="col-sm-8">
+                <input type="text" class="form-control"
+                       data-ng-model="addAuthorization.authCodeId" name="authCodeId" id="authCodeId" />
+            </div>
+        </div>
+        <div class="form-group" ng-show="addLicenseType == 'single'">
+            <label class="col-sm-4 control-label">硬件序列号：</label>
+
+            <div class="col-sm-8">
+                <!--<input type="text" class="form-control"
+                       ng-model="addOrEditProductDeliveryForm.deliveryDate" name="deliveryDate" />-->
+
+
+                <div class="input-group">
+                    <input type="text" class="form-control" id="hardwareSerialNumber" name="hardwareSerialNumber" data-ng-model="addAuthorization.hardwareSerialNumber">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                        </ul>
+                    </div>
+                    <!-- /btn-group -->
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="form-group" ng-show="addLicenseType == 'single'">
+            <label class="col-sm-4 control-label"><span class="asterisk_red">*</span>合同号：</label>
+            <div class="col-sm-8">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="contractNo" name="contractNo" data-ng-model="addAuthorization.contractNo">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                        </ul>
+                    </div>
+                    <!-- /btn-group -->
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <div class="form-group" ng-show="addLicenseType == 'fileTolead' ">
+            <!--<label class="col-sm-4 control-label"><span class="asterisk_red">*</span>授权码文件导入：</label>
+
+            <div class="col-sm-8" id="file-pretty">
+                &lt;!&ndash;<input type="file" multiple="multiple" id="authIdFile" class="form-control">&ndash;&gt;
+                <input type="file" class="form-control" id="certificateFile" name="file" data-ng-click="clearItems();"
+                       data-uploader="uploaderUap" nv-file-select>
+            </div>-->
+
+
+            <div class="col-sm-6 file-pretty">
+                <input type="text" id="authId" class="form-control" placeholder="请选择上传文件" data-ng-disabled="disabledSign"
+                       style="float: left;width: 68%;"/>
+                <input type="file" class="form-control " name="file" id="authIdFile"
+                       data-ng-click="clearItems();"
+                       data-uploader="uploaderAuthFile" nv-file-select/>
+            </div>
+
+        </div>
+        <div class="form-group color_5" ng-show="addLicenseType == 'fileTolead' ">
+           <p>1. 多次上传文件，以末次上传文件为主;</p>
+           <p>2. 文件中最多可填写50条ID码数据；</p>
+           <p>
+               3. 附件格式符合.lic.conf的要求 (ID:xxxxxSN:ooooo)；
+
+            <p>
+                   3.1 xxx : 32/36(UAP)位系统识别码(即ID码)；
+            </p>
+             <p>
+                   3.2 ooo : 设备序列号(即SN码)；
+             </p>
+            <p>
+                   3.3 SN前无空格，[:]英文冒号；
+            </p>
+            <p>
+                   3.4 每条ID码之间不能有空行。
+            </p>
+           </p>
+        </div>
+    </form>
+
+</div>
+<div class="modal-footer" data-ng-if="operateSign">
+    <button type="button" class="btn btn-success"  data-ng-click="save()">确定</button>
+    <button class="btn btn-sm btn-white" data-ng-click="cancel()"><i class="fa fa-close"></i>&nbsp;关闭</button>
+</div>

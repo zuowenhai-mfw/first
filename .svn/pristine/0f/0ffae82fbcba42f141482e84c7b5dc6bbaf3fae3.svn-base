@@ -1,0 +1,143 @@
+<script>
+    $(function(){
+        $(".myTab a").click(function(e){
+            e.preventDefault();
+            $(this).tab('show');
+        })
+    })
+</script>
+<form class="form-horizontal" name="editPwdForm" novalidate>
+	<div class="modal-header">
+		<button type='button' class='close' data-ng-click="cancel();"><i class="fa fa-close"></i></button>
+		<h4 class="modal-title">个人资料</h4>
+	</div>
+	<div class="modal-body">
+		<div class="tabs-container">
+			<ul class="nav nav-tabs myTab">
+				<li class="active"><a href="#msgDetail" data-toggle="tab">个人信息</a></li>
+				<li><a href="#pwdUpdate" data-toggle="tab">修改密码</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane active" id="msgDetail">
+					<div class="panel-body">
+						<div class="form-group">
+							<label class="col-sm-2 control-label">用户名：</label>
+							<div class="col-sm-3">
+								<p class="form-control-static" data-ng-bind="detailUser.userName"></p>
+							</div>
+							<label class="col-sm-2 control-label">姓名：</label>
+							<div class="col-sm-3">
+								<p class="form-control-static" data-ng-bind="detailUser.realName"></p>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">性别：</label>
+							<div class="col-sm-3">
+								<p class="form-control-static" data-ng-bind="detailUser.gendar"></p>
+							</div>
+							<label class="col-sm-2 control-label">部门：</label>
+							<div class="col-sm-3">
+								<p class="form-control-static" data-ng-bind="detailUser.deptCode"></p>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">电话：</label>
+							<div class="col-sm-3">
+								<p class="form-control-static" data-ng-bind="detailUser.phone"></p>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">手机：</label>
+							<div class="col-sm-3">
+								<p class="form-control-static" data-ng-bind="detailUser.mobile"></p>
+							</div>
+							<label class="col-sm-2 control-label">邮箱：</label>
+							<div class="col-sm-3">
+								<p class="form-control-static" data-ng-bind="detailUser.email"></p>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">备注：</label>
+							<div class="col-sm-4">
+								<p class="form-control-static" data-ng-bind="detailUser.remark"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane" id="pwdUpdate">
+					<div class="panel-body">
+						<div class="form-group"
+							  data-ng-class="{'has-error' : editPwdForm.initialPwd.$dirty && editPwdForm.initialPwd.$invalid}">
+							<label class="col-sm-2 control-label"><span class="asterisk_red" data-ng-if="editPwdForm.initialPwd.$error.required">*</span>原密码：</label>
+							<div class="col-sm-5">
+								<input type="password" class="form-control"  name="initialPwd"
+								   data-ng-model="userPwd.initialPwd"
+								   data-ng-required="true"
+								   user-pwd-validate
+								   autocomplete="off"
+								   placeholder="原密码"/>
+							</div>
+							<div class="help-block m-b-none"
+								data-ng-show="editPwdForm.initialPwd.$error.userPwdUnique && editPwdForm.initialPwd.$dirty && editPwdForm.initialPwd.$invalid">
+								<i class="fa fa-times-circle"></i>（密码错误）
+							</div>
+						</div>
+						<div class="form-group"
+							 data-ng-class="{'has-error' : editPwdForm.newPwd.$dirty && editPwdForm.newPwd.$invalid}">
+							<label class="col-sm-2 control-label"><span class="asterisk_red" data-ng-if="editPwdForm.newPwd.$error.required">*</span>新密码：</label>
+							<div class="col-sm-5">
+								<input type="password" class="form-control" name="newPwd" id="newPwd"
+								   data-ng-model="userPwd.newPwd"
+								   data-ng-required="true"
+								   data-ng-minlength="8"
+									   data-ng-pattern="/^(?=.*[a-zA-Z])(?=.*[\d])(?=.*[^a-zA-Z\d])(?!.*\s).{8,20}$/"
+								   data-ng-maxlength="20"
+								   autocomplete="off"
+								   user-pwd-equal="{{userPwd.initialPwd}}"
+								   placeholder="新密码"/>
+							</div>
+							<!--<div class="help-block m-b-none"
+								data-ng-show="editPwdForm.newPwd.$error.minlength">
+								<i class="fa fa-times-circle"></i>密码长度不能少于6位
+							</div>
+							<div class="help-block m-b-none"
+								data-ng-show="editPwdForm.newPwd.$error.maxlength">
+								<i class="fa fa-times-circle"></i>密码长度不能多于20位
+							</div>-->
+							<span class="help-block m-b-none" style="color: #a94442;"
+								  data-ng-if="editPwdForm.newPwd.$error.pattern"> <i
+									class="fa fa-times-circle"></i> 用户密码必须是8-20位的数字加字母加特殊字符组成
+                                </span>
+							<div class=" help-block m-b-none" style="color: #a94442;"
+								data-ng-show="editPwdForm.initialPwd.$dirty && editPwdForm.newPwd.$dirty && editPwdForm.newPwd.$error.pwdEqual">
+								<i class="fa fa-info-circle"></i>新密码不能和原密码不能相同
+							</div>
+						</div>
+						<div class="form-group"
+							  data-ng-class="{'has-error' : editPwdForm.affirmPwd.$dirty && editPwdForm.affirmPwd.$invalid}">
+							<label class="col-sm-2 control-label"><span class="asterisk_red" data-ng-if="editPwdForm.affirmPwd.$error.required">*</span>确认新密码：</label>
+							<div class="col-sm-5">
+								<input type="password" class="form-control" name="affirmPwd"
+								   data-ng-required="true"
+								   user-pwd-unequal="newPwd"
+								   data-ng-model="userPwd.affirmPwd"
+								   autocomplete="off"
+								   placeholder="确认密码"/>
+							</div>
+							<div style="color:#a94442;" class="help-block m-b-none " data-ng-show="editPwdForm.newPwd.$dirty && editPwdForm.affirmPwd.$dirty && editPwdForm.affirmPwd.$error.pwdUnEqual">
+								<i class="fa fa-info-circle"></i> 两次输入密码不相同</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-sm btn-success" data-ng-disabled="editPwdForm.$invalid" data-ng-click="alterUserPwdForm();">
+			<i class="fa fa-check"></i>&nbsp;确定
+		</button>
+		<button class="btn btn-sm btn-white" data-ng-click="cancel();">
+			<i class="fa fa-close"></i>&nbsp;关闭
+		</button>
+	</div>
+</form>

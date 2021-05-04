@@ -1,0 +1,19 @@
+{
+	"message": "",
+	"value": [
+		{
+		  "hardwareId": "000001112022",
+		  "hardwarePlatform": "H3P LY-01"
+		},
+	  {
+		"hardwareId": "000001112023",
+		"hardwarePlatform": "H3P LY-021"
+	  },
+	  {
+		"hardwareId": "000001112024",
+		"hardwarePlatform": "H3P LY-04"
+	  }
+	],
+	"code": 200,
+	"redirect": ""
+}

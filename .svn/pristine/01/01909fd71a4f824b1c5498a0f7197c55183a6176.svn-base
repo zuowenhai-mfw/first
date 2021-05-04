@@ -1,0 +1,170 @@
+<div class="wrapper wrapper-content" ng-controller="licenseUTMListCtrl">
+    <div class="btn-group hidden-xs" id="hardwareProchaseToolbar" role="group">
+        <button type="button" class="btn btn-sm btn-success" ng-click="addOreEditlicenseUTM()">
+            <i class="fa fa-plus"></i>&nbsp;新增
+        </button>
+        <button type="button" class="btn btn-sm btn-white" ng-click="deleteAuthorizationCodeUTM()">
+            <i class="fa fa-trash"></i>&nbsp;删除
+        </button>
+
+    </div>
+    <!--UTM制作登记列表-->
+    <table id="licenseUTMListList"  data-mobile-responsive="true"></table>
+</div>
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> UTM授权登记</title>
+    <link rel="stylesheet" type="text/css" href="lifeCycleManagement/license/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="lifeCycleManagement/license//easyui/themes/icon.css">
+    <script type="text/javascript" src="lifeCycleManagement/license//easyui/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="lifeCycleManagement/license//easyui/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="lifeCycleManagement/license//js/common.js"></script>
+    <script type="text/javascript" src="lifeCycleManagement/license//js/json.js"></script>
+    <script src="lifeCycleManagement/license//js/license_utm_des.js"></script>
+    <script src="lifeCycleManagement/license//easyui/locale/easyui-lang-zh_CN.js"></script>
+    <div id="tb" data-options="region:'south',border:false">
+        <a class="easyui-linkbutton" data-options="iconCls:'icon-ok',plain:true" href="javascript:void(0)" onclick=" submitForm()">确定</a>
+        <a class="easyui-linkbutton" data-options="iconCls:'icon-cancel', plain:true" href="javascript:void(0)" onclick="closeWindow('#win2')">取消</a>
+    </div>
+    <div id="tb2" data-options="region:'south',border:false">
+        <a class="easyui-linkbutton" data-options="iconCls:'icon-ok',plain:true" href="javascript:void(0)" onclick="add()">添加</a>
+        <a class="easyui-linkbutton" data-options="iconCls:'icon-edit', plain:true" href="javascript:void(0)" onclick="edit()">编辑</a>
+        <a class="easyui-linkbutton" data-options="iconCls:'icon-cancel', plain:true" href="javascript:void(0)" onclick="rm()">删除</a>
+        <tr>
+            <td>
+                &nbsp;防护板序列号
+            </td>
+            <td>
+                <input class="kuang_text"  name="ID1" id="ID1" onkeyup="enterKeySubmit(this,event,select);"/>
+            </td>
+            <td>
+                硬件序列号
+            </td>
+            <td>
+                <input class="kuang_text"  name="SN1" id="SN1" onkeyup="enterKeySubmit(this,event,select);"/>
+            </td>
+            <td>
+                刮刮卡编号
+            </td>
+            <td>
+                <input class="kuang_text"  name="GGKSN1" id="GGKSN1" onkeyup="enterKeySubmit(this,event,select);"/>
+            </td>
+
+            <td>
+                详情信息
+            </td>
+            <td>
+                <input class="kuang_text"  name="MSG1" id="MSG1" onkeyup="enterKeySubmit(this,event,select);"/>
+            </td>
+
+            <td colspan="2">
+                <a class="easyui-linkbutton"  data-options="iconCls:'icon-search',plain:true" href="javascript:void(0)" onClick="select()">查询</a>
+            </td>
+        </tr>
+    </div>
+    </div>
+
+</head>
+<body>
+<table id="tt">
+</table>
+&lt;!&ndash; 查询&ndash;&gt;&lt;!&ndash; 添加 编辑 窗口&ndash;&gt;
+<div id="win2" class="easyui-dialog" title="添加授权登记" data-options="iconCls:'icon-add', modal:true, closed:true, toolbar:'#tb'" style="width:520px;height: 240px;">
+    <div class="easyui-layout" data-options="fit:true " style="height:auto;">
+        <div data-options="region:'center',border:true" style="background:#fff;">
+            <form action="" method="post">
+                <div class="juzhong1">
+                    <table border="0" cellspacing="4" cellpadding="0" align="center" style="line-height:2em;">
+                        <tr>
+                            <td align="left">
+                                <label>
+                                    防护板序列号<span class="calendar-sunday">*</span> </label>
+                            </td>
+                            <td  align="left">
+                                <input name="id" type="text" class="kuang_text"  id="ID" data-options="required:false" onkeyup="enterKeySubmit(this,event,submitForm);">
+                            </td>
+
+
+                            <td align="left">
+                                <label>&nbsp;&nbsp;&nbsp; 硬件SN号<span class="calendar-sunday">*</span> </label>
+                            </td>
+
+                            <td align="left">
+                                <input type="text" name="sn" id="SN" onkeyup="enterKeySubmit(this,event,submitForm);" class="kuang_text">
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td align="left">
+                                <label>
+                                    刮刮卡编号<span class="calendar-sunday">*</span> </label>
+                            </td>
+                            <td align="left">
+                                <input class=" kuang_text" data-options="required:false" id="GGKSN" name="ggkSN" type="text"  onkeyup="enterKeySubmit(this,event,submitForm);">
+                            </td>
+
+
+                            <td align="left">
+                                <label>&nbsp;&nbsp;&nbsp; 刮刮卡授权码<span class="calendar-sunday">*</span> </label>
+                            </td>
+                            <td align="left">
+                                <input type="text" name="ggkID" id="GGKID" onkeyup="enterKeySubmit(this,event,submitForm);" class="kuang_text">
+                            </td>
+
+
+                        </tr>
+
+                        <tr>
+                            <td align="left">
+                                <label>
+                                    日期<span class="calendar-sunday"></span> </label>
+                            </td>
+                            <td align="left">
+                                <input type="text" name="date" id="DATE" onkeyup="enterKeySubmit(this,event,submitForm);" class="kuang_text">
+                            </td>
+
+
+                            <td align="left">&nbsp;&nbsp;&nbsp; 时间
+                            </td>
+                            <td align="left">
+                                <input type="text" name="time" id="TIME" onkeyup="enterKeySubmit(this,event,submitForm);" class="kuang_text">
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td align="left">
+                                <label>
+                                    授权类型<span class="calendar-sunday">*</span> </label>
+                            </td>
+                            <td align="left">
+                                <label for="phonenumber">
+                                    <select class="kuang1_select" name="lictype" id="LIC">
+                                        <option value="1" selected="selected">正式授权</option>
+                                        <option value="2">临时授权</option>
+                                    </select>
+                                </label>
+                            </td>
+                            <td align="left">
+                                <label>	&nbsp;&nbsp;&nbsp; 详情<span class="calendar-sunday">*</span> </label>
+                            </td>
+
+                            <td align="left">
+                                <input class="kuang_text" type="text" name="address" id="MSG" onkeyup="enterKeySubmit(this,event,submitForm);">
+                            </td>
+                        </tr>
+
+
+
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>-->

@@ -1,0 +1,133 @@
+<div class="modal-header">
+    <button type='button' class='close' data-ng-click="cancel();"><i class="fa fa-close"></i></button>
+    <h4 class="modal-title">{{title}}授权登记</h4>
+</div>
+<div class="modal-body">
+    <form action="" name="utmAddAuthIdForm" class="form-horizontal">
+        <div class="form-group">
+            <div data-ng-class="{'has-error':utmAddAuthIdForm.protectivePlateId.$dirty && utmAddAuthIdForm.protectivePlateId.$invalid}">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>防护板序列号：</label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control" data-ng-model="authorizationCode.protectivePlateId" authcodeid-ensure-unique name="protectivePlateId" required autocomplete="off"
+                       data-ng-required="true"
+                       ng-readonly="authCodeIdSign"
+                       data-ng-pattern="/^[a-z0-9]*$/"
+                       data-ng-minlength="16" data-ng-maxlength="16"/>
+                <span class="help-block m-b-none"
+                      data-ng-if="utmAddAuthIdForm.protectivePlateId.$error.protectivePlateIdUnique && utmAddAuthIdForm.protectivePlateId.$dirty && utmAddAuthIdForm.protectivePlateId.$invalid">
+                              <i class="fa fa-times-circle"></i> 防护板授权码已经存在</span>
+                <span class="help-block m-b-none" data-ng-if="utmAddAuthIdForm.protectivePlateId.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;防护板序列号只能输入小写字母、数字
+                    </span><span class="help-block m-b-none"
+                                 data-ng-if="utmAddAuthIdForm.protectivePlateId.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 防护板序列号长度为16位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="utmAddAuthIdForm.protectivePlateId.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 防护板序列号长度为16位
+                                </span>
+            </div>
+            </div>
+
+            <!--<label class="col-sm-2 control-label"><span class="asterisk_red">*</span>硬件序列号：</label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control" data-ng-model="authorizationCode.hardwareSerialNumber" name="hardwareSerialNumber" required autocomplete="off"/>
+            </div>-->
+
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>硬件序列号：</label>
+
+            <div class="col-sm-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" data-ng-required="true" id="hardwareSerialNumber" name="hardwareSerialNumber" data-ng-model="authorizationCode.hardwareSerialNumber">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                        </ul>
+                    </div>
+                    <!-- /btn-group -->
+                </div>
+            </div>
+
+
+        </div>
+        <div class="form-group">
+            <div data-ng-class="{'has-error':utmAddAuthIdForm.guagCardNo.$dirty && utmAddAuthIdForm.guagCardNo.$invalid}">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>刮刮卡编号：</label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control" data-ng-model="authorizationCode.guagCardNo" name="guagCardNo" required autocomplete="off"
+                       data-ng-required="true"
+                       data-ng-pattern="/^[-0-9]*$/"
+                       data-ng-minlength="24" data-ng-maxlength="24"/>
+                <span class="help-block m-b-none" data-ng-if="utmAddAuthIdForm.guagCardNo.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;刮刮卡编号只能输入数字、-
+                    </span><span class="help-block m-b-none"
+                                 data-ng-if="utmAddAuthIdForm.guagCardNo.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 刮刮卡编号长度为24位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="utmAddAuthIdForm.guagCardNo.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 刮刮卡编号长度为24位
+                                </span>
+            </div>
+            </div>
+
+            <div data-ng-class="{'has-error':utmAddAuthIdForm.guagCardAuthCode.$dirty && utmAddAuthIdForm.guagCardAuthCode.$invalid}">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>刮刮卡授权码：</label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control" data-ng-model="authorizationCode.guagCardAuthCode" name="guagCardAuthCode" required autocomplete="off"
+                       data-ng-required="true"
+                       data-ng-pattern="/^[-A-Z0-9\-]*$/"
+                       data-ng-minlength="19" data-ng-maxlength="19"/>
+                <span class="help-block m-b-none" data-ng-if="utmAddAuthIdForm.guagCardAuthCode.$error.pattern">
+                        <i class="fa fa-times-circle"></i>&nbsp;刮刮卡授权码只能输入大写字母、数字、-
+                    </span><span class="help-block m-b-none"
+                                 data-ng-if="utmAddAuthIdForm.guagCardAuthCode.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 刮刮卡授权码长度为19位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="utmAddAuthIdForm.guagCardAuthCode.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 刮刮卡授权码长度为19位
+                                </span>
+
+            </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>日期：</label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control" readonly def-laydate datetype='datetime' id="registerTime"
+                       data-ng-required="true" data-ng-model="authorizationCode.registerTime" name="registerTime" />
+            </div>
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>授权类型：</label>
+
+            <div class="col-sm-4">
+                <select class="form-control" data-ng-required="true" name="authType" data-ng-model="authorizationCode.authType">
+                    <option value="">-- 请选择 --</option>
+                    <option value="1">正式授权</option>
+                    <option value="2">临时授权</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label class="col-sm-2 control-label">详情：</label>
+
+            <div class="col-sm-10">
+                <div class="col-sm-5" data-ng-class="{'has-error':utmAddAuthIdForm.details.$dirty && utmAddAuthIdForm.details.$invalid}">
+                <textarea class="form-control" rows="4" name="details" data-ng-model="authorizationCode.details" data-ng-maxlength="100"></textarea>
+                    <span class="help-block m-b-none" data-ng-show="utmAddAuthIdForm.details.$error.maxlength">
+                            	<i class="fa fa-times-circle"></i> 详情不能大于100位字符
+                            </span>
+            </div>
+        </div>
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-success" data-ng-disabled="utmAddAuthIdForm.$invalid" data-ng-click="save()">保存</button>
+    <button class="btn btn-sm btn-white" data-ng-click="cancel()"><i class="fa fa-close"></i>&nbsp;关闭</button>
+</div>

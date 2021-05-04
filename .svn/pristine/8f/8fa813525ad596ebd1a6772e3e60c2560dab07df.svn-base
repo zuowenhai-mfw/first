@@ -1,0 +1,8 @@
+//数据查询列表
+app.controller('systemMessageCtrl',  function($scope,$compile,$rootScope,NgTableParams,ngTableCountFactory) {
+    $scope.dataQueryUrl = 'dataQuery/systemMessageResultsList.html';
+
+
+});
+
+

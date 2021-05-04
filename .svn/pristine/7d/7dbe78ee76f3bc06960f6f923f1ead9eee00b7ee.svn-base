@@ -1,0 +1,6 @@
+<!--<div ng-controller="licenseLogListCtrl">-->
+<div ng-controller="licenseLogListCtrl">
+
+    <!--UTM制作登记列表-->
+    <table id="licenseLogList"  data-mobile-responsive="true"></table>
+</div>

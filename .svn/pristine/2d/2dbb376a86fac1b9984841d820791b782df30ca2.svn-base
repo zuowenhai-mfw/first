@@ -1,0 +1,368 @@
+//用户信息维护
+app.controller('businessUserListCtrl',  function($scope,NgTableParams, getDataService,$screenFactory,$confirm, ngTip,$uibModal,$http,$compile) {
+
+
+    $scope.options = [];
+    $scope.events = [];
+    $("#businessUserList").bootstrapTable({
+        url: "/plmcore/businessUserList",
+        showRefresh: false,
+        pageNumber: 1,
+        pagination: true,
+        sidePagination: 'server',
+        pageSize: 10,
+        pageList:[10,25,50,100],
+        showToggle: false,
+        showColumns: false,
+        signleSelect: true,
+        search:true,
+        iconSize: "outline",
+        toolbar: "#toolbar",
+        queryParams:function queryParams(params){
+            var keyword = params.search;
+            if(keyword!== undefined){
+
+            }else{
+                keyword = "";
+            }
+            var param = {
+                "pageNo":params.offset / params.limit + 1,
+                "pageSize":params.limit,
+                "keyword": keyword
+            }
+            return param;
+        },
+        columns: [
+            {checkbox: true},
+            {field: 'id', title: 'id',visible: false},
+            {field: 'name', title: '用户姓名'},
+            {field: 'gendar', title: '性别'},
+            {field: 'phone', title: '座机号'},
+            {field: 'mobile', title: '手机号'},
+            {field: 'type', title: '用户类型',formatter:function(value,row,index){
+                    var value = "";
+                    if(row.type=='1'){
+                        return "发布人员";
+                    }else if(row.type=='2'){
+                        return "销售人员";
+                    }else if(row.type=='3'){
+                        return "下单人员";
+                    }else if(row.type=='4'){
+                        return "发货人员";
+                    }else if(row.type=='5'){
+                        return "需求人员";
+                    }else{
+                        return "实施人员";
+                    }
+                }
+            },
+
+            {field: 'operate', title: '操作', formatter: function(value,row,index){
+                var rtn = "<div id='option_"+index+"'></div>"
+                var event= '<span title="编辑" ng-click="editBusinessUser('+row.id+')"><a class="fa fa-edit"></a></span> &nbsp;'
+
+                $scope.options.push("option_"+index)
+                $scope.events.push(event)
+                return rtn
+            }}
+        ],
+        onLoadSuccess:function(){
+            /*for(var i=0;i<$scope.options.length;i++){
+                var _option = $scope.options[i]
+                var _event = $scope.events[i];
+                var $el = $(_event).appendTo('#'+_option)
+                $compile($el)($scope)
+            }*/
+
+
+            for(var i=0;i<$scope.options.length;i++){
+                var _option = $scope.options[i]
+                var _event = $scope.events[i];
+                $('#'+_option).empty();
+                var $el = $(_event).appendTo('#'+_option);
+                $compile($el)($scope);
+            }
+
+
+
+        }
+    });
+
+    //打开编辑页面
+    $scope.editBusinessUser = function(obj){
+        $uibModal.open({
+            templateUrl : 'systemManage/businessUserManage/businessUserEdit.html',
+            controller :'addOrEditBusinessUserCtrl',
+            backdrop :'static',
+            size : 'lg',
+            resolve : {
+                param : function() {
+                    return   angular.copy(obj);
+                }
+            }
+        });
+    }
+
+    //打开新增页面
+    $scope.addOrEditBusinessUser = function(obj){
+        $uibModal.open({
+            templateUrl : 'systemManage/businessUserManage/businessUserAdd.html',
+            controller :'addOrEditBusinessUserCtrl',
+            backdrop :'static',
+            size : 'lg',
+            resolve : {
+                param : function() {
+                    return   angular.copy(obj);
+                }
+            }
+        });
+    }
+
+    //删除用户
+    $scope.delUserList = function(){
+        var checkId = [];
+        var dataType = [];
+        var rows = $("#userList").bootstrapTable('getSelections');
+        for(var i=0;i<rows.length;i++){
+            checkId.push(rows[i].id);
+        }
+        //判断选择的用户是否有内置用户
+        for(var i=0;i<rows.length;i++){
+            //dataType.push(rows[i].dataType);
+            if(rows[i].dataType == "1"){
+                ngTip.tip("默认内置用户不能删除！", "warning");
+                return;
+            }
+        }
+        if(rows.length == 0){
+            ngTip.tip("请选择要删除的数据！", "warning");
+        }/*else if(rows.length>1){
+            ngTip.tip("不能批量删除用户，只能单个删除！", "warning");
+        }*/else{
+            $confirm({text: "删除的数据无法恢复，您确认删除吗？", title: "删除数据", ok: "是", cancel: "否"})
+                .then(function () {
+                    $http({
+                        method: 'post',
+                        url: '/plmcore/delUser',
+                        params: {
+                            checkId: checkId.join(",")
+                        }
+                    }).success(function (response) {
+                        if(response.stateCode == '1'){
+                            ngTip.tip(response.message, "success");
+                        }else{
+                            ngTip.tip(response.message, "warning");
+                        }
+                        //$("#userList").bootstrapTable('refresh')
+                        var time = setTimeout(function(){
+                            var index = parent.layer.getFrameIndex(window.name);
+                            parent.location.reload();
+                            parent.layer.close(index);
+                        },1000);
+                    });
+                });
+        }
+    }
+
+
+    //删除列表
+    $scope.delCustomersInfoList = function(){
+        var checkId = [];
+        var rows = $("#customersInformList").bootstrapTable('getSelections');
+        for(var i=0;i<rows.length;i++){
+            checkId.push(rows[i].id);
+        }
+        if(rows.length == 0){
+            ngTip.tip("请选择要删除的数据！", "warning");
+        }else{
+
+            $confirm({text: "删除的数据无法恢复，您确认删除吗？", title: "删除数据", ok: "是", cancel: "否"})
+                .then(function () {
+                    $http({
+                        method: 'post',
+                        url: '/plmcore/deleteCustomersInformMaintenance',
+                        params: {
+                            checkId: checkId.join(",")
+                        }
+                    }).success(function (response) {
+                        if(response.stateCode == '1'){
+                            ngTip.tip(response.message, "success");
+                        }else{
+                            ngTip.tip(response.message, "warning");
+                        }
+                        $("#customersInformList").bootstrapTable('refresh');
+                    });
+                });
+        }
+    }
+
+});
+
+
+/**
+ *校验新增用户名唯一的指令。
+ */
+app.directive('nameEnsureUnique',
+    function ($http) {
+        return {
+            restrict: 'EA',
+            require: '?ngModel',
+            link: function ($scope, element, attrs, c) {
+                $scope.$watch(attrs.ngModel, function () {
+                    var name = $scope.addUser.name;
+                    if ($scope.addUser.name !== undefined) {
+                        $http({
+                            method: 'POST',
+                            timeout: 10000,
+                            url: '/plmcore/validateBusinessName',
+                            params: {
+                                id: $scope.addUser.id,
+                                name: name
+                            }
+                        }).success(function (data) {
+                            // 该方法用于改变验证状态，以及在控制变化的验证标准时通知表格（validationErrorKey,isValid）
+                            c.$setValidity('bussinesUnique', data);
+                        }).error(function () {
+                            c.$setValidity('unique', false);
+                        });
+                    }else{
+                        c.$setValidity('bussinesUnique', true);
+                    }
+
+                });
+            }
+        }
+    });
+
+
+/*点击编辑或者新增的模态框*/
+app.controller('addOrEditBusinessUserCtrl',function($rootScope,$scope,$uibModalInstance,ngTip,param,$http){
+    //关闭按钮
+    $scope.cancel = function(){
+        $uibModalInstance.dismiss('cancel');
+    }
+
+    $scope.addUser = {};
+    $scope.addUser.id = 0;
+    $scope.title = '新增';
+    if(param != undefined){
+        $scope.title = '编辑';
+        $scope.addUser.id = param;
+        //console.log("$scope.addUser.id============"+$scope.addUser.id);
+        $http({
+            url:'/plmcore/getBusinessUserById',
+            method :'POST',
+            params: {
+                id: $scope.addUser.id
+            }
+        }).success(function(res){
+            $scope.addUser = res;
+            $scope.addUser.type = res.type+"";
+            //console.log("res.type============"+$scope.addUser.type);
+            //console.log("title============"+$scope.title);
+        })
+    }else{
+        $scope.title = '新增';
+    }
+
+
+    $http({
+        method: "POST",
+        url: "/plmcore/roleList"
+    }).success(function (res) {
+        $scope.user_role_add = res;
+    })
+
+
+    // 点击关闭按钮，关闭模态框.
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
+
+    /**
+     *	加密
+     */
+    var key = CryptoJS.enc.Utf8.parse('o7H8uIM2O5qv65l2');//秘钥
+    $scope.encryptKey = key;
+    function Encrypt(word){
+
+        var srcs = CryptoJS.enc.Utf8.parse(word);
+
+        var encrypted = CryptoJS.AES.encrypt(srcs, $scope.encryptKey, {mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});
+
+        return encrypted.toString();
+
+    }
+
+    $http({
+        method  : 'POST',
+        url     : '/plmcore/getEncryptKey',
+    }).success(function(res) {
+        if (res.stateCode === 1) {
+            $scope.encryptKey = CryptoJS.enc.Utf8.parse(res.data);//秘钥
+        }
+    });
+
+    $scope.addUserInfoForm = function () {
+        // 防止表单多次点击重复提交
+
+        if (!$scope.addBusinessUserForm.$submitted) {
+            $scope.addBusinessUserForm.$submitted = true;
+            $uibModalInstance.close('cancel');// 关闭模态框
+            $http({
+                method: "POST",
+                url: "/plmcore/saveBusinessUser",
+                params: {
+                    name: $scope.addUser.name,
+                    gendar: $scope.addUser.gendar,
+                    phone: $scope.addUser.phone,
+                    mobile: $scope.addUser.mobile,
+                    type: $scope.addUser.type
+                }
+            }).success(function (res) {
+                ngTip.tip(res);
+                //$rootScope.$broadcast('userTableRefresh');// 刷新页面
+                var time = setTimeout(function(){
+                    var index = parent.layer.getFrameIndex(window.name);
+                    parent.location.reload();
+                    parent.layer.close(index);
+                },1000);
+            })
+
+        }
+
+    }
+
+    $scope.editUserInfoForm = function () {
+
+        if (!$scope.editBusinessUserForm.$submitted) {
+            $scope.editBusinessUserForm.$submitted = true;
+            // 同步调用getUserDataService。获得接口，调用承诺api获取数据.resolve
+            $uibModalInstance.close('cancel');// 关闭模态框
+            $http({
+                method: "POST",
+                url: "/plmcore/saveBusinessUser",
+                params: {
+                    id: $scope.addUser.id,
+                    name: $scope.addUser.name,
+                    gendar: $scope.addUser.gendar,
+                    phone: $scope.addUser.phone,
+                    mobile: $scope.addUser.mobile,
+                    type: $scope.addUser.type
+                }
+            }).success(function (res) {
+                ngTip.tip(res);
+                //$rootScope.$broadcast('userTableRefresh');// 刷新页面
+                var time = setTimeout(function(){
+                    var index = parent.layer.getFrameIndex(window.name);
+                    parent.location.reload();
+                    parent.layer.close(index);
+                },1000);
+                //$("#userList").bootstrapTable('refresh')
+            })
+
+        }
+
+    }
+})
+

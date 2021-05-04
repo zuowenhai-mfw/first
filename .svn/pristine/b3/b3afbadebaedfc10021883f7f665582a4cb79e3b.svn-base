@@ -1,0 +1,138 @@
+<form action="" class="form-horizontal"><!--ng-controller="hardwareReleaseDetailContentCtrl-->
+    <!--基本信息-->
+    <fieldset>
+        <legend>
+            <h4>基本信息</h4>
+        </legend>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">硬件编码：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static" ng-bind="hardwarePlatformPublish.hardwareCode"></p>
+            </div>
+            <label class="col-sm-2 control-label">硬件平台：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static" ng-bind="hardwarePlatformPublish.hardwarePlatform"></p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">厂商编码：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static" ng-bind="hardwarePlatformPublish.factoryCode"></p>
+            </div>
+            <label class="col-sm-2 control-label">厂商信息：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static" ng-bind="hardwarePlatformPublish.factoryInfo"></p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">发布人：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static" ng-bind="hardwarePlatformPublish.publishPerson"></p>
+            </div>
+            <label class="col-sm-2 control-label">发布日期：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static" ng-bind="hardwarePlatformPublish.publishDate"></p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">建档日期：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static" ng-bind="hardwarePlatformPublish.putOnRecordDate"></p>
+            </div>
+            <label class="col-sm-2 control-label">预期用途：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static" ng-bind="hardwarePlatformPublish.expectPurpose"></p>
+            </div>
+        </div>
+    </fieldset>
+    <!--详细信息-->
+    <fieldset>
+        <legend>
+            <h4>详细信息</h4>
+        </legend>
+        <div class="form-group">
+            <div class="col-sm-12 text-center">
+                <label class="checkbox-inline">
+                    <input type="radio" name="version" ng-checked="signleChecked" value="单版">&nbsp;单版
+                </label>
+                <label class="checkbox-inline">
+                    <input type="radio" name="version" ng-checked="doubleChecked" value="双版">&nbsp;双版
+                </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">芯片组：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{hardwarePlatformPublish.firstChipset}}</p>
+            </div>
+            <label class="col-sm-2 control-label" data-ng-if="twoVconfig">芯片组：</label>
+
+            <div class="col-sm-4" data-ng-if="twoVconfig">
+                <p class="form-control-static">{{hardwarePlatformPublish.secondChipset}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">CPU：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{hardwarePlatformPublish.firstCpu}}</p>
+            </div>
+            <label class="col-sm-2 control-label" data-ng-if="twoVconfig">CPU：</label>
+
+            <div class="col-sm-4" data-ng-if="twoVconfig">
+                <p class="form-control-static">{{hardwarePlatformPublish.secondCpu}}</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">内存：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{hardwarePlatformPublish.firstMemory}}</p>
+            </div>
+            <label class="col-sm-2 control-label" data-ng-if="twoVconfig">内存：</label>
+
+            <div class="col-sm-4" data-ng-if="twoVconfig">
+                <p class="form-control-static">{{hardwarePlatformPublish.secondMemory}}</p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">电源：</label>
+
+            <div class="col-sm-4">
+                <p class="form-control-static">{{hardwarePlatformPublish.firstPowerSupply}}</p>
+            </div>
+            <label class="col-sm-2 control-label" data-ng-if="twoVconfig">电源：</label>
+
+            <div class="col-sm-4" data-ng-if="twoVconfig">
+                <p class="form-control-static">{{hardwarePlatformPublish.secondPowerSupply}}</p>
+            </div>
+        </div>
+    </fieldset>
+    <!--备注信息-->
+    <fieldset>
+        <legend>
+            <h4>备注信息</h4>
+        </legend>
+        <div class="form-group">
+            <textarea class="form-control" rows="4" disabled>{{hardwarePlatformPublish.remarks}}</textarea>
+        </div>
+
+    </fieldset>
+    <!--修改记录-->
+    <fieldset>
+        <legend>
+            <h4>修改记录</h4>
+        </legend>
+        <table id="editRecordList" data-mobile-responsive="true"></table>
+    </fieldset>
+</form>

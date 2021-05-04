@@ -1,0 +1,116 @@
+<div class="modal-header">
+    <button type='button' class='close' data-ng-click="cancel();"><i class="fa fa-close"></i></button>
+    <h4 class="modal-title">{{title}}产品交付发货信息</h4>
+</div>
+<div class="modal-body" data-ng-click="setSearchConToggle($event)">
+    <form action="" class="form-horizontal" name="productDeliverForm" novalidate>
+
+        <div class="form-group"
+             data-ng-class="{'has-error':productDeliverForm.billNo.$dirty && productDeliverForm.billNo.$invalid}">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>单据号：</label>
+            <div class="col-sm-3">
+                <input type="text" class="form-control" data-ng-model="productDeliver.billNo" data-ng-minlength="2"
+                       data-ng-pattern="/^[a-zA-Z0-9\_]*$/" autofocus="autofocus"
+                       data-ng-maxlength="20" name="billNo" data-ng-required="true" autocomplete="off"
+                       asset-report-name-unique />
+                <span class="help-block m-b-none" data-ng-if="productDeliverForm.billNo.$error.pattern">
+                <i class="fa fa-times-circle"></i>&nbsp;单据号只能输入字母、数字和下划线
+            </span>
+                <span class="help-block m-b-none" data-ng-if="productDeliverForm.billNo.$error.minlength">
+                <i class="fa fa-times-circle"></i>&nbsp;单据号长度不能少于2位
+            </span>
+                <span class="help-block m-b-none" data-ng-if="productDeliverForm.billNo.$error.maxlength">
+                <i class="fa fa-times-circle"></i>&nbsp;单据号长度不能大于20位
+            </span>
+                <span class="help-block m-b-none" data-ng-if="productDeliverForm.billNo.$error.nameUnique && productDeliverForm.billNo.$dirty && productDeliverForm.billNo.$invalid && !productDeliverForm.billNo.$error.minlength&& !productDeliverForm.billNo.$error.pattern && !productDeliverForm.billNo.$error.required">
+                <i class="fa fa-times-circle"></i>&nbsp;单据号已经存在
+            </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>发货人：</label>
+
+            <!--<div class="col-sm-4">
+                <input type="text" class="form-control" ng-model="addOrEditProductDeliveryForm.consignor" name="consignor" required autocomplete="off"/>
+            </div>-->
+            <div class="col-sm-4">
+                <select class="form-control" name="sendUser"
+                        data-ng-model="productDeliver.sendUserId"
+                        data-ng-options="sendUser.value as sendUser.text for sendUser in sendData"
+                        data-ng-required="true">
+                    <option value="">---请选择---</option>
+                </select>
+            </div>
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>发货日期：</label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control" def-laydate datetype='date' id="sendDate" data-ng-required="true"
+                       data-ng-model="productDeliver.sendDate" name="sendDate" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>需求人：</label>
+
+            <!--<div class="col-sm-4">
+                <input type="text" class="form-control" ng-model="addOrEditProductDeliveryForm.needuser" name="needuser" required autocomplete="off"/>
+            </div>-->
+            <div class="col-sm-4">
+                <select class="form-control" name="demandUser"
+                        data-ng-model="productDeliver.demandUserId"
+                        data-ng-options="demandUser.value as demandUser.text for demandUser in demandData"
+                        data-ng-required="true">
+                    <option value="">---请选择---</option>
+                </select>
+            </div>
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>接收单位：</label>
+
+            <div class="col-sm-4">
+                <input type="text" data-ng-required="true" data-ng-model="productDeliver.company" name="company" class="form-control">
+
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>接收人员：</label>
+
+            <div class="col-sm-4">
+                <select class="form-control" name="receiveUser" data-ng-change="changetype(productDeliver.customerId)"
+                        data-ng-model="productDeliver.customerId"
+                        data-ng-options="receiveUser.value as receiveUser.text for receiveUser in receiveData"
+                        data-ng-required="true">
+                    <option value="">---请选择---</option>
+                </select>
+                <!--<input type="text" ng-model="addOrEditProductDeliveryForm.receivePersonnel" name="receivePersonnel" class="form-control">-->
+            </div>
+            <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>联系方式：</label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control" data-ng-model="productDeliver.contactInfo" name="contactInfo" data-ng-required="true" autocomplete="off"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">备注：</label>
+
+            <div class="col-sm-10">
+                <div class="col-sm-5" data-ng-class="{'has-error':productDeliverForm.remarks.$dirty && productDeliverForm.remarks.$invalid}">
+                <textarea class="form-control" rows="4" data-ng-model="productDeliver.remarks" name="remarks" data-ng-maxlength="100"></textarea>
+                    <span class="help-block m-b-none" data-ng-show="productDeliverForm.remarks.$error.maxlength">
+                            	<i class="fa fa-times-circle"></i> 描述信息不能大于100位字符
+                            </span>
+                </div>
+            </div>
+        </div>
+        <fieldset>
+            <legend>
+                <h4>选择硬件序列号</h4>
+            </legend>
+            <table id="hardwareNumberList" data-mobile-responsive="true"></table>
+
+        </fieldset>
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-success" data-ng-disabled="productDeliverForm.$invalid" data-ng-click="save()">保存</button>
+    <button class="btn btn-sm btn-white" data-ng-click="cancel()"><i class="fa fa-close"></i>&nbsp;关闭</button>
+</div>
