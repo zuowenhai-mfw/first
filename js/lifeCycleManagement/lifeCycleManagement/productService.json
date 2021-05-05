@@ -1,0 +1,13 @@
+[
+  {
+    "id": "1",
+    "hardwareNumber": "00012",
+    "implementer": "小李",
+    "effectiveDate": "2020-01-02",
+    "userUnits": "xxx单位",
+    "contacts": "小王",
+    "contractNumber": "15",
+    "contactInformartion": "15890201846",
+    "remark":"xxxxx"
+  }
+]

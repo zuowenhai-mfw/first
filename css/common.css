@@ -1,0 +1,637 @@
+*{
+	border-radius:0 !important;
+}
+table{
+	width:100%;
+}
+/*列表文本居中*/
+.data_list table th, .data_list table td{
+	text-align:center;
+	word-wrap: break-word;
+}
+
+/*列表中的span鼠标放上去显示小手*/
+.data_list span, .profile-element img{
+	cursor:pointer;
+}
+
+/*选择按钮样式*/
+.btn_select {
+	width: 60px;
+	height: 24px !important;
+	background: #f1f1f1;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+/*列表中的查询条件字段样式*/
+.search_text .form-group .control-label{
+	width:100px;
+	text-align:right;
+}
+
+/*绿色*/
+.color_1{
+	color: #1ab394;
+}
+/*蓝色*/
+.color_2{
+	color: #1c84c6;
+}
+/*黄色*/
+.color_3{
+	color: #ffcc00;
+}
+/*橙色*/
+.color_4{
+	color: #f8ac59;
+}
+/*红色*/
+.color_5{
+	color: #ed5565;
+}
+
+/*绿色背景*/
+.color_bg_1{
+	background-color: #1ab394;
+}
+/*蓝色背景*/
+.color_bg_2{
+	background-color: #1c84c6;
+}
+/*黄色背景*/
+.color_bg_3{
+	background-color: #ffcc00;
+}
+/*橙色背景*/
+.color_bg_4{
+	background-color: #f8ac59;
+}
+/*红色背景*/
+.color_bg_5{
+	background-color: #ed5565;
+}
+
+/*策略管理列表下发情况是已下发时加下划线*/
+.issued{
+	text-decoration:underline;
+}
+.Firewallissued{
+	text-decoration:underline;
+}
+/*策略管理列表鼠标滑过下发情况时出现的table样式*/
+.menuTable{
+    width: 300px;
+    padding: 7px;
+	border:1px solid #e7e7e7;
+}
+
+/*点击input框弹出树图的样式*/
+.input_tree{
+	position:absolute;
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+	z-index:105;
+	max-height: 240px;
+	overflow-Y: auto;
+}
+
+/*星号样式*/
+.asterisk_red{
+	color:#ff0000;
+	margin-right:5px;
+	font-weight:bold;
+	vertical-align:middle;
+}
+
+/*事件管理中事件类型框架的高度*/
+.content_height	{
+	height:230px !important;
+	overflow-Y:auto;
+}
+
+.form-group [class*='col-sm-']{
+	padding-left:5px;
+	padding-right:5px;
+}
+.form-inline .btn{
+	margin-top:5px;
+}
+.arrow_right_class{
+	width:30px;
+	margin-top:18%;
+}
+
+.navbar-header h2{
+	 color:#1a4483;
+	 letter-spacing:10px;
+	 font-weight:bold;
+	 margin:12px 0px;
+	 /*color:#fff;
+	 text-shadow:2px -2px 4px #003366; 
+	 filter:progid:DXImageTransform.Microsoft.Shadow(color=#003366, strength=4, direction=45);*/
+}
+
+.score_bg{
+	width:100px;
+	height:150px;
+	background:url(../img/score_bg.png) center no-repeat;
+	line-height: 150px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.tree_asset_title{
+	position:relative;
+	background:#fff;
+	border:1px solid #999;
+	border-radius:3px;
+	width:100px;
+	z-index:99;
+}
+.tree_asset_title div{
+	padding-left:5px;
+}
+.tree_asset_title div a:hover{
+	background:none !important;
+	cursor:default;
+}
+.tree_asset_title div a span:hover{
+	cursor:pointer;
+}
+textarea{
+	resize: none;
+}
+.skin-color{
+	color:#fff;
+	opacity:0;
+}
+.skin-show{
+	opacity:0.4;
+}
+#navUpDown{
+	margin-top:10px;
+	margin-right:5px;
+}
+#navUpDown img{
+	height:30px;
+}
+
+#news .badge{
+	position: absolute;
+	top: -5px;
+	right: 7px;
+	font-size: 9px;
+}
+#news .small-chat-box{
+	max-height:150px;
+	bottom:40px;
+	right:10px;
+	padding:15px;
+}
+#news .small-chat-box .chat-message{
+	padding:5px 10px;
+}
+#news .small-chat-box .chat-message:hover{
+	background: #f5f5f5;	
+}
+#news .divider {
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+/*安全态势中的高度和样式*/
+.height-xs {
+	height: 150px
+}
+.height-sm {
+	height: 285px
+}
+.height-md {
+	height: 300px
+}
+.height-Device {
+	height: 400px
+}
+.height-m {
+	height: 612px
+}
+/*列表左侧树图样式*/
+.my-content,.my-content .row{
+	height: 100%;
+}
+.my-content .col-md-2{
+	/*position:fixed;*/
+/*width:220px;*/
+height:100%;
+	background:#ecf5ff;
+	padding:0 0 0 0px;
+	overflow-y:auto;
+}
+.my-content .col-md-2 .dataQuery .form-control{
+	height: 34px;
+	font-size: 14px;
+}
+.my-content .col-md-10{
+	/*width:calc(100% - 220px);*/
+	/*left:220px;*/
+	height: 100%;
+	overflow: auto;
+	padding-top:15px;
+}
+.my-content .widget{
+	margin-top:0px;
+}
+.my-content .col-md-2 .ztree li ul{ margin:0; padding:0}
+.my-content .col-md-2 .ztree li {line-height:30px;}
+.my-content .col-md-2 .ztree li a {width:210px;height:30px;padding-top: 0px;}
+.my-content .col-md-2 .ztree li a:hover {text-decoration:none; background-color:#f5f5f5;}
+.my-content .col-md-2 .ztree li a.curSelectedNode {background-color:#fff;border:0;height:30px;}
+.my-content .col-md-2 .ztree li span {line-height:30px;}
+.my-content .col-md-2 .ztree li span.button.noline_open { background:url(../comp/zTree/zTreeStyle/img/left_menuForOutLook.png); *background-image:url(../comp/zTree/zTreeStyle/img/left_menuForOutLook.gif); background-position: 0 0;}
+.my-content .col-md-2 .ztree li span.button.noline_close {background:url(../comp/zTree/zTreeStyle/img/left_menuForOutLook.png); *background-image:url(../comp/zTree/zTreeStyle/img/left_menuForOutLook.gif); background-position: -18px 0;}
+.my-content .col-md-2 .ztree li span.button.noline_docu{background:none;}
+.my-content .col-md-2 .ztree li span.button.ico_open, .my-content .col-md-2 .ztree li span.button.ico_docu, .my-content .col-md-2 .ztree li span.button.ico_close { margin-top:7px;}
+
+.my_pager .btn{
+	padding:2px 6px;
+}
+.my_pager .dropdown-menu {
+	min-width:50px;
+	margin-right:78px;
+	margin-top:-130px;
+}
+.my_pager .dropdown-menu>li>a {
+	line-height: 15px;
+	margin: 2px;
+	text-align: left;
+}
+/*换肤的宽度*/
+.skinWidth{
+	min-width: 160px;
+}
+/*经常性检查*/
+#result .layer-date{display: inline-block!important;vertical-align:text-top;max-width:130px;}
+
+@media (min-width:992px) {
+	#equiptrends .col-md-2{
+		width: 12%;
+	}
+	#equiptrends .col-md-3{
+		width: 20%;
+	}
+	#equiptrends .col-md-10{
+		width: 85%;
+	}
+}
+.p-r-l-sm{
+	padding:0px 5px;
+}
+.box{
+	border:dashed 1px #ccc;
+	height: 160px;
+	margin-bottom: 10px;
+	overflow: auto;
+	display: block;
+}
+.vertical{
+	border-left: 1px solid #ccc;
+	margin:0 5px;
+}
+/*表头固定*/
+.tableFixed{
+	overflow: auto;
+	overflow-x:hidden;
+	position: relative;
+}
+.table{
+	margin-bottom:0;
+}
+/*栅格一行显示5块*/
+.w20 .col-sm-2 {
+	width:20%;
+}
+/*经常性检查中安排训练分数的input框*/
+.form-inline .input-s-xs {
+	width: 50px
+}
+
+.btn-gray{
+	background-color: #c2c2c2;
+	border-color: #c2c2c2;
+	color: #FFF;
+}
+.btn-gray.active, .btn-gray:active, .btn-gray:focus, .btn-gray:hover, .open .dropdown-toggle.btn-gray {
+	background-color: #c2c2c2;
+	border-color: #c2c2c2;
+	color: #FFF
+}
+
+/*事件详情中的事件还原*/
+.process_body {
+	margin-left:7%;
+	height:60px;
+}
+.process_body .process_source, .process_body .process_purpose {
+	float:left;
+	padding:6px;
+	background-color:#fff;
+	border:1px solid #e7eaec;
+	cursor:pointer;
+	line-height:20px;
+	text-align:center;
+}
+.process_body .process_source {
+	margin:0 5px;
+}
+.process_body .process_purpose {
+	margin:0 10px;
+}
+.process_body .process_pointer {
+	float:left;
+	width:35%;
+}
+.process_body .process_pointer .process_pointer_middle {
+	width: 100%;
+	height: 5px;
+	cursor:pointer;
+}
+.process_body .process_pointer .process_pointer_top, .process_body .process_pointer .process_pointer_bottom {
+	text-align:center;
+	clear:both;
+	cursor:pointer;
+}
+.process_body .process_pointer .process_pointer_top {
+	padding:5px 0;
+}
+.process_body .process_pointer .process_pointer_bottom {
+	padding:0 0 5px 0;
+}
+.process_body .process_pointer .fa {
+	font-size:30px;
+	float:right;
+	margin: -13px -5px 0 0;
+}
+/*域管理中的表头颜色*/
+.table-thead-fixed thead tr{
+	background-color: #F5F5F6;
+}
+
+
+/*table列表中的操作下拉按钮*/
+.operation_content {
+	display:none;
+	position: absolute;
+	z-index:100;
+	right:50px;
+}
+.operation_content ul {
+	border: medium none;
+	list-style: none outside none;
+	padding: 0;
+	min-width: 120px;
+	margin: 2px 0 0;
+	text-align: left;
+	background-color: #fff;
+	box-shadow: 0 0 3px rgba(86,96,117,.3);
+}
+.operation_content ul > li > a {
+	color: inherit;
+	line-height: 30px;
+	margin: 4px;
+	padding: 3px 20px;
+}
+
+/*有关表单向导的css*/
+.formactive{
+	background: #1AB394;
+	color: #fff;
+}
+.gray{
+	background: #ccc;
+	color: #fff;
+}
+.dark{
+	background: #6fd1bd;
+	color: #fff;
+}
+/*告警规则管理中的样式*/
+.alarmTitle{
+	height: 30px;
+}
+.alarmTitle li{
+	margin: 0px 0px 0px 5px;
+	cursor: default;
+	padding: 7px;
+	float: left;
+	display: block;
+	width: 20%;
+	-webkit-border-radius: 5px !important;
+	-moz-border-radius: 5px !important;
+	border-radius: 5px !important;
+}
+/*资产新增中的样式*/
+.title{
+	width: 450px;
+	height: 50px;
+	margin:0 auto;
+}
+.title div{
+	float: left;
+}
+.title .square{
+	width: 150px;
+	line-height: 20px;
+	height: 5px;
+	background-color: #ccc;
+	float: left;
+	margin-top: 16px;
+}
+.title .introduce{
+	clear:both;
+	margin-left: -8px;
+	padding-top: 10px;
+}
+
+/*安全检查 检查结果日历数字字体大小*/
+html .fc-day-number {
+	font-size: 18px;
+}
+/*安全检查 成绩*/
+.fc-day-content .m-l-md {
+	text-align: center;
+	margin: 20% 0 0 0;
+}
+.fc-day-content .m-l-md span {
+	font-size: 20px;
+	font-weight: 700;
+}
+/*使用ibox、ibox-title去掉上面的灰色*/
+.Lr .ibox-title{
+	border-color: #fff;
+}
+.Lr .col-sm-5{
+	width: 47% ;
+}
+/*重新整合弹出模态框的大小*/
+@media (min-width:1930px) {
+	/*正常*/
+	.modal-dialog {
+		width: 900px;
+		margin: 30px auto
+	}
+	.modal-dialog .modal-body {
+		max-height: 900px;
+	}
+	/*最大*/
+	.modal-lg {
+		width: 1300px
+	}
+	/*较小*/
+	.modal-md {
+		width: 700px
+	}
+
+	/*最小*/
+	.modal-sm {
+		width: 500px;
+		margin: 8% auto
+	}
+
+	/*有关类似弹出框中策略下发的高度*/
+	.Lr .ibox-content{
+		height: 600px;
+		overflow: auto;
+	}
+}
+@media screen and (min-width:1367px) and (max-width:1930px){
+	/*正常*/
+	.modal-dialog {
+		width: 750px;
+		margin: 30px auto
+	}
+	.modal-dialog .modal-body {
+		max-height: 550px;
+	}
+	/*最大*/
+	.modal-lg {
+		width: 1100px;
+	}
+
+	/*较小*/
+	.modal-md {
+		width: 500px
+	}
+	/*最小*/
+	.modal-sm {
+		width: 400px;
+		margin: 8% auto
+	}
+	/*有关类似弹出框中策略下发的高度*/
+	.Lr .ibox-content{
+		height: 290px;
+		overflow: auto;
+	}
+}
+@media screen and (min-width:768px) and (max-width:1367px){
+	/*正常*/
+	.modal-dialog {
+		width: 650px;
+		margin: 30px auto
+	}
+	.modal-dialog .modal-body {
+		max-height: 400px;
+	}
+	/*最大*/
+	.modal-lg {
+		width: 750px
+	}
+
+	/*较小*/
+	.modal-md {
+		width: 450px
+	}
+	/*最小*/
+	.modal-sm {
+		width: 400px;
+		margin: 8% auto
+	}
+	/*有关类似弹出框中策略下发的高度*/
+	.Lr .ibox-content{
+		height: 215px;
+		overflow: auto;
+	}
+	.Lr .steateIssued{
+		height: 143px;
+		overflow: auto;
+	}
+}
+@media (max-width:768px) {
+	/*正常*/
+	.modal-dialog {
+		width: 500px;
+		margin: 30px auto
+	}
+	.modal-dialog .modal-body {
+		max-height: 300px;
+	}
+	/*最大*/
+	.modal-lg {
+		width: 600px
+	}
+	/*较小*/
+	.modal-md {
+		width: 400px
+	}
+	/*最小*/
+	.modal-sm {
+		width: 400px
+	}
+}
+/*有关首页中的几个色块的样式*/
+.h-210{ height:200px;}
+.f3f3f4 { background:#f3f3f4;}
+.f3f3f4 .table>thead>tr>th {
+	background-color: #fff;
+}
+.f3f3f4 .table>.cloneThead>tr>th{
+	border-top:0;
+}
+
+.f3f3f4 .ibox-title{
+	border: none;
+}
+.w20 .ibox:hover{
+	cursor:pointer;
+
+}
+.bg-green {
+	background: none repeat scroll 0% 0% #00ACAC !important;
+	color:#fff;
+}
+.bg-blue {
+	background: none repeat scroll 0% 0% #348FE2 !important;
+	color:#fff;
+}
+.bg-purple {
+	background: none repeat scroll 0% 0% #727CB6 !important;
+	color:#fff;
+}
+.bg-yellow {
+	background: none repeat scroll 0% 0% #f8ac59 !important;
+	color: #fff;
+}
+/*表格下面的跳转页码的输入框 的样式*/
+.form-inline .jumptext{
+	width: 40px;
+	height: 22px;
+	padding: 1px;
+}
+#page-wrapper #content-main {
+	overflow: auto;
+}
+
+

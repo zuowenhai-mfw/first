@@ -1,0 +1,218 @@
+<script>
+    $(function() {
+        $(".myTab a").click(function(e){
+            e.preventDefault();
+            $(this).tab('show');
+        })
+    })
+</script>
+<div class="modal-header">
+    <button type='button' class='close' data-ng-click="cancel();"><i class="fa fa-close"></i></button>
+    <h4 class="modal-title">{{title}}用户</h4>
+</div>
+<div class="modal-body">
+    <form action="" class="form-horizontal" name="addUserForm">
+
+        <div class="modal-body tabs-container">
+            <div class="myTab">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#userMessage" data-toggle="tab">用户信息</a></li>
+                    <li><a href="#roleMessage" data-toggle="tab">角色信息</a></li>
+                </ul>
+            </div>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="userMessage">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <div data-ng-class="{'has-error':addUserForm.addUserName.$dirty && addUserForm.addUserName.$invalid}">
+                                <!-- 用户名 -->
+                                <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>用户名：</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" autofocus="autofocus" autocomplete="off"
+                                           data-ng-model="addUser.username" username-ensure-unique
+                                           name="addUserName" placeholder="用户名" data-ng-required="true"
+                                           data-ng-minlength="2" data-ng-maxlength="20"
+                                           data-ng-pattern="/^[a-zA-Z0-9\u4e00-\u9fa5\_]*$/" /> <span
+                                        class="help-block m-b-none"
+                                        data-ng-if="addUserForm.addUserName.$error.userUnique && addUserForm.addUserName.$dirty && addUserForm.addUserName.$invalid">
+                                    <i class="fa fa-times-circle"></i> 用户名已经存在
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="addUserForm.addUserName.$error.pattern"> <i
+                                        class="fa fa-times-circle"></i> 只能输入字母、数字、汉字、下划线
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="addUserForm.addUserName.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 用户名不能少于2位
+                                </span> <span class="help-block m-b-none"
+                                              data-ng-if="addUserForm.addUserName.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 用户名不能大于20位
+                                </span>
+                                </div>
+                            </div>
+                            <div data-ng-class="{'has-error':addUserForm.realname.$dirty && addUserForm.realname.$invalid}">
+                                <!-- 姓名 -->
+                                <label class="col-sm-3 control-label"><span class="asterisk_red">*</span>姓名：</label>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" autocomplete="off"
+                                           data-ng-pattern="/^[a-zA-Z\u4E00-\u9FA5]+$/"
+                                           data-ng-model="addUser.realName" name="realname"
+                                           placeholder="真实姓名" data-ng-required="true"
+                                           data-ng-minlength="2" data-ng-maxlength="10" /> <span
+                                        class="help-block m-b-none"
+                                        data-ng-if="addUserForm.realname.$error.pattern"> <i
+                                        class="fa fa-times-circle"></i> 姓名只能包含字母、汉字
+                                </span>
+                                    <span class="help-block m-b-none"
+                                          data-ng-if="addUserForm.realname.$error.minlength">
+                                    <i class="fa fa-times-circle"></i> 姓名不能少于2位
+                                 </span>
+                                    <span class="help-block m-b-none"
+                                          data-ng-if="addUserForm.realname.$error.maxlength">
+                                    <i class="fa fa-times-circle"></i> 姓名不能大于10位
+                                </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div data-ng-class="{'has-error':addUserForm.password.$dirty && addUserForm.password.$invalid}">
+                                <!-- 口令 -->
+                                <label class="col-sm-2 control-label"><span class="asterisk_red">*</span>口令：</label>
+                                <div class="col-sm-3">
+
+                                    <input type="password" class="form-control" placeholder="用户密码"
+                                           data-ng-required="true" data-ng-minlength="8" name="password" id="userPwd"
+                                           data-ng-model="addUser.password" data-ng-maxlength="20"
+                                           data-ng-pattern="/^(?=.*[a-zA-Z])(?=.*[\d])(?=.*[^a-zA-Z\d])(?!.*\s).{8,20}$/"
+                                           autocomplete="off" /> <!--<span class="help-block m-b-none"
+                                    data-ng-if="addUserForm.password.$error.minlength"> <i
+                                    class="fa fa-times-circle"></i> 用户密码不能少于6位
+                                </span>--> <!--<span class="help-block m-b-none"
+                                    data-ng-if="addUserForm.password.$error.maxlength"> <i
+                                    class="fa fa-times-circle"></i> 用户密码不能大于20位
+                                </span>-->
+                                    <span class="help-block m-b-none"
+                                          data-ng-if="addUserForm.password.$error.pattern"> <i
+                                            class="fa fa-times-circle"></i> 用户密码必须是8-20位的数字加字母加特殊字符组成
+                                </span>
+                                    <!-- data-ng-pattern="/^(?:\d+|[a-zA-Z]+|[!@#$%^&*]+)$/" -->
+                                </div>
+                            </div>
+                            <div data-ng-class="{'has-error':addUserForm.password.$dirty && addUserForm.repeatPwd.$dirty && addUser.password != addUser.repeatPwd}">
+                                <!-- 确认口令 -->
+                                <label class="col-sm-3 control-label"><span class="asterisk_red">*</span>确认口令：</label>
+                                <div class="col-sm-3">
+                                    <input type="password" class="form-control"
+                                           placeholder="确认用户密码"
+                                           data-ng-required="true"
+                                           name="repeatPwd" autocomplete="off"
+                                           user-pwd-unequal="userPwd"
+                                           data-ng-model="addUser.repeatPwd" />
+                                    <div class="help-block m-b-none"
+                                         data-ng-if="addUserForm.password.$dirty && addUserForm.repeatPwd.$dirty && addUserForm.repeatPwd.$error.pwdUnEqual">
+                                        <i class="fa fa-times-circle"></i> 两次输入密码不一致
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="col-sm-5">
+                            <div class="control-label glyphicon glyphicon-asterisk"></div>
+                        </div> -->
+                        </div>
+
+                        <div class="form-group">
+                            <!-- 性别 -->
+                            <label class="col-sm-2 control-label">性别：</label>
+                            <div class="col-sm-3" ng-init="addUser.userGendar='男'">
+                                <label class="checkbox-inline"> <input type="radio"
+                                                                       name="gendar" data-ng-model="addUser.userGendar"
+                                                                       data-ng-checked="true" value="男">&nbsp;男
+                                </label> <label class="checkbox-inline"> <input type="radio"
+                                                                                name="gendar" data-ng-model="addUser.userGendar" value="女">&nbsp;女
+                            </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <!-- 电话 -->
+                            <label class="col-sm-2 control-label">固定电话：</label>
+                            <div class="col-sm-3" data-ng-class="{'has-error':addUserForm.phone.$dirty && addUserForm.phone.$invalid}">
+                                <input type="text" name="phone" class="form-control"
+                                       data-ng-model="addUser.phone" data-ng-init="addUser.phone=''"
+                                       data-ng-pattern="/^(\(\d{3,4}\)|\d{3,4}-|\s)?\d{8}$/" />
+                                <span class="help-block m-b-none" data-ng-if="addUserForm.phone.$error.pattern">
+                            	<i class="fa fa-times-circle"></i> 座机号码格式不正确
+                            </span>
+                            </div>
+                            <!-- 手机 -->
+                            <label class="col-sm-3 control-label">移动电话：</label>
+                            <div class="col-sm-3" data-ng-class="{'has-error':addUserForm.mobile.$dirty && addUserForm.mobile.$invalid}">
+                                <input type="text" class="form-control" name="mobile"
+                                       data-ng-model="addUser.mobile" data-ng-init="addUser.mobile=''"
+                                       data-ng-pattern="/^1[3|4|5|7|8]\d{9}$/" />
+                                <span class="help-block m-b-none" data-ng-if="addUserForm.mobile.$error.pattern">
+                            	<i class="fa fa-times-circle"></i> 手机号码格式不正确
+                            </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <!-- 邮箱 -->
+                            <label class="col-sm-2 control-label">邮箱：</label>
+                            <div class="col-sm-3" data-ng-class="{'has-error':addUserForm.email.$dirty && addUserForm.email.$invalid}">
+                                <input type="email" class="form-control" name="email" data-ng-maxlength="32"
+                                       data-ng-model="addUser.email" data-ng-init="addUser.email=''" />
+                                <span class="help-block m-b-none" data-ng-if="addUserForm.email.$error.email">
+                            	<i class="fa fa-times-circle"></i> 邮箱格式不正确
+                            </span>
+                                <span class="help-block m-b-none" data-ng-if="addUserForm.email.$error.maxlength">
+                            	<i class="fa fa-times-circle"></i> 邮箱长度不能超过32位
+                            </span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <!-- 备注 -->
+                            <label class="col-sm-2 control-label">备注：</label>
+                            <div class="col-sm-5" data-ng-class="{'has-error':addUserForm.remark.$dirty && addUserForm.remark.$invalid}">
+                            <textarea class="form-control" data-ng-model="addUser.remark"
+                                      name="remark" data-ng-init="addUser.remark=''"
+                                      data-ng-maxlength="100"></textarea>
+                                <span class="help-block m-b-none" data-ng-show="addUserForm.remark.$error.maxlength">
+                            	<i class="fa fa-times-circle"></i> 描述信息不能大于100位字符
+                            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane data_list" id="roleMessage">
+                    <div class="panel-body">
+                        <table class="table table-striped table-condensed table-bordered">
+                            <thead>
+                            <tr>
+                                <th width="6%">&nbsp;</th>
+                                <th width="20%">角色名称</th>
+                                <th width="20%">创建时间</th>
+                                <th width="10%">创建人</th>
+                                <th width="40%">描述</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr data-ng-repeat="user_role in user_role_add">
+                                <td width="6%"><input type="radio" name="roleName"
+                                                      data-ng-value="user_role.roleName"
+                                                      data-ng-model="addUser.roleName" /></td>
+                                <td width="20%" data-ng-bind="user_role.roleName"></td>
+                                <td width="20%" data-ng-bind="user_role.ctime"></td>
+                                <td width="10%" data-ng-bind="user_role.creater"></td>
+                                <td width="40%" data-ng-bind="user_role.detail"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-success" data-ng-disabled="addUserForm.$invalid" data-ng-click="addUserInfoForm()">保存</button>
+    <button class="btn btn-sm btn-white" data-ng-click="cancel()"><i class="fa fa-close"></i>&nbsp;关闭</button>
+</div>

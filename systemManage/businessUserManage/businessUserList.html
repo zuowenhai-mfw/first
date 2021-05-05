@@ -1,0 +1,29 @@
+<div class="wrapper wrapper-content">
+    <div class="col-md-10" data-ng-controller="businessUserListCtrl">
+
+        <div class="btn-group float-e-margins" id="customersInformListToolbar" role="group">
+            <button type="button" class="btn btn-sm btn-success" data-ng-click="addOrEditBusinessUser()">
+                <i class="fa fa-plus"></i>&nbsp;新增
+            </button>
+            <!--<button type="button" class="btn btn-sm btn-white" data-ng-click="delBusinessUserList()">
+                <i class="fa fa-trash"></i>&nbsp;删除
+            </button>-->
+
+        </div>
+        <div class="tab-content" >
+            <div id="tab-4" class="tab-pane active" class="data_list tableFixed" data-ng-table="parentTableParams">
+                <!--业务用户列表-->
+                <table id="businessUserList"  data-mobile-responsive="true"></table>
+            </div>
+
+            <div id="tab-5" class="tab-pane">
+
+            </div>
+            <div id="tab-6" class="tab-pane">
+
+            </div>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,15 @@
+[
+  {
+    "id":"1",
+    "contractNumber": "1",
+    "salesperson": "小李",
+    "projectStaus": "xxx",
+    "productList":[
+      { "finishProductCode": "1", "productName": "安管1"}
+    ],
+
+    "number": "12",
+    "date": "2019-01-04",
+    "createdDate": "2019-01-11"
+  }
+]

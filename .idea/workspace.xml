@@ -27,7 +27,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../soc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -142,6 +142,7 @@
       <workItem from="1612843162131" duration="765000" />
       <workItem from="1615015234007" duration="598000" />
       <workItem from="1615087464905" duration="620000" />
+      <workItem from="1620096542734" duration="5411000" />
     </task>
     <task id="LOCAL-00001" summary="修改说明：修改前端html页面，修改新增硬件信息和新增成品信息页面。&#10;影响范围：PLM系统。">
       <created>1605679274827</created>

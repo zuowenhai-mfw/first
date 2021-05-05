@@ -1,0 +1,50 @@
+<div class="wrapper my-content" ng-controller="systemMessageListCtrl">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="mailbox-content messageList">
+                <fieldset>
+                    <legend>
+                        <h3>查询条件</h3>
+                    </legend>
+                    <!-- 硬件序列号查询-->
+                    <div class="form-group">
+                        <label class="control-label">硬件序列号：</label>
+                        <input type="text" class="form-control"
+                               data-ng-model="messageDate.hardwareSerialNumber" name="choice"
+                               autocomplete="off"/>
+                    </div>
+                    <!-- 授权码查询-->
+                    <div class="form-group">
+                        <label class="control-label">授权码ID：</label>
+                        <input type="text" class="form-control"
+                               data-ng-model="messageDate.authCodeId" name="choice"
+                               autocomplete="off"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">硬件到期时间：</label>
+                        <input placeholder="开始日期-结束日期" class="form-control layer-date readonly_bg_color layer-range-width"
+                               id="startHardware" readonly data-ng-model="messageDate.hardwardExpiration" autocomplete="off"
+                               def-laydate dateType="date" range="-" >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">软件到期时间：</label>
+                        <input placeholder="开始日期-结束日期" class="form-control layer-date readonly_bg_color layer-range-width"
+                               id="startProduct" readonly data-ng-model="messageDate.productExpiration" autocomplete="off"
+                               def-laydate dateType="date" range="-" >
+                    </div>
+
+                    <div class="form-group text-center">
+                        <!-- 查询-->
+                        <button type="button" class="btn btn-sm btn-success" data-ng-click="showQuery();">查询</button>
+                        <button type="button" data-ng-click="reset()" class="btn btn-sm btn-white">重置</button>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div ng-include="systemMessageListUrl"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,102 @@
+<div class="wrapper my-content" ng-controller="dataQueryListCtrl">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="mailbox-content dataQuery">
+                <fieldset>
+                    <legend>
+                        <h3>查询条件</h3>
+                    </legend>
+                    <!-- 硬件序列号查询-->
+                    <div class="form-group">
+                        <label class="control-label">硬件序列号：</label>
+                        <input type="text" class="form-control"
+                               data-ng-model="searchData.hardwareSerialNumber" name="choice"
+                               autocomplete="off"/>
+
+                    </div>
+                    <!-- 管理板授权码查询-->
+                    <div class="form-group">
+                        <label class="control-label">管理板授权码：</label>
+                        <input type="text" class="form-control"
+                               data-ng-model="searchData.authCodeId" name="choice"
+                               autocomplete="off"/>
+
+                    </div>
+                    <!-- 防护板授权码查询-->
+                    <div class="form-group">
+                        <label class="control-label">防护板授权码：</label>
+                        <input type="text" class="form-control"
+                               data-ng-model="searchData.protectivePlateId" name="choice"
+                               autocomplete="off"/>
+
+                    </div>
+                    <!-- 软件版本查询-->
+                    <div class="form-group">
+                        <label class="control-label">软件版本：</label>
+                        <input type="text" class="form-control"
+                               data-ng-model="searchData.softwareVersion"
+                               autocomplete="off"/>
+                    </div>
+                    <!-- 合同号查询-->
+                    <div class="form-group">
+                        <label class="control-label">合同号：</label>
+                        <input type="text" class="form-control" name="contractNo" data-ng-model="searchData.contractNo" autocomplete="off"/>
+                    </div>
+                    <!-- 采购单号查询-->
+                    <div class="form-group">
+                        <label class="control-label">采购单号：</label>
+                        <input  class="form-control"
+                                id="hardwardPurchaseNo" data-ng-model="searchData.hardwardPurchaseNo" autocomplete="off">
+                    </div>
+                    <!-- 硬件平台查询-->
+                    <div class="form-group">
+                        <label class="control-label">硬件平台：</label>
+                        <input class="form-control "
+                               data-ng-model="searchData.hardwarePlatform" autocomplete="off">
+                    </div>
+                    <!-- 发货单号查询-->
+                    <div class="form-group">
+                        <label class="control-label">发货单号：</label>
+                        <input  class="form-control "
+                                id="sendBillNo" data-ng-model="searchData.sendBillNo" autocomplete="off">
+                    </div>
+                    <!-- 区域查询-->
+                    <!--<div class="form-group">
+                        <label class="control-label">区域：</label>
+                        <input  class="form-control "
+                                data-ng-model="searchEvent.saveTime" autocomplete="off">
+                    </div>-->
+                    <!-- 部署时间查询-->
+                    <!--<div class="form-group">
+                        <label class="control-label">部署时间：</label>
+                        <input  class="form-control "
+                                data-ng-model="searchEvent.saveTime" autocomplete="off">
+                    </div>-->
+                    <!-- 发货日期查询-->
+                    <div class="form-group">
+                        <label class="control-label">发货日期：</label>
+                        <!--<input  class="form-control "
+                                data-ng-model="searchData.sendDate" id="issueDate" def-laydate datetype='date' autocomplete="off">-->
+
+
+
+                        <input placeholder="开始日期-结束日期" class="form-control layer-date readonly_bg_color layer-range-width"
+                               id="start" readonly data-ng-model="searchData.sendDate" autocomplete="off"
+                               def-laydate dateType="date" range="-" >
+
+
+
+                    </div>
+                    <div class="form-group text-center">
+                        <!-- 查询-->
+                        <button type="button" class="btn btn-sm btn-success" data-ng-click="showQuery();">查询</button>
+                        <button type="button" data-ng-click="reset()" class="btn btn-sm btn-white">重置</button>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div ng-include="dataQueryUrl"></div>
+        </div>
+    </div>
+</div>

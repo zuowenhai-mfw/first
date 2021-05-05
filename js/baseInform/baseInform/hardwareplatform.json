@@ -1,0 +1,52 @@
+[
+  {
+    "hardwareId": "000001112022",
+    "hardwarePlatform": "H3P LY-01",
+    "externalCode": "HM65-10",
+    "vendorInfo": "北京乐研科技xx ",
+    "issuer": "张立科",
+    "issueDate": "2019-01-02",
+    "createDate": "2019-01-04",
+    "use": "I型一体化"
+  },
+  {
+    "hardwareId": "000001112023",
+    "hardwarePlatform": "H3P LY-021",
+    "externalCode": "HM65-10",
+    "vendorInfo": "北京乐研科技xx ",
+    "issuer": "张立科",
+    "issueDate": "2019-01-02",
+    "createDate": "2019-01-04",
+    "use": "I型一体化"
+  },
+  {
+    "hardwareId": "000001112024",
+    "hardwarePlatform": "H3P LY-04",
+    "externalCode": "HM65-10",
+    "vendorInfo": "北京乐研科技xx ",
+    "issuer": "张立科",
+    "issueDate": "2019-01-04",
+    "createDate": "2019-01-05",
+    "use": "I型一体化"
+  },
+  {
+    "hardwareId": "000001112025",
+    "hardwarePlatform": "H3P LY-05",
+    "externalCode": "HM65-10",
+    "vendorInfo": "北京乐研科技xx ",
+    "issuer": "张立科",
+    "issueDate": "2019-01-05",
+    "createDate": "2019-01-05",
+    "use": "I型一体化"
+  },
+  {
+    "hardwareId": "000001112026",
+    "hardwarePlatform": "H3P LY-06",
+    "externalCode": "HM65-10",
+    "vendorInfo": "北京乐研科技xx ",
+    "issuer": "张立科",
+    "issueDate": "2019-01-07",
+    "createDate": "2019-01-07",
+    "use": "I型一体化"
+  }
+]

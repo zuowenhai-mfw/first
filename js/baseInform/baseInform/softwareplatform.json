@@ -1,0 +1,26 @@
+[
+  {
+    "softwareId": "1",
+    "softwareProductName": "xx产品",
+    "softwareEdition": "V3.0",
+    "hardwareId": "000001112022",
+    "productType": "自研",
+    "issuer": "张立科",
+    "issueDate": "2019-01-02",
+    "createDate": "2019-01-04",
+    "use": "I型一体化",
+    "remark": "xxxxx"
+  },
+  {
+    "softwareId": "2",
+    "softwareProductName": "xx产品",
+    "softwareEdition": "V3.0",
+    "hardwareId": "000001112023",
+    "productType": "自研",
+    "issuer": "张立科",
+    "issueDate": "2019-01-02",
+    "createDate": "2019-01-04",
+    "use": "I型一体化",
+    "remark": "xxxxx"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "1",
+    "hardwareNumber": "00012",
+    "contractNumber": "12",
+    "consignor": "小李",
+    "deliveryDate": "2020-01-02",
+    "needuser": "小王",
+    "acceptingUnit": "xxx单位",
+    "receivePersonnel": "小赵",
+    "contactInformartion": "15890201846",
+    "remark":"xxxxx"
+  }
+]

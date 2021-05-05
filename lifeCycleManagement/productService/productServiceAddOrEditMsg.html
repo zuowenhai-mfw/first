@@ -1,0 +1,112 @@
+<script>
+    $('#file-pretty input[type="file"]').prettyFile()
+</script>
+<div class="modal-header">
+    <button type='button' class='close' data-ng-click="cancel();"><i class="fa fa-close"></i></button>
+    <h4 class="modal-title">详细描述</h4>
+</div>
+<div class="modal-body">
+    <form action="" name="addMessage" class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">详细描述：</label>
+
+            <div class="col-sm-10">
+                <div class="col-sm-5" data-ng-class="{'has-error':addMessage.problemDescribe.$dirty && addMessage.problemDescribe.$invalid}">
+                <textarea class="form-control" name="problemDescribe" data-ng-model="detailedDescribe.problemDescribe"
+                          data-ng-required="true" data-ng-maxlength="300"></textarea>
+                    <span class="help-block m-b-none" data-ng-show="addMessage.problemDescribe.$error.maxlength">
+                            	<i class="fa fa-times-circle"></i> 详细描述长度不能超过300个字符
+                            </span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">处理方法：</label>
+
+            <div class="col-sm-10">
+                <div class="col-sm-5" data-ng-class="{'has-error':addMessage.processingMethod.$dirty && addMessage.processingMethod.$invalid}">
+                <textarea class="form-control" name="processingMethod" data-ng-model="detailedDescribe.processingMethod"
+                          data-ng-required="true" data-ng-maxlength="300"></textarea>
+                    <span class="help-block m-b-none" data-ng-show="addMessage.processingMethod.$error.maxlength">
+                            	<i class="fa fa-times-circle"></i> 处理方法长度不能超过300字符
+                            </span>
+                </div>
+            </div>
+        </div>
+        <fieldset>
+            <legend>
+                <h4>文件上传</h4>
+            </legend>
+            <div class="form-group">
+                <!--<label class="col-sm-2 control-label">上传文件：</label>
+
+                <div class="col-sm-10"  id="file-pretty">
+                    <input type="file" multiple="multiple" class="form-control" id="fileName" data-ng-model="serviceLogMsgForm.fileName">
+                </div>-->
+
+
+                <div class="col-sm-6 file-pretty">
+                    <input type="text" id="servicefileId" class="form-control" placeholder="请选择上传文件" data-ng-disabled="disabledSign"
+                           style="float: left;width: 68%;"/>
+                    <input type="file" class="form-control " name="servicefile" id="servicefile"
+                           data-ng-click="clearItems();" data-ng-disabled="operateDisableSign"
+                           data-uploader="uploaderServicefile" nv-file-select/>
+                </div>
+
+
+
+
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">描述：</label>
+
+                <div class="col-sm-10">
+                    <textarea class="form-control" data-ng-disabled="operateDisableSign" name="questionDescribe" data-ng-model="detailedDescribe.questionDescribe"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label"></label>
+
+                <div class="col-sm-10">
+                    <!--<button class="btn btn-sm btn-white" data-ng-click="addLogfile111()"><i class="fa fa-plus"></i>&nbsp;确定</button>-->
+                    <a data-ng-disabled="operateDisableSign" data-ng-click="addLogfile()">
+                        <i class="fa fa-plus"></i>&nbsp;确定
+                    </a>
+                </div>
+            </div>
+            <div class="form-group data_list">
+                <table class="table table-striped table-condensed table-hover table-bordered">
+                    <thead>
+                    <tr>
+                        <th width="10%">序号</th>
+                        <th width="40%">文件名</th>
+                        <th width="40%">描述</th>
+                        <th width="10%" style="display: none">文件路径</th>
+                        <th width="10%">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr data-ng-repeat="serviceLog in serviceLogMsg">
+                        <td width="10%" data-ng-if="serviceLog.fileName!=''">
+                            {{$index+1}}
+                        </td>
+                        <td width="40%" ng-bind="serviceLog.fileName" data-ng-if="serviceLog.fileName!=''"></td>
+                        <td width="40%" ng-bind="serviceLog.questionDescribe" data-ng-if="serviceLog.fileName!=''"></td>
+                        <td width="40%" ng-bind="serviceLog.filePath" style="display: none" data-ng-if="serviceLog.fileName!=''"></td>
+                        <td width="10%" data-ng-if="serviceLog.fileName!=''">
+                            <a class="fa fa-trash" data-ng-click="delserviceLogMsg($index)"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a class="fa fa-download" data-ng-click="downloadFile(serviceLog.filePath)"></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-success" data-ng-disabled="addMessage.$invalid || operateDisableSign" data-ng-click="save()">暂时保存</button>
+    <button class="btn btn-sm btn-white" data-ng-click="cancel()"><i class="fa fa-close"></i>&nbsp;关闭</button>
+</div>

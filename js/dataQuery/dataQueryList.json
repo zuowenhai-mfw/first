@@ -1,0 +1,35 @@
+[
+  {
+    "id":"1",
+    "hardwareNumber": "LY000001",
+    "licenseKey": "0001111222333444",
+    "softwareVersion": "NSM3.0",
+    "contractNumber": "HTH12345",
+    "purchaseOpder": "CGH12345",
+    "number": "FHH123456",
+    "state": "0",
+    "hardwarePlatform": "H3P LY-01"
+  },
+  {
+    "id":"2",
+    "hardwareNumber": "LY000002",
+    "licenseKey": "000111122233355",
+    "softwareVersion": "NSM3.0",
+    "contractNumber": "HTH12345",
+    "purchaseOpder": "CGH12345",
+    "number": "FHH123456",
+    "state": "1",
+    "hardwarePlatform": "H3P LY-01"
+  },
+  {
+    "id":"3",
+    "hardwareNumber": "LY000002",
+    "licenseKey": "000111122233355",
+    "softwareVersion": "NSM3.0",
+    "contractNumber": "HTH12345",
+    "purchaseOpder": "CGH12345",
+    "number": "FHH123456",
+    "state": "2",
+    "hardwarePlatform": "H3P LY-01"
+  }
+]

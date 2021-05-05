@@ -1,0 +1,14 @@
+[
+  {
+    "id":"1",
+    "unitName": "xxx单位",
+    "contact": "张三",
+    "dep": "xx部门",
+    "post": "其他",
+    "contactInfon": "15842035214",
+    "warZone": "东部战区",
+    "system": "xxx系统",
+    "createDate": "2019-05-08",
+    "remark":"xxxxxx"
+  }
+]

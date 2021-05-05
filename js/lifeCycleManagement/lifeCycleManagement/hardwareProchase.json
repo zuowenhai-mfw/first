@@ -1,0 +1,15 @@
+[
+  {
+    "id": "1",
+    "requisitionNumber": "1",
+    "salesperson": "小李",
+    "projectStaus": "xxx",
+    "hardwarePlatform": "123456",
+    "orderDate": "2019-01-14",
+    "hardwareNumber": "000012",
+    "arrivalDate": "2019-01-04",
+    "contractNumber": "1020",
+    "myhardwareNumber": "1020",
+    "remark":"xxxxx"
+  }
+]
